@@ -1,0 +1,64 @@
+﻿<Window x:Class="Apllication4Course.Views.DataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Просмотр данных" Style="{DynamicResource DominatedWindow}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Style="{StaticResource BaseGridStyle}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Верхняя панель -->
+            <RowDefinition Height="*"/>
+            <!-- Основной контент -->
+            <RowDefinition Height="Auto"/>
+            <!-- Нижняя панель -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <!-- Левая панель -->
+            <ColumnDefinition Width="*"/>
+            <!-- Центральная панель -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Правая панель -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Кнопка "На главную" (слева сверху) -->
+        <Button Style="{StaticResource BackToMain}" 
+                Grid.Row="0" Grid.Column="0"
+                Command="{Binding GoToMainCommand}"/>
+
+        <!-- Кнопка "Выход" (справа сверху) -->
+        <Button Style="{StaticResource ExitButtonStyle}" 
+                Grid.Row="0" Grid.Column="2"
+                Command="{Binding LogoutCommand}"/>
+
+        <!-- Frame для отображения страниц (посередине) -->
+        <Frame Style="{StaticResource DWCustomFrame}" x:Name="MainFrame" 
+               Grid.Row="1" Grid.ColumnSpan="3"/>
+
+        <!-- StackPanel с навигационными кнопками (снизу) -->
+        <StackPanel Style="{StaticResource DWStackPanel}"
+                    Grid.Row="2" Grid.ColumnSpan="3">
+            <Button Style="{StaticResource NavigateServicesPage}" 
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="Services"/>
+            <Button Style="{StaticResource NavigateStoragePage}" 
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="Storage"/>
+            <Button Style="{StaticResource NavigateDeceasedPage}" 
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="Deceased"/>
+            <Button Style="{StaticResource NavigateEmploymeesPage}" 
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="Employees"/>
+            <Button Style="{StaticResource NavigateStorageLocationsPage}" 
+                    Command="{Binding NavigateCommand}" 
+                    CommandParameter="StorageLocations"/>
+        </StackPanel>
+    </Grid>
+</Window>

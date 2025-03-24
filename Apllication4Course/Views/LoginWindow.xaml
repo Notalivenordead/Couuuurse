@@ -1,0 +1,53 @@
+﻿<Window x:Class="Apllication4Course.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Авторизация" Style="{DynamicResource BaseWindowStyle}">
+    <Window.Resources>
+        <ResourceDictionary Source="../Styles/Styles.xaml"/>
+    </Window.Resources>
+    <Grid Style="{StaticResource BaseGridStyle}">
+        <!-- Определение сетки 3x3 -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Поле для логина -->
+        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                 Style="{StaticResource AuthTextBoxStyle}" 
+                 Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <!-- Поле для пароля -->
+        <PasswordBox x:Name="PasswordBox" 
+                     Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                     Style="{StaticResource AuthPasswordBoxStyle}" 
+                     PasswordChanged="PasswordBox_PasswordChanged"/>
+
+        <!-- Скрытый TextBox для отображения пароля -->
+        <TextBox x:Name="VisiblePasswordTextBox" 
+                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                 Style="{StaticResource AuthVisiblePasswordStyle}" 
+                 TextChanged="VisiblePasswordTextBox_TextChanged"/>
+
+        <!-- Кнопка отображения пароля -->
+        <ToggleButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                      Style="{StaticResource EyeToggleButtonStyle}" 
+                      Click="EyeToggleButton_Click"/>
+
+        <!-- Кнопка "Регистрация" -->
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 
+                Style="{StaticResource AuthButtonStyle_ToReg}" 
+                Command="{Binding GoToRegisterCommand}"/>
+
+        <!-- Кнопка "Войти" -->
+        <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                Style="{StaticResource AuthButtonStyle_DoAuth}" 
+                Command="{Binding LoginCommand}"/>
+    </Grid>
+</Window>

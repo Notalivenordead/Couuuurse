@@ -1,0 +1,23 @@
+﻿<Page x:Class="Apllication4Course.Pages.StorageLocationsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Места в камерах" Style="{DynamicResource BasePage}">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <DataGrid ItemsSource="{Binding StorageLocations}" AutoGenerateColumns="False" Style="{StaticResource MDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Места" Binding="{Binding ID_Места}" />
+                <DataGridTextColumn Header="ID Камеры" Binding="{Binding ID_Камеры}" />
+                <DataGridTextColumn Header="ID Умершего" Binding="{Binding ID_Умершего}" />
+                <DataGridTextColumn Header="Дата размещения" Binding="{Binding Дата_Размещения, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Дата извлечения" Binding="{Binding Дата_Извлечения, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}, TargetNullValue=Не указано}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
