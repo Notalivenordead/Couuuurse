@@ -133,10 +133,9 @@ namespace Apllication4Course.ViewModels
             RegisterCommand = new RelayCommand(RegisterExecute);
             GoToLoginCommand = new RelayCommand(GoToLoginExecute);
         }
+
         public bool IsPasswordStrong(string password)
         {
-            if (!ValidatePassword(password))
-            {
                 ErrorMessage = "Пароль не содержит:\n";
                 var specialSymbols = "!@#$%^&*()-_+=<>?/[]{}|";
                 int specialSymbolCount = password.Count(ch => specialSymbols.Contains(ch));
@@ -149,8 +148,6 @@ namespace Apllication4Course.ViewModels
 
                 if (specialSymbolCount < 2) ErrorMessage += "2 специальных символа";
                 return false;
-            }
-            else return true;
         }
         private void RegisterExecute()
         {
@@ -188,19 +185,18 @@ namespace Apllication4Course.ViewModels
                     return;
             }
         }
-
         public int CheckRegister(string login, string password, string Lastname, string Firstname, string position, string phone,
             string FatherName = null, string email = null)
         {
             if (!CanRegisterExecute(login, password, Lastname, Firstname, position, phone))
                 return -1;
-            else if (!ValidatePassword(password))
+            if (!ValidatePassword(password))
                 return -2;
-            else if (!ValidateEmail(email))
+            if (!ValidateEmail(email))
                 return -3;
-            else if (!ValidatePhoneNumber(phone))
+            if (!ValidatePhoneNumber(phone))
                 return -4;
-            else try
+            try
                 {
                     var user = new Models.Сотрудники
                     {
@@ -212,9 +208,7 @@ namespace Apllication4Course.ViewModels
                         Email = email
                     };
                     if (_userService.Register(user))
-                    {
                         return 1;
-                    }
                     else return -5;
                 }
                 catch (Exception ex)
@@ -240,10 +234,14 @@ namespace Apllication4Course.ViewModels
             CloseCurrentWindow();
         }
 
-        private bool ValidatePassword(string test)
+        public bool ValidatePassword(string password)
         {
-            var regex = new Regex(@"^(?=.*[!@#$%^&*_+-]{2,})(?=.*[a-z]{2,})(?=.*[A-Z]{2,})(?=.*\d{2,}).{8,}$");
-            return regex.IsMatch(test);
+            var regex = new Regex(@"^(?=.*[!@#$%^&*()\-_=+<>?/\[\]{}|].*[!@#$%^&*()\-_=+<>?/\[\]{}|])" +
+                       @"(?=.*[a-z].*[a-z])" + 
+                       @"(?=.*[A-Z].*[A-Z])" + 
+                       @"(?=.*\d.*\d)" +       
+                       @".{8,}$");             
+            return regex.IsMatch(password);
         }
 
         private bool ValidateEmail(string test)
