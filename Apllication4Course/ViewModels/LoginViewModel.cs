@@ -125,6 +125,15 @@ namespace Apllication4Course.ViewModels
             }
         }
 
+        public int CapchaValidate(string inserted_capcha, string text_capcha, int mistakes)
+        {
+            if (string.IsNullOrWhiteSpace(text_capcha)) return 0;
+            if (mistakes >= 3) return -1;
+            if (inserted_capcha == text_capcha && mistakes < 3) return 1;
+            if (inserted_capcha != text_capcha && mistakes < 3) return -2;
+            else return -100;
+        }
+
         public int CanLoginExecute2(string login, string password)
         {
             if (!CanLoginExecute(login, password))

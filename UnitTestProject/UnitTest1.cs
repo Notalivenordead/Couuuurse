@@ -72,7 +72,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(1, res); 
+            Assert.AreEqual(1, res);
         }
 
         [TestMethod]
@@ -89,7 +89,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(1, res); 
+            Assert.AreEqual(1, res);
         }
 
         [TestMethod]
@@ -106,7 +106,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-4, res); 
+            Assert.AreEqual(-4, res);
         }
 
         [TestMethod]
@@ -123,7 +123,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-4, res); 
+            Assert.AreEqual(-4, res);
         }
 
         [TestMethod]
@@ -140,7 +140,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-4, res); 
+            Assert.AreEqual(-4, res);
         }
 
         [TestMethod]
@@ -157,7 +157,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(1, res); 
+            Assert.AreEqual(1, res);
         }
 
         [TestMethod]
@@ -191,7 +191,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-1, res); 
+            Assert.AreEqual(-1, res);
         }
 
         [TestMethod]
@@ -225,7 +225,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-2, res); 
+            Assert.AreEqual(-2, res);
         }
 
         [TestMethod]
@@ -242,7 +242,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-3, res); 
+            Assert.AreEqual(-3, res);
         }
 
         [TestMethod]
@@ -259,7 +259,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-3, res); 
+            Assert.AreEqual(-3, res);
         }
 
         [TestMethod]
@@ -276,7 +276,7 @@ namespace UnitTestProject
             int res = ToReg(un, ps, ln, fn, pos, ph, mn, em);
 
             // Assert
-            Assert.AreEqual(-3, res); 
+            Assert.AreEqual(-3, res);
         }
 
         [TestMethod]
@@ -470,6 +470,120 @@ namespace UnitTestProject
 
             // Assert
             Assert.AreEqual(res, -1);
+        }
+    }
+
+
+    [TestClass]
+    public class CapchaUnitTest
+    {
+        public int CheckUpInput(string inserted_capcha, string text_capcha, int mistakes = 0)
+        {
+            var page = new LoginViewModel();
+            int res = page.CapchaValidate(inserted_capcha, text_capcha, mistakes);
+            return res;
+        }
+
+        [TestMethod]
+        public void GoodCapchaInsert()
+        {
+            // Arrange
+            string i_cap = "qwT563", t_cap = "qwT563";
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap);
+
+            // Assert
+            Assert.AreEqual(res, 1);
+        }
+
+        [TestMethod]
+        public void CapchaGenerationTrouble()
+        {
+            // Arrange
+            string i_cap = "qwT563", t_cap = "";
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap);
+
+            // Assert
+            Assert.AreEqual(res, 0);
+        }
+
+        [TestMethod]
+        public void BadCapchaInsert()
+        {
+            // Arrange
+            string i_cap = "QwT563", t_cap = "qwT563";
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap);
+
+            // Assert
+            Assert.AreEqual(res, -2);
+        }
+
+        [TestMethod]
+        public void TooManyAptemptsCapchaInsert_1()
+        {
+            // Arrange
+            string i_cap = "QwT563", t_cap = "qwT563";
+            int mistakes = 3;
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}, mistakes: {mistakes}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap, mistakes);
+
+            // Assert
+            Assert.AreEqual(res, -1);
+        }
+
+        [TestMethod]
+        public void TooManyAptemptsCapchaInsert_2()
+        {
+            // Arrange
+            string i_cap = "QwT563", t_cap = "qwT563";
+            int mistakes = 100;
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}, mistakes: {mistakes}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap, mistakes);
+
+            // Assert
+            Assert.AreEqual(res, -1);
+        }
+
+        [TestMethod]
+        public void NotTooManyAptemptsCapchaInsert_1()
+        {
+            // Arrange
+            string i_cap = "QwT563", t_cap = "qwT563";
+            int mistakes = 1;
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}, mistakes: {mistakes}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap, mistakes);
+
+            // Assert
+            Assert.AreEqual(res, -2);
+        }
+
+        [TestMethod]
+        public void NotTooManyAptemptsCapchaInsert_2()
+        {
+            // Arrange
+            string i_cap = "QwT563", t_cap = "qwT563";
+            int mistakes = 2;
+            Console.WriteLine($"Testing with inserted_capcha: {i_cap}, text_capcha: {t_cap}, mistakes: {mistakes}");
+
+            // Act
+            int res = CheckUpInput(i_cap, t_cap, mistakes);
+
+            // Assert
+            Assert.AreEqual(res, -2);
         }
     }
 }
