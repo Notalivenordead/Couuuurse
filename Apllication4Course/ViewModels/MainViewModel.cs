@@ -31,9 +31,7 @@ namespace Apllication4Course.ViewModels
             // Диалоговое окно подтверждения выхода
             var result = MessageBox.Show("Вы уверены, что хотите выйти?", "Подтверждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
-            {
                 Application.Current.Shutdown();
-            }
         }
 
         private void ExecuteGoToLogin()

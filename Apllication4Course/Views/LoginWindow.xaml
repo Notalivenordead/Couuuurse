@@ -19,26 +19,46 @@
         </Grid.ColumnDefinitions>
 
         <!-- Поле для логина -->
-        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+        <TextBox Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3"
                  Style="{StaticResource AuthTextBoxStyle}" 
                  Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
 
         <!-- Поле для пароля -->
-        <PasswordBox x:Name="PasswordBox" 
-                     Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+        <PasswordBox x:Name="PasswordBox"
+                     Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" 
                      Style="{StaticResource AuthPasswordBoxStyle}" 
                      PasswordChanged="PasswordBox_PasswordChanged"/>
 
         <!-- Скрытый TextBox для отображения пароля -->
         <TextBox x:Name="VisiblePasswordTextBox" 
-                 Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+                 Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" 
                  Style="{StaticResource AuthVisiblePasswordStyle}" 
                  TextChanged="VisiblePasswordTextBox_TextChanged"/>
 
         <!-- Кнопка отображения пароля -->
-        <ToggleButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+        <ToggleButton Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                       Style="{StaticResource EyeToggleButtonStyle}" 
                       Click="EyeToggleButton_Click"/>
+        
+        <!--Капча (контейнер)-->
+        <StackPanel Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3"
+                    Style="{StaticResource CaptchaContainerStyle}">
+            
+        <!-- Капча (изображение)-->
+        <Image Style="{StaticResource CaptchaImageStyle}" 
+               Source="{Binding CaptchaImageBytes, Converter={StaticResource ByteArrayToImageConverter}}" 
+               Visibility="{Binding CaptchaImageBytes, Converter={StaticResource NullToVisibilityConverter}}"/>
+
+        <!-- Поле для ввода капчи -->
+        <TextBox Style="{StaticResource CaptchaInputStyle}" 
+                 Text="{Binding UserCaptchaInput, UpdateSourceTrigger=PropertyChanged}" 
+                 Visibility="{Binding CaptchaImageBytes, Converter={StaticResource NullToVisibilityConverter}}" />
+            
+        <!-- Кнопка обновления капчи -->
+        <Button Style="{StaticResource RefreshCaptchaButtonStyle}" 
+                Visibility="{Binding CaptchaImageBytes, Converter={StaticResource NullToVisibilityConverter}}"
+                Command="{Binding RefreshCaptchaCommand}"/>
+        </StackPanel>
 
         <!-- Кнопка "Регистрация" -->
         <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" 

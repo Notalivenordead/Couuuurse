@@ -23,7 +23,7 @@
         <!-- UniformGrid для автоматического размещения полей ввода -->
         <UniformGrid Rows="9" Columns="1" Grid.Row="1" Grid.Column="1">
             <!-- Поле для логина -->
-            <TextBox Style="{StaticResource RegisterTextBoxStyle}" 
+            <TextBox Style="{StaticResource RegisterTextBoxStyle_Login}" 
                      Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
 
@@ -43,17 +43,17 @@
             </ToggleButton>
 
             <!-- Поле для фамилии -->
-            <TextBox Style="{StaticResource RegisterTextBoxStyle}" 
+            <TextBox Style="{StaticResource RegisterTextBoxStyle_LN}" 
                      Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
 
             <!-- Поле для имени -->
-            <TextBox Style="{StaticResource RegisterTextBoxStyle}" 
+            <TextBox Style="{StaticResource RegisterTextBoxStyle_FN}" 
                      Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
 
             <!-- Поле для отчества -->
-            <TextBox Style="{StaticResource RegisterTextBoxStyle}" 
+            <TextBox Style="{StaticResource RegisterTextBoxStyle_MN}" 
                      Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
 
@@ -64,12 +64,12 @@
             </ComboBox>
 
             <!-- Поле для контактного телефона -->
-            <TextBox Style="{StaticResource RegisterTextBoxStyle}" 
+            <TextBox Style="{StaticResource RegisterTextBoxStyle_ph}" 
                      Text="{Binding Phone, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
 
             <!-- Поле для email -->
-            <TextBox Style="{StaticResource RegisterTextBoxStyle}" 
+            <TextBox Style="{StaticResource RegisterTextBoxStyle_em}" 
                      Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
         </UniformGrid>

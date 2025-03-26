@@ -1,8 +1,26 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:Apllication4Course.Services">
+    <!--Ссылка на конверторы работы капчи-->
+    <!-- Конвертер для преобразования массива байтов в изображение -->
+    <converters:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter" />
 
+    <!-- Конвертер для преобразования null в видимость -->
+    <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
 
     <!--        Раздел базовыми стилями        -->
+
+    <!-- Базовый стиль для ToolTip -->
+    <Style x:Key="BaseToolTipStyle" TargetType="ToolTip">
+        <Setter Property="Background" Value="#808080"/>
+        <Setter Property="Foreground" Value="#F8F32B"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
+        <Setter Property="Padding" Value="5"/>
+        <Setter Property="BorderBrush" Value="#F8F32B"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    
     <!-- Базовый стиль для окна -->
     <Style x:Key="BaseWindowStyle" TargetType="Window">
         <Setter Property="Background" Value="#000000"/>
@@ -13,7 +31,7 @@
         <Setter Property="Height" Value="1080"/>
         <Setter Property="WindowState" Value="Maximized"/>
     </Style>
-
+    
     <!-- Базовый стиль для Grid -->
     <Style x:Key="BaseGridStyle" TargetType="Grid">
         <Setter Property="Background" Value="#000000"/>
@@ -41,6 +59,19 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="150"/>
         <Setter Property="MaxWidth" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                        <ScrollViewer x:Name="PART_ContentHost"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <!-- Базовый стиль для PasswordBox -->
@@ -54,6 +85,12 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="MinWidth" Value="150"/>
         <Setter Property="MaxWidth" Value="500"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите пароль"/>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <!-- Базовый стиль для Button -->
@@ -70,6 +107,17 @@
         <Setter Property="Height" Value="70"/>
         <Setter Property="Template">
             <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Border Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
@@ -79,17 +127,6 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
-
-    <!-- Базовый стиль для ToolTip -->
-    <Style x:Key="BaseToolTipStyle" TargetType="ToolTip">
-        <Setter Property="Background" Value="#808080"/>
-        <Setter Property="Foreground" Value="#F8F32B"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontFamily" Value="Segoe UI"/>
-        <Setter Property="Padding" Value="5"/>
-        <Setter Property="BorderBrush" Value="#F8F32B"/>
-        <Setter Property="BorderThickness" Value="1"/>
     </Style>
 
     <!-- Базовый стиль для ToggleButton -->
@@ -123,6 +160,11 @@
         <Setter Property="MinWidth" Value="150"/>
         <Setter Property="MaxWidth" Value="500"/>
         <Setter Property="Height" Value="30"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Выберите должность"/>
+            </Setter.Value>
+        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
@@ -213,9 +255,67 @@
     </Style>
 
     <!--        Раздел со стилями окон авторизации и регистрации        -->
+    <!-- Стиль для контейнера капчи -->
+    <Style x:Key="CaptchaContainerStyle" TargetType="StackPanel" BasedOn="{StaticResource BaseStackPanel}">
+        <Setter Property="Margin" Value="0, 200, 0, 0"/>
+    </Style>
+    
+    <!-- Стиль для изображения капчи -->
+    <Style x:Key="CaptchaImageStyle" TargetType="Image">
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Margin" Value="0, 0, 0, 10"/>
+        <Setter Property="Stretch" Value="Uniform"/>
+        <Setter Property="Cursor" Value="Arrow"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите текст с картинки"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect ShadowDepth="2" Color="Black" Opacity="0.3" BlurRadius="5"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
+    <!-- Стиль для текстового поля ввода капчи -->
+    <Style x:Key="CaptchaInputStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Padding" Value="10, 5"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите капчу с изобпажения"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для кнопки обновления капчи -->
+    <Style x:Key="RefreshCaptchaButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Width" Value="185"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Content" Value="Обновить капчу"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Нажмите, чтобы обновить капчу"/>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F8F32B"/>
+                <Setter Property="Foreground" Value="#1E1E1E"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#DAA520"/>
+                <Setter Property="Foreground" Value="#1E1E1E"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
     <!-- Стиль для поля логина -->
     <Style x:Key="AuthTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
+        <Setter Property="Margin" Value="0, 0, 0, 250"/>
         <Setter Property="ToolTip">
             <Setter.Value>
                 <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите логин"/>
@@ -225,7 +325,7 @@
 
     <!-- Стиль для видимого пароля A-->
     <Style x:Key="AuthVisiblePasswordStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
-        <Setter Property="Margin" Value="0, 200, 0, 0"/>
+        <Setter Property="Margin" Value="0, 0, 0, 150"/>
         <Setter Property="Visibility" Value="Collapsed"/>
         <Setter Property="IsReadOnly" Value="True"/>
         <Setter Property="ToolTip">
@@ -242,7 +342,7 @@
 
     <!-- Стиль для поля пароля -->
     <Style x:Key="AuthPasswordBoxStyle" TargetType="PasswordBox" BasedOn="{StaticResource BasePasswordBoxStyle}">
-        <Setter Property="Margin" Value="0, 200, 0, 0"/>
+        <Setter Property="Margin" Value="0, 0, 0, 150"/>
         <Setter Property="ToolTip">
             <Setter.Value>
                 <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите пароль"/>
@@ -298,17 +398,71 @@
     <Style x:Key="RegisterTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
     </Style>
 
-    <!-- Стиль для PasswordBox-->
-    <Style x:Key="RegisterPasswordBoxStyle" TargetType="PasswordBox" BasedOn="{StaticResource BasePasswordBoxStyle}">
+    <!-- Стиль для поля ввода логина-->
+    <Style x:Key="RegisterTextBoxStyle_Login" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите логин"/>
+            </Setter.Value>
+        </Setter>
     </Style>
+
+    <!-- Стиль для поля ввода имени-->
+    <Style x:Key="RegisterTextBoxStyle_FN" TargetType="TextBox" BasedOn="{StaticResource RegisterTextBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите Имя"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для поля ввода фамилии-->
+    <Style x:Key="RegisterTextBoxStyle_LN" TargetType="TextBox" BasedOn="{StaticResource RegisterTextBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите Фамилию"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для поля ввода отчества-->
+    <Style x:Key="RegisterTextBoxStyle_MN" TargetType="TextBox" BasedOn="{StaticResource RegisterTextBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите Отчество"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для поля ввода телефона-->
+    <Style x:Key="RegisterTextBoxStyle_ph" TargetType="TextBox" BasedOn="{StaticResource RegisterTextBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите телефон начиная с +7"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для поля ввода почты-->
+    <Style x:Key="RegisterTextBoxStyle_em" TargetType="TextBox" BasedOn="{StaticResource RegisterTextBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Введите электронную почту"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для PasswordBox-->
+    <Style x:Key="RegisterPasswordBoxStyle" TargetType="PasswordBox" BasedOn="{StaticResource BasePasswordBoxStyle}"/>
+
 
     <!-- Стиль для ComboBox R-->
-    <Style x:Key="RegisterComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource BaseComboBoxStyle}">
-    </Style>
+    <Style x:Key="RegisterComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource BaseComboBoxStyle}"/>
+
 
     <!-- Стиль для Button R-->
-    <Style x:Key="RegisterButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
-    </Style>
+    <Style x:Key="RegisterButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}"/>
+
 
 
     <!--        Раздел для основных окон и их элементов-->
@@ -360,6 +514,21 @@
         <Setter Property="Margin" Value="10"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#FFE57373"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style x:Key="BackToAuth" TargetType="Button" BasedOn="{StaticResource BackButtonStyle}">
