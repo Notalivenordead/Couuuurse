@@ -11,7 +11,7 @@ namespace Apllication4Course.Views
             InitializeComponent();
             var viewModel = new DataViewModel(MainFrame); // Передаем ссылку на Frame
             DataContext = viewModel;
-            MainFrame.Navigate(new ServicesPage());
+            MainFrame.Navigate(new ServicesPage { DataContext = ((DataViewModel)DataContext).CurrentPageViewModel });
         }
     }
 }

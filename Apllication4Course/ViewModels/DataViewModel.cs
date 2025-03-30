@@ -1,27 +1,63 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
 using Apllication4Course.Pages;
 using Apllication4Course.Views;
-using System.Windows;
-
+using GalaSoft.MvvmLight.Command;
 
 namespace Apllication4Course.ViewModels
 {
     public class DataViewModel : BaseViewModel
     {
         private readonly Frame _mainFrame;
+        private IBaseDataViewModel _currentPageViewModel;
 
-        // Экземпляры страниц
-        private ServicesPage _servicesPage;
-        private StoragePage _storagePage;
-        private DeceasedPage _deceasedPage;
-        private EmployeesPage _employeesPage;
-        private StorageLocationsPage _storageLocationsPage;
+
+        // Свойства для видимости кнопок
+        private bool _isAddButtonVisible = true;
+        private bool _isEditButtonVisible = true;
+        private bool _isDeleteButtonVisible = true;
+        private bool _isConfirmButtonVisible = false;
+
+        public bool IsAddButtonVisible
+        {
+            get => _isAddButtonVisible;
+            set => Set(ref _isAddButtonVisible, value);
+        }
+
+        public bool IsEditButtonVisible
+        {
+            get => _isEditButtonVisible;
+            set => Set(ref _isEditButtonVisible, value);
+        }
+
+        public bool IsDeleteButtonVisible
+        {
+            get => _isDeleteButtonVisible;
+            set => Set(ref _isDeleteButtonVisible, value);
+        }
+
+        public bool IsConfirmButtonVisible
+        {
+            get => _isConfirmButtonVisible;
+            set => Set(ref _isConfirmButtonVisible, value);
+        }
+
+        public IBaseDataViewModel CurrentPageViewModel
+        {
+            get => _currentPageViewModel;
+            set
+            {
+                if (_currentPageViewModel != value)
+                {
+                    _currentPageViewModel = value;
+                    OnPropertyChanged(nameof(CurrentPageViewModel));
+                }
+            }
+        }
 
         public ICommand GoToMainCommand { get; }
         public ICommand LogoutCommand { get; }
-
         public ICommand NavigateCommand { get; }
 
         public DataViewModel(Frame mainFrame)
@@ -34,21 +70,16 @@ namespace Apllication4Course.ViewModels
 
         private void ExecuteGoToMain()
         {
-            // Вернуться на главное окно
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             CloseCurrentWindow();
         }
 
-
         private void ExecuteLogout()
         {
-            // Диалоговое окно подтверждения выхода
             var result = MessageBox.Show("Вы уверены, что хотите выйти?", "Подтверждение", MessageBoxButton.YesNo);
             if (result == MessageBoxResult.Yes)
-            {
                 Application.Current.Shutdown();
-            }
         }
 
         private void ExecuteNavigate(string pageName)
@@ -56,52 +87,38 @@ namespace Apllication4Course.ViewModels
             switch (pageName)
             {
                 case "Services":
-                    if (_servicesPage == null)
-                    {
-                        _servicesPage = new ServicesPage();
-                    }
-                    _mainFrame.Navigate(_servicesPage);
+                    CurrentPageViewModel = new ServiceViewModel();
+                    _mainFrame.Navigate(new ServicesPage { DataContext = CurrentPageViewModel });
                     break;
 
                 case "Storage":
-                    if (_storagePage == null)
-                    {
-                        _storagePage = new StoragePage();
-                    }
-                    _mainFrame.Navigate(_storagePage);
+                    CurrentPageViewModel = new StorageViewModel();
+                    _mainFrame.Navigate(new StoragePage { DataContext = CurrentPageViewModel });
                     break;
 
                 case "Deceased":
-                    if (_deceasedPage == null)
-                    {
-                        _deceasedPage = new DeceasedPage();
-                    }
-                    _mainFrame.Navigate(_deceasedPage);
+                    CurrentPageViewModel = new DeceasedViewModel();
+                    _mainFrame.Navigate(new DeceasedPage());
                     break;
 
                 case "Employees":
-                    if (_employeesPage == null)
-                    {
-                        _employeesPage = new EmployeesPage();
-                    }
-                    _mainFrame.Navigate(_employeesPage);
+                    CurrentPageViewModel = new EmployeeViewModel();
+                    _mainFrame.Navigate(new EmployeesPage());
                     break;
 
                 case "StorageLocations":
-                    if (_storageLocationsPage == null)
-                    {
-                        _storageLocationsPage = new StorageLocationsPage();
-                    }
-                    _mainFrame.Navigate(_storageLocationsPage);
+                    CurrentPageViewModel = new StorageLocationViewModel();
+                    _mainFrame.Navigate(new StorageLocationsPage());
                     break;
             }
         }
+
         private void CloseCurrentWindow()
         {
             foreach (var window in Application.Current.Windows)
-                if (window is DataWindow DataWindow)
+                if (window is DataWindow dataWindow)
                 {
-                    DataWindow.Close();
+                    dataWindow.Close();
                     break;
                 }
         }

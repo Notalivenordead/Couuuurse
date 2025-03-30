@@ -25,51 +25,31 @@ namespace Apllication4Course.ViewModels
         public string Login
         {
             get => _login;
-            set
-            {
-                _login = value;
-                OnPropertyChanged(nameof(Login));
-            }
+            set => Set(ref _login, value);
         }
 
         public string Password
         {
             get => _password;
-            set
-            {
-                _password = value;
-                OnPropertyChanged(nameof(Password));
-            }
+            set => Set(ref _password, value);
         }
 
         public string UserCaptchaInput
         {
             get => _userCaptchaInput;
-            set
-            {
-                _userCaptchaInput = value;
-                OnPropertyChanged(nameof(UserCaptchaInput));
-            }
+            set => Set(ref _userCaptchaInput, value);
         }
 
         public byte[] CaptchaImageBytes
         {
             get => _captchaImageBytes;
-            set
-            {
-                _captchaImageBytes = value;
-                OnPropertyChanged(nameof(CaptchaImageBytes));
-            }
+            set => Set(ref _captchaImageBytes, value);
         }
 
         public string ErrorMessage
         {
             get => _errorMessage;
-            set
-            {
-                _errorMessage = value;
-                OnPropertyChanged(nameof(ErrorMessage));
-            }
+            set => Set(ref _errorMessage, value);
         }
 
         public ICommand LoginCommand { get; }

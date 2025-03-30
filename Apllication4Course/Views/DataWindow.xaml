@@ -36,7 +36,23 @@
         <Button Style="{StaticResource ExitButtonStyle}" 
                 Grid.Row="0" Grid.Column="2"
                 Command="{Binding LogoutCommand}"/>
-
+        
+        <!-- Панель с кнопками управления (добавить, редактировать, удалить, подтвердить) -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,10" Grid.Row="0" Grid.Column="1">
+            <Button Style="{StaticResource ToAdd}" 
+                    Command="{Binding CurrentPageViewModel.AddCommand}" 
+                    Visibility="{Binding IsAddButtonVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button Style="{StaticResource ToEdit}" 
+                    Command="{Binding CurrentPageViewModel.EditCommand}" 
+                    Visibility="{Binding CurrentPageViewModel.IsEditEnabled, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button Style="{StaticResource ToDelete}" 
+                    Command="{Binding CurrentPageViewModel.DeleteCommand}" 
+                    Visibility="{Binding IsDeleteButtonVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <Button Style="{StaticResource ToConform}" 
+                    Command="{Binding CurrentPageViewModel.SaveCommand}" 
+                    Visibility="{Binding IsConfirmButtonVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </StackPanel>
+        
         <!-- Frame для отображения страниц (посередине) -->
         <Frame Style="{StaticResource DWCustomFrame}" x:Name="MainFrame" 
                Grid.Row="1" Grid.ColumnSpan="3"/>

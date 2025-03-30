@@ -5,16 +5,16 @@ using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class TemperatureLogViewModel : BaseViewModel
+    public class TemperatureLogViewModel : BaseDataViewModel<Журнал_Температур>
     {
-        public ObservableCollection<Журнал_Температур> TemperatureLogs { get; set; }
+        public ObservableCollection<Журнал_Температур> Storage => Items as ObservableCollection<Журнал_Температур>;
 
         public TemperatureLogViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                TemperatureLogs = new ObservableCollection<Журнал_Температур>(context.ЖурналТемператур.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

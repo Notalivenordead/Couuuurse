@@ -29,91 +29,55 @@ namespace Apllication4Course.ViewModels
         public string Login
         {
             get => _login;
-            set
-            {
-                _login = value;
-                OnPropertyChanged(nameof(Login));
-            }
+            set => Set(ref _login, value);
         }
 
         public string Password
         {
             get => _password;
-            set
-            {
-                _password = value;
-                OnPropertyChanged(nameof(Password));
-            }
+            set => Set(ref _password, value);
         }
 
         public string LastName
         {
             get => _lastName;
-            set
-            {
-                _lastName = value;
-                OnPropertyChanged(nameof(LastName));
-            }
+            set => Set(ref _lastName, value);
         }
 
         public string FirstName
         {
             get => _firstName;
-            set
-            {
-                _firstName = value;
-                OnPropertyChanged(nameof(FirstName));
-            }
+            set => Set(ref _firstName, value);
         }
 
         public string MiddleName
         {
             get => _middleName;
-            set
-            {
-                _middleName = value;
-                OnPropertyChanged(nameof(MiddleName));
-            }
+            set => Set(ref _middleName, value);
         }
 
         public string Position
         {
             get => _position;
-            set
-            {
-                _position = value;
-                OnPropertyChanged(nameof(Position));
-            }
+            set => Set(ref _position, value);
         }
 
         public string Phone
         {
             get => _phone;
-            set
-            {
-                _phone = value;
-                OnPropertyChanged(nameof(Phone));
-            }
+            set => Set(ref _phone, value);
         }
 
         public string Email
         {
             get => _email;
-            set
-            {
-                _email = value;
-                OnPropertyChanged(nameof(Email));
-            }
+            set => Set(ref _email, value);
         }
 
         public string ErrorMessage
         {
             get => _errorMessage;
-            set
-            {
-                _errorMessage = value;
-                OnPropertyChanged(nameof(ErrorMessage));
-            }
+            set => Set(ref _errorMessage, value);
         }
 
         public ICommand RegisterCommand { get; }

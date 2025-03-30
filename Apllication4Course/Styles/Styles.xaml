@@ -8,6 +8,9 @@
     <!-- Конвертер для преобразования null в видимость -->
     <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
 
+    <!-- Конвертер для преобразования видимости кнопок -->
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+
     <!--        Раздел базовыми стилями        -->
 
     <!-- Базовый стиль для ToolTip -->
@@ -529,6 +532,22 @@
                 <Setter Property="Background" Value="#FFE57373"/>
             </Trigger>
         </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="ToAdd" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Content" Value="Создать"/>
+    </Style>
+
+    <Style x:Key="ToEdit" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Content" Value="Редактировать"/>
+    </Style>
+
+    <Style x:Key="ToDelete" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Content" Value="Удалить"/>
+    </Style>
+
+    <Style x:Key="ToConform" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Content" Value="Подтвердить"/>
     </Style>
 
     <Style x:Key="BackToAuth" TargetType="Button" BasedOn="{StaticResource BackButtonStyle}">

@@ -10,5 +10,12 @@ namespace Apllication4Course.ViewModels
     {
         public ObservableCollection<Места_В_Камерах> StorageLocations => Items as ObservableCollection<Места_В_Камерах>;
 
+        public StorageLocationViewModel()
+        {
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
+        }
     }
 }
