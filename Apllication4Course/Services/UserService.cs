@@ -9,12 +9,6 @@ namespace Apllication4Course.Services
 {
     public class UserService
     {
-        private readonly DatabaseContext _context;
-
-        public UserService(DatabaseContext context)
-        {
-            _context = context;
-        }
 
         // Хэширование пароля (Для автотестов сменил на public)
         public string HashPassword(string password)
@@ -30,7 +24,7 @@ namespace Apllication4Course.Services
         // Проверка логина и пароля
         public bool Authenticate(string login, string password)
         {
-            var user = _context.Сотрудники.FirstOrDefault(u => u.Логин.Equals(login, StringComparison.OrdinalIgnoreCase));
+            var user = DatabaseContext.Instance.Сотрудники.FirstOrDefault(u => u.Логин.Equals(login, StringComparison.OrdinalIgnoreCase));
             var hashedPassword = HashPassword(password);
             if (user == null || password == null)
             {
@@ -53,15 +47,15 @@ namespace Apllication4Course.Services
         // Регистрация нового пользователя
         public bool Register(Сотрудники user)
         {
-            if (_context.Сотрудники.Any(u => u.Логин == user.Логин))
+            if (DatabaseContext.Instance.Сотрудники.Any(u => u.Логин == user.Логин))
             {
                 Console.WriteLine($"такой пользователь уже существует.");
                 return false;
             }
 
             user.ПарольHash = HashPassword(user.ПарольHash);
-            _context.Сотрудники.Add(user);
-            _context.SaveChanges();
+            DatabaseContext.Instance.Сотрудники.Add(user);
+            DatabaseContext.Instance.SaveChanges();
             Console.WriteLine($"Пользователь {user.Логин} успешно зарегистрирован.");
             return true;
         }

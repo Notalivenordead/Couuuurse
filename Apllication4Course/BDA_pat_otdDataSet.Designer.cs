@@ -58,47 +58,55 @@ namespace Apllication4Course {
         
         private Финансовые_ОперацииDataTable tableФинансовые_Операции;
         
-        private global::System.Data.DataRelation relationFK__Журнал_Об__ID_От__6E01572D;
+        private Мониторинг_Финансовых_ОперацийDataTable tableМониторинг_Финансовых_Операций;
         
-        private global::System.Data.DataRelation relationFK__Журнал_Те__ID_Ка__5165187F;
+        private Отчет_Проведенные_ИсследованияDataTable tableОтчет_Проведенные_Исследования;
         
-        private global::System.Data.DataRelation relationFK__Журнал_Те__ID_От__52593CB8;
+        private Статистика_Движения_УмершихDataTable tableСтатистика_Движения_Умерших;
         
-        private global::System.Data.DataRelation relationFK__Заявки_на__ID_От__4222D4EF;
+        private AddInventoryDataTable tableAddInventory;
         
-        private global::System.Data.DataRelation relationFK__Заявки_на__ID_Ус__403A8C7D;
+        private global::System.Data.DataRelation relationFK_Журнал_Обращений_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Использов__ID_Ин__68487DD7;
+        private global::System.Data.DataRelation relationFK_Журнал_Температур_Камеры_Хранения;
         
-        private global::System.Data.DataRelation relationFK__Использов__ID_Ис__6754599E;
+        private global::System.Data.DataRelation relationFK_Журнал_Температур_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Использов__ID_От__6A30C649;
+        private global::System.Data.DataRelation relationFK_Заявки_на_Платные_Услуги_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Использов__ID_Ис__5FB337D6;
+        private global::System.Data.DataRelation relationFK_Заявки_на_Платные_Услуги_Услуги;
         
-        private global::System.Data.DataRelation relationFK__Использов__ID_Об__5EBF139D;
+        private global::System.Data.DataRelation relationFK_Использование_Инвентаря_Инвентарь;
         
-        private global::System.Data.DataRelation relationFK__Использов__ID_От__619B8048;
+        private global::System.Data.DataRelation relationFK_Использование_Инвентаря_Исследования;
         
-        private global::System.Data.DataRelation relationFK__Исследова__ID_Ис__571DF1D5;
+        private global::System.Data.DataRelation relationFK_Использование_Инвентаря_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Исследова__ID_Ум__5535A963;
+        private global::System.Data.DataRelation relationFK_Использование_Образцов_Исследования;
         
-        private global::System.Data.DataRelation relationFK__Места_В_К__ID_Ка__4D94879B;
+        private global::System.Data.DataRelation relationFK_Использование_Образцов_Образцы;
         
-        private global::System.Data.DataRelation relationFK__Места_В_К__ID_Ум__4E88ABD4;
+        private global::System.Data.DataRelation relationFK_Использование_Образцов_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Образцы__ID_Отве__5BE2A6F2;
+        private global::System.Data.DataRelation relationFK_Исследования_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Образцы__ID_Умер__59FA5E80;
+        private global::System.Data.DataRelation relationFK_Исследования_Умершие;
         
-        private global::System.Data.DataRelation relationFK__Платные_И__ID_За__44FF419A;
+        private global::System.Data.DataRelation relationFK_Места_В_Камерах_Камеры_Хранения;
         
-        private global::System.Data.DataRelation relationFK__Платные_И__ID_Ис__45F365D3;
+        private global::System.Data.DataRelation relationFK_Места_В_Камерах_Умершие;
         
-        private global::System.Data.DataRelation relationFK__Транспорт__ID_От__72C60C4A;
+        private global::System.Data.DataRelation relationFK_Образцы_Сотрудники;
         
-        private global::System.Data.DataRelation relationFK__Транспорт__ID_Ум__70DDC3D8;
+        private global::System.Data.DataRelation relationFK_Образцы_Умершие;
+        
+        private global::System.Data.DataRelation relationFK_Платные_Исследования_Заявки_на_Платные_Услуги;
+        
+        private global::System.Data.DataRelation relationFK_Платные_Исследования_Сотрудники;
+        
+        private global::System.Data.DataRelation relationFK_Транспортировка_Сотрудники;
+        
+        private global::System.Data.DataRelation relationFK_Транспортировка_Умершие;
         
         private global::System.Data.DataRelation relationFK_Финансовые_Операции_Заявки;
         
@@ -182,6 +190,18 @@ namespace Apllication4Course {
                 }
                 if ((ds.Tables["Финансовые_Операции"] != null)) {
                     base.Tables.Add(new Финансовые_ОперацииDataTable(ds.Tables["Финансовые_Операции"]));
+                }
+                if ((ds.Tables["Мониторинг_Финансовых_Операций"] != null)) {
+                    base.Tables.Add(new Мониторинг_Финансовых_ОперацийDataTable(ds.Tables["Мониторинг_Финансовых_Операций"]));
+                }
+                if ((ds.Tables["Отчет_Проведенные_Исследования"] != null)) {
+                    base.Tables.Add(new Отчет_Проведенные_ИсследованияDataTable(ds.Tables["Отчет_Проведенные_Исследования"]));
+                }
+                if ((ds.Tables["Статистика_Движения_Умерших"] != null)) {
+                    base.Tables.Add(new Статистика_Движения_УмершихDataTable(ds.Tables["Статистика_Движения_Умерших"]));
+                }
+                if ((ds.Tables["AddInventory"] != null)) {
+                    base.Tables.Add(new AddInventoryDataTable(ds.Tables["AddInventory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -373,6 +393,46 @@ namespace Apllication4Course {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Мониторинг_Финансовых_ОперацийDataTable Мониторинг_Финансовых_Операций {
+            get {
+                return this.tableМониторинг_Финансовых_Операций;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Отчет_Проведенные_ИсследованияDataTable Отчет_Проведенные_Исследования {
+            get {
+                return this.tableОтчет_Проведенные_Исследования;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public Статистика_Движения_УмершихDataTable Статистика_Движения_Умерших {
+            get {
+                return this.tableСтатистика_Движения_Умерших;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AddInventoryDataTable AddInventory {
+            get {
+                return this.tableAddInventory;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -488,6 +548,18 @@ namespace Apllication4Course {
                 }
                 if ((ds.Tables["Финансовые_Операции"] != null)) {
                     base.Tables.Add(new Финансовые_ОперацииDataTable(ds.Tables["Финансовые_Операции"]));
+                }
+                if ((ds.Tables["Мониторинг_Финансовых_Операций"] != null)) {
+                    base.Tables.Add(new Мониторинг_Финансовых_ОперацийDataTable(ds.Tables["Мониторинг_Финансовых_Операций"]));
+                }
+                if ((ds.Tables["Отчет_Проведенные_Исследования"] != null)) {
+                    base.Tables.Add(new Отчет_Проведенные_ИсследованияDataTable(ds.Tables["Отчет_Проведенные_Исследования"]));
+                }
+                if ((ds.Tables["Статистика_Движения_Умерших"] != null)) {
+                    base.Tables.Add(new Статистика_Движения_УмершихDataTable(ds.Tables["Статистика_Движения_Умерших"]));
+                }
+                if ((ds.Tables["AddInventory"] != null)) {
+                    base.Tables.Add(new AddInventoryDataTable(ds.Tables["AddInventory"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -624,27 +696,51 @@ namespace Apllication4Course {
                     this.tableФинансовые_Операции.InitVars();
                 }
             }
-            this.relationFK__Журнал_Об__ID_От__6E01572D = this.Relations["FK__Журнал_Об__ID_От__6E01572D"];
-            this.relationFK__Журнал_Те__ID_Ка__5165187F = this.Relations["FK__Журнал_Те__ID_Ка__5165187F"];
-            this.relationFK__Журнал_Те__ID_От__52593CB8 = this.Relations["FK__Журнал_Те__ID_От__52593CB8"];
-            this.relationFK__Заявки_на__ID_От__4222D4EF = this.Relations["FK__Заявки_на__ID_От__4222D4EF"];
-            this.relationFK__Заявки_на__ID_Ус__403A8C7D = this.Relations["FK__Заявки_на__ID_Ус__403A8C7D"];
-            this.relationFK__Использов__ID_Ин__68487DD7 = this.Relations["FK__Использов__ID_Ин__68487DD7"];
-            this.relationFK__Использов__ID_Ис__6754599E = this.Relations["FK__Использов__ID_Ис__6754599E"];
-            this.relationFK__Использов__ID_От__6A30C649 = this.Relations["FK__Использов__ID_От__6A30C649"];
-            this.relationFK__Использов__ID_Ис__5FB337D6 = this.Relations["FK__Использов__ID_Ис__5FB337D6"];
-            this.relationFK__Использов__ID_Об__5EBF139D = this.Relations["FK__Использов__ID_Об__5EBF139D"];
-            this.relationFK__Использов__ID_От__619B8048 = this.Relations["FK__Использов__ID_От__619B8048"];
-            this.relationFK__Исследова__ID_Ис__571DF1D5 = this.Relations["FK__Исследова__ID_Ис__571DF1D5"];
-            this.relationFK__Исследова__ID_Ум__5535A963 = this.Relations["FK__Исследова__ID_Ум__5535A963"];
-            this.relationFK__Места_В_К__ID_Ка__4D94879B = this.Relations["FK__Места_В_К__ID_Ка__4D94879B"];
-            this.relationFK__Места_В_К__ID_Ум__4E88ABD4 = this.Relations["FK__Места_В_К__ID_Ум__4E88ABD4"];
-            this.relationFK__Образцы__ID_Отве__5BE2A6F2 = this.Relations["FK__Образцы__ID_Отве__5BE2A6F2"];
-            this.relationFK__Образцы__ID_Умер__59FA5E80 = this.Relations["FK__Образцы__ID_Умер__59FA5E80"];
-            this.relationFK__Платные_И__ID_За__44FF419A = this.Relations["FK__Платные_И__ID_За__44FF419A"];
-            this.relationFK__Платные_И__ID_Ис__45F365D3 = this.Relations["FK__Платные_И__ID_Ис__45F365D3"];
-            this.relationFK__Транспорт__ID_От__72C60C4A = this.Relations["FK__Транспорт__ID_От__72C60C4A"];
-            this.relationFK__Транспорт__ID_Ум__70DDC3D8 = this.Relations["FK__Транспорт__ID_Ум__70DDC3D8"];
+            this.tableМониторинг_Финансовых_Операций = ((Мониторинг_Финансовых_ОперацийDataTable)(base.Tables["Мониторинг_Финансовых_Операций"]));
+            if ((initTable == true)) {
+                if ((this.tableМониторинг_Финансовых_Операций != null)) {
+                    this.tableМониторинг_Финансовых_Операций.InitVars();
+                }
+            }
+            this.tableОтчет_Проведенные_Исследования = ((Отчет_Проведенные_ИсследованияDataTable)(base.Tables["Отчет_Проведенные_Исследования"]));
+            if ((initTable == true)) {
+                if ((this.tableОтчет_Проведенные_Исследования != null)) {
+                    this.tableОтчет_Проведенные_Исследования.InitVars();
+                }
+            }
+            this.tableСтатистика_Движения_Умерших = ((Статистика_Движения_УмершихDataTable)(base.Tables["Статистика_Движения_Умерших"]));
+            if ((initTable == true)) {
+                if ((this.tableСтатистика_Движения_Умерших != null)) {
+                    this.tableСтатистика_Движения_Умерших.InitVars();
+                }
+            }
+            this.tableAddInventory = ((AddInventoryDataTable)(base.Tables["AddInventory"]));
+            if ((initTable == true)) {
+                if ((this.tableAddInventory != null)) {
+                    this.tableAddInventory.InitVars();
+                }
+            }
+            this.relationFK_Журнал_Обращений_Сотрудники = this.Relations["FK_Журнал_Обращений_Сотрудники"];
+            this.relationFK_Журнал_Температур_Камеры_Хранения = this.Relations["FK_Журнал_Температур_Камеры_Хранения"];
+            this.relationFK_Журнал_Температур_Сотрудники = this.Relations["FK_Журнал_Температур_Сотрудники"];
+            this.relationFK_Заявки_на_Платные_Услуги_Сотрудники = this.Relations["FK_Заявки_на_Платные_Услуги_Сотрудники"];
+            this.relationFK_Заявки_на_Платные_Услуги_Услуги = this.Relations["FK_Заявки_на_Платные_Услуги_Услуги"];
+            this.relationFK_Использование_Инвентаря_Инвентарь = this.Relations["FK_Использование_Инвентаря_Инвентарь"];
+            this.relationFK_Использование_Инвентаря_Исследования = this.Relations["FK_Использование_Инвентаря_Исследования"];
+            this.relationFK_Использование_Инвентаря_Сотрудники = this.Relations["FK_Использование_Инвентаря_Сотрудники"];
+            this.relationFK_Использование_Образцов_Исследования = this.Relations["FK_Использование_Образцов_Исследования"];
+            this.relationFK_Использование_Образцов_Образцы = this.Relations["FK_Использование_Образцов_Образцы"];
+            this.relationFK_Использование_Образцов_Сотрудники = this.Relations["FK_Использование_Образцов_Сотрудники"];
+            this.relationFK_Исследования_Сотрудники = this.Relations["FK_Исследования_Сотрудники"];
+            this.relationFK_Исследования_Умершие = this.Relations["FK_Исследования_Умершие"];
+            this.relationFK_Места_В_Камерах_Камеры_Хранения = this.Relations["FK_Места_В_Камерах_Камеры_Хранения"];
+            this.relationFK_Места_В_Камерах_Умершие = this.Relations["FK_Места_В_Камерах_Умершие"];
+            this.relationFK_Образцы_Сотрудники = this.Relations["FK_Образцы_Сотрудники"];
+            this.relationFK_Образцы_Умершие = this.Relations["FK_Образцы_Умершие"];
+            this.relationFK_Платные_Исследования_Заявки_на_Платные_Услуги = this.Relations["FK_Платные_Исследования_Заявки_на_Платные_Услуги"];
+            this.relationFK_Платные_Исследования_Сотрудники = this.Relations["FK_Платные_Исследования_Сотрудники"];
+            this.relationFK_Транспортировка_Сотрудники = this.Relations["FK_Транспортировка_Сотрудники"];
+            this.relationFK_Транспортировка_Умершие = this.Relations["FK_Транспортировка_Умершие"];
             this.relationFK_Финансовые_Операции_Заявки = this.Relations["FK_Финансовые_Операции_Заявки"];
             this.relationFK_Финансовые_Операции_Способ_Оплаты = this.Relations["FK_Финансовые_Операции_Способ_Оплаты"];
         }
@@ -691,90 +787,98 @@ namespace Apllication4Course {
             base.Tables.Add(this.tableУслуги);
             this.tableФинансовые_Операции = new Финансовые_ОперацииDataTable();
             base.Tables.Add(this.tableФинансовые_Операции);
-            this.relationFK__Журнал_Об__ID_От__6E01572D = new global::System.Data.DataRelation("FK__Журнал_Об__ID_От__6E01572D", new global::System.Data.DataColumn[] {
+            this.tableМониторинг_Финансовых_Операций = new Мониторинг_Финансовых_ОперацийDataTable();
+            base.Tables.Add(this.tableМониторинг_Финансовых_Операций);
+            this.tableОтчет_Проведенные_Исследования = new Отчет_Проведенные_ИсследованияDataTable();
+            base.Tables.Add(this.tableОтчет_Проведенные_Исследования);
+            this.tableСтатистика_Движения_Умерших = new Статистика_Движения_УмершихDataTable();
+            base.Tables.Add(this.tableСтатистика_Движения_Умерших);
+            this.tableAddInventory = new AddInventoryDataTable();
+            base.Tables.Add(this.tableAddInventory);
+            this.relationFK_Журнал_Обращений_Сотрудники = new global::System.Data.DataRelation("FK_Журнал_Обращений_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableЖурнал_Обращений.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Журнал_Об__ID_От__6E01572D);
-            this.relationFK__Журнал_Те__ID_Ка__5165187F = new global::System.Data.DataRelation("FK__Журнал_Те__ID_Ка__5165187F", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Журнал_Обращений_Сотрудники);
+            this.relationFK_Журнал_Температур_Камеры_Хранения = new global::System.Data.DataRelation("FK_Журнал_Температур_Камеры_Хранения", new global::System.Data.DataColumn[] {
                         this.tableКамеры_Хранения.ID_КамерыColumn}, new global::System.Data.DataColumn[] {
                         this.tableЖурнал_Температур.ID_КамерыColumn}, false);
-            this.Relations.Add(this.relationFK__Журнал_Те__ID_Ка__5165187F);
-            this.relationFK__Журнал_Те__ID_От__52593CB8 = new global::System.Data.DataRelation("FK__Журнал_Те__ID_От__52593CB8", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Журнал_Температур_Камеры_Хранения);
+            this.relationFK_Журнал_Температур_Сотрудники = new global::System.Data.DataRelation("FK_Журнал_Температур_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableЖурнал_Температур.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Журнал_Те__ID_От__52593CB8);
-            this.relationFK__Заявки_на__ID_От__4222D4EF = new global::System.Data.DataRelation("FK__Заявки_на__ID_От__4222D4EF", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Журнал_Температур_Сотрудники);
+            this.relationFK_Заявки_на_Платные_Услуги_Сотрудники = new global::System.Data.DataRelation("FK_Заявки_на_Платные_Услуги_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаявки_на_Платные_Услуги.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Заявки_на__ID_От__4222D4EF);
-            this.relationFK__Заявки_на__ID_Ус__403A8C7D = new global::System.Data.DataRelation("FK__Заявки_на__ID_Ус__403A8C7D", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Заявки_на_Платные_Услуги_Сотрудники);
+            this.relationFK_Заявки_на_Платные_Услуги_Услуги = new global::System.Data.DataRelation("FK_Заявки_на_Платные_Услуги_Услуги", new global::System.Data.DataColumn[] {
                         this.tableУслуги.ID_УслугиColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаявки_на_Платные_Услуги.ID_УслугиColumn}, false);
-            this.Relations.Add(this.relationFK__Заявки_на__ID_Ус__403A8C7D);
-            this.relationFK__Использов__ID_Ин__68487DD7 = new global::System.Data.DataRelation("FK__Использов__ID_Ин__68487DD7", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Заявки_на_Платные_Услуги_Услуги);
+            this.relationFK_Использование_Инвентаря_Инвентарь = new global::System.Data.DataRelation("FK_Использование_Инвентаря_Инвентарь", new global::System.Data.DataColumn[] {
                         this.tableИнвентарь.ID_ИнвентаряColumn}, new global::System.Data.DataColumn[] {
                         this.tableИспользование_Инвентаря.ID_ИнвентаряColumn}, false);
-            this.Relations.Add(this.relationFK__Использов__ID_Ин__68487DD7);
-            this.relationFK__Использов__ID_Ис__6754599E = new global::System.Data.DataRelation("FK__Использов__ID_Ис__6754599E", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Использование_Инвентаря_Инвентарь);
+            this.relationFK_Использование_Инвентаря_Исследования = new global::System.Data.DataRelation("FK_Использование_Инвентаря_Исследования", new global::System.Data.DataColumn[] {
                         this.tableИсследования.ID_ИсследованияColumn}, new global::System.Data.DataColumn[] {
                         this.tableИспользование_Инвентаря.ID_ИсследованияColumn}, false);
-            this.Relations.Add(this.relationFK__Использов__ID_Ис__6754599E);
-            this.relationFK__Использов__ID_От__6A30C649 = new global::System.Data.DataRelation("FK__Использов__ID_От__6A30C649", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Использование_Инвентаря_Исследования);
+            this.relationFK_Использование_Инвентаря_Сотрудники = new global::System.Data.DataRelation("FK_Использование_Инвентаря_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableИспользование_Инвентаря.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Использов__ID_От__6A30C649);
-            this.relationFK__Использов__ID_Ис__5FB337D6 = new global::System.Data.DataRelation("FK__Использов__ID_Ис__5FB337D6", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Использование_Инвентаря_Сотрудники);
+            this.relationFK_Использование_Образцов_Исследования = new global::System.Data.DataRelation("FK_Использование_Образцов_Исследования", new global::System.Data.DataColumn[] {
                         this.tableИсследования.ID_ИсследованияColumn}, new global::System.Data.DataColumn[] {
                         this.tableИспользование_Образцов.ID_ИсследованияColumn}, false);
-            this.Relations.Add(this.relationFK__Использов__ID_Ис__5FB337D6);
-            this.relationFK__Использов__ID_Об__5EBF139D = new global::System.Data.DataRelation("FK__Использов__ID_Об__5EBF139D", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Использование_Образцов_Исследования);
+            this.relationFK_Использование_Образцов_Образцы = new global::System.Data.DataRelation("FK_Использование_Образцов_Образцы", new global::System.Data.DataColumn[] {
                         this.tableОбразцы.ID_ОбразцаColumn}, new global::System.Data.DataColumn[] {
                         this.tableИспользование_Образцов.ID_ОбразцаColumn}, false);
-            this.Relations.Add(this.relationFK__Использов__ID_Об__5EBF139D);
-            this.relationFK__Использов__ID_От__619B8048 = new global::System.Data.DataRelation("FK__Использов__ID_От__619B8048", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Использование_Образцов_Образцы);
+            this.relationFK_Использование_Образцов_Сотрудники = new global::System.Data.DataRelation("FK_Использование_Образцов_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableИспользование_Образцов.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Использов__ID_От__619B8048);
-            this.relationFK__Исследова__ID_Ис__571DF1D5 = new global::System.Data.DataRelation("FK__Исследова__ID_Ис__571DF1D5", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Использование_Образцов_Сотрудники);
+            this.relationFK_Исследования_Сотрудники = new global::System.Data.DataRelation("FK_Исследования_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableИсследования.ID_ИсполнителяColumn}, false);
-            this.Relations.Add(this.relationFK__Исследова__ID_Ис__571DF1D5);
-            this.relationFK__Исследова__ID_Ум__5535A963 = new global::System.Data.DataRelation("FK__Исследова__ID_Ум__5535A963", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Исследования_Сотрудники);
+            this.relationFK_Исследования_Умершие = new global::System.Data.DataRelation("FK_Исследования_Умершие", new global::System.Data.DataColumn[] {
                         this.tableУмершие.ID_УмершегоColumn}, new global::System.Data.DataColumn[] {
                         this.tableИсследования.ID_УмершегоColumn}, false);
-            this.Relations.Add(this.relationFK__Исследова__ID_Ум__5535A963);
-            this.relationFK__Места_В_К__ID_Ка__4D94879B = new global::System.Data.DataRelation("FK__Места_В_К__ID_Ка__4D94879B", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Исследования_Умершие);
+            this.relationFK_Места_В_Камерах_Камеры_Хранения = new global::System.Data.DataRelation("FK_Места_В_Камерах_Камеры_Хранения", new global::System.Data.DataColumn[] {
                         this.tableКамеры_Хранения.ID_КамерыColumn}, new global::System.Data.DataColumn[] {
                         this.tableМеста_В_Камерах.ID_КамерыColumn}, false);
-            this.Relations.Add(this.relationFK__Места_В_К__ID_Ка__4D94879B);
-            this.relationFK__Места_В_К__ID_Ум__4E88ABD4 = new global::System.Data.DataRelation("FK__Места_В_К__ID_Ум__4E88ABD4", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Места_В_Камерах_Камеры_Хранения);
+            this.relationFK_Места_В_Камерах_Умершие = new global::System.Data.DataRelation("FK_Места_В_Камерах_Умершие", new global::System.Data.DataColumn[] {
                         this.tableУмершие.ID_УмершегоColumn}, new global::System.Data.DataColumn[] {
                         this.tableМеста_В_Камерах.ID_УмершегоColumn}, false);
-            this.Relations.Add(this.relationFK__Места_В_К__ID_Ум__4E88ABD4);
-            this.relationFK__Образцы__ID_Отве__5BE2A6F2 = new global::System.Data.DataRelation("FK__Образцы__ID_Отве__5BE2A6F2", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Места_В_Камерах_Умершие);
+            this.relationFK_Образцы_Сотрудники = new global::System.Data.DataRelation("FK_Образцы_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableОбразцы.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Образцы__ID_Отве__5BE2A6F2);
-            this.relationFK__Образцы__ID_Умер__59FA5E80 = new global::System.Data.DataRelation("FK__Образцы__ID_Умер__59FA5E80", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Образцы_Сотрудники);
+            this.relationFK_Образцы_Умершие = new global::System.Data.DataRelation("FK_Образцы_Умершие", new global::System.Data.DataColumn[] {
                         this.tableУмершие.ID_УмершегоColumn}, new global::System.Data.DataColumn[] {
                         this.tableОбразцы.ID_УмершегоColumn}, false);
-            this.Relations.Add(this.relationFK__Образцы__ID_Умер__59FA5E80);
-            this.relationFK__Платные_И__ID_За__44FF419A = new global::System.Data.DataRelation("FK__Платные_И__ID_За__44FF419A", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Образцы_Умершие);
+            this.relationFK_Платные_Исследования_Заявки_на_Платные_Услуги = new global::System.Data.DataRelation("FK_Платные_Исследования_Заявки_на_Платные_Услуги", new global::System.Data.DataColumn[] {
                         this.tableЗаявки_на_Платные_Услуги.ID_ЗаявкиColumn}, new global::System.Data.DataColumn[] {
                         this.tableПлатные_Исследования.ID_ЗаявкиColumn}, false);
-            this.Relations.Add(this.relationFK__Платные_И__ID_За__44FF419A);
-            this.relationFK__Платные_И__ID_Ис__45F365D3 = new global::System.Data.DataRelation("FK__Платные_И__ID_Ис__45F365D3", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Платные_Исследования_Заявки_на_Платные_Услуги);
+            this.relationFK_Платные_Исследования_Сотрудники = new global::System.Data.DataRelation("FK_Платные_Исследования_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableПлатные_Исследования.ID_ИсполнителяColumn}, false);
-            this.Relations.Add(this.relationFK__Платные_И__ID_Ис__45F365D3);
-            this.relationFK__Транспорт__ID_От__72C60C4A = new global::System.Data.DataRelation("FK__Транспорт__ID_От__72C60C4A", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Платные_Исследования_Сотрудники);
+            this.relationFK_Транспортировка_Сотрудники = new global::System.Data.DataRelation("FK_Транспортировка_Сотрудники", new global::System.Data.DataColumn[] {
                         this.tableСотрудники.ID_СотрудникаColumn}, new global::System.Data.DataColumn[] {
                         this.tableТранспортировка.ID_ОтветственногоColumn}, false);
-            this.Relations.Add(this.relationFK__Транспорт__ID_От__72C60C4A);
-            this.relationFK__Транспорт__ID_Ум__70DDC3D8 = new global::System.Data.DataRelation("FK__Транспорт__ID_Ум__70DDC3D8", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Транспортировка_Сотрудники);
+            this.relationFK_Транспортировка_Умершие = new global::System.Data.DataRelation("FK_Транспортировка_Умершие", new global::System.Data.DataColumn[] {
                         this.tableУмершие.ID_УмершегоColumn}, new global::System.Data.DataColumn[] {
                         this.tableТранспортировка.ID_УмершегоColumn}, false);
-            this.Relations.Add(this.relationFK__Транспорт__ID_Ум__70DDC3D8);
+            this.Relations.Add(this.relationFK_Транспортировка_Умершие);
             this.relationFK_Финансовые_Операции_Заявки = new global::System.Data.DataRelation("FK_Финансовые_Операции_Заявки", new global::System.Data.DataColumn[] {
                         this.tableЗаявки_на_Платные_Услуги.ID_ЗаявкиColumn}, new global::System.Data.DataColumn[] {
                         this.tableФинансовые_Операции.ID_ЗаявкиColumn}, false);
@@ -889,6 +993,30 @@ namespace Apllication4Course {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeМониторинг_Финансовых_Операций() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeОтчет_Проведенные_Исследования() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeСтатистика_Движения_Умерших() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeAddInventory() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -992,6 +1120,18 @@ namespace Apllication4Course {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void Финансовые_ОперацииRowChangeEventHandler(object sender, Финансовые_ОперацииRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void Мониторинг_Финансовых_ОперацийRowChangeEventHandler(object sender, Мониторинг_Финансовых_ОперацийRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void Отчет_Проведенные_ИсследованияRowChangeEventHandler(object sender, Отчет_Проведенные_ИсследованияRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void Статистика_Движения_УмершихRowChangeEventHandler(object sender, Статистика_Движения_УмершихRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void AddInventoryRowChangeEventHandler(object sender, AddInventoryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1150,7 +1290,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Журнал_ОбращенийRow AddЖурнал_ОбращенийRow(string ФИО_Обратившегося, string КонтактныйТелефон, string СвязьСУмершим, System.DateTime Дата_Обращения, string Тип_Обращения, string Описание, СотрудникиRow parentСотрудникиRowByFK__Журнал_Об__ID_От__6E01572D) {
+            public Журнал_ОбращенийRow AddЖурнал_ОбращенийRow(string ФИО_Обратившегося, string КонтактныйТелефон, string СвязьСУмершим, System.DateTime Дата_Обращения, string Тип_Обращения, string Описание, СотрудникиRow parentСотрудникиRowByFK_Журнал_Обращений_Сотрудники) {
                 Журнал_ОбращенийRow rowЖурнал_ОбращенийRow = ((Журнал_ОбращенийRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1161,8 +1301,8 @@ namespace Apllication4Course {
                         Тип_Обращения,
                         Описание,
                         null};
-                if ((parentСотрудникиRowByFK__Журнал_Об__ID_От__6E01572D != null)) {
-                    columnValuesArray[7] = parentСотрудникиRowByFK__Журнал_Об__ID_От__6E01572D[0];
+                if ((parentСотрудникиRowByFK_Журнал_Обращений_Сотрудники != null)) {
+                    columnValuesArray[7] = parentСотрудникиRowByFK_Журнал_Обращений_Сотрудники[0];
                 }
                 rowЖурнал_ОбращенийRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЖурнал_ОбращенийRow);
@@ -1492,7 +1632,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Журнал_ТемпературRow AddЖурнал_ТемпературRow(Камеры_ХраненияRow parentКамеры_ХраненияRowByFK__Журнал_Те__ID_Ка__5165187F, System.DateTime Дата_Измерения, decimal Температура, СотрудникиRow parentСотрудникиRowByFK__Журнал_Те__ID_От__52593CB8) {
+            public Журнал_ТемпературRow AddЖурнал_ТемпературRow(Камеры_ХраненияRow parentКамеры_ХраненияRowByFK_Журнал_Температур_Камеры_Хранения, System.DateTime Дата_Измерения, decimal Температура, СотрудникиRow parentСотрудникиRowByFK_Журнал_Температур_Сотрудники) {
                 Журнал_ТемпературRow rowЖурнал_ТемпературRow = ((Журнал_ТемпературRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1500,11 +1640,11 @@ namespace Apllication4Course {
                         Дата_Измерения,
                         Температура,
                         null};
-                if ((parentКамеры_ХраненияRowByFK__Журнал_Те__ID_Ка__5165187F != null)) {
-                    columnValuesArray[1] = parentКамеры_ХраненияRowByFK__Журнал_Те__ID_Ка__5165187F[0];
+                if ((parentКамеры_ХраненияRowByFK_Журнал_Температур_Камеры_Хранения != null)) {
+                    columnValuesArray[1] = parentКамеры_ХраненияRowByFK_Журнал_Температур_Камеры_Хранения[0];
                 }
-                if ((parentСотрудникиRowByFK__Журнал_Те__ID_От__52593CB8 != null)) {
-                    columnValuesArray[4] = parentСотрудникиRowByFK__Журнал_Те__ID_От__52593CB8[0];
+                if ((parentСотрудникиRowByFK_Журнал_Температур_Сотрудники != null)) {
+                    columnValuesArray[4] = parentСотрудникиRowByFK_Журнал_Температур_Сотрудники[0];
                 }
                 rowЖурнал_ТемпературRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЖурнал_ТемпературRow);
@@ -1840,7 +1980,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Заявки_на_Платные_УслугиRow AddЗаявки_на_Платные_УслугиRow(УслугиRow parentУслугиRowByFK__Заявки_на__ID_Ус__403A8C7D, string ФИО_Заказчика, string КонтактныйТелефон, System.DateTime Дата_Подачи, string Статус, СотрудникиRow parentСотрудникиRowByFK__Заявки_на__ID_От__4222D4EF) {
+            public Заявки_на_Платные_УслугиRow AddЗаявки_на_Платные_УслугиRow(УслугиRow parentУслугиRowByFK_Заявки_на_Платные_Услуги_Услуги, string ФИО_Заказчика, string КонтактныйТелефон, System.DateTime Дата_Подачи, string Статус, СотрудникиRow parentСотрудникиRowByFK_Заявки_на_Платные_Услуги_Сотрудники) {
                 Заявки_на_Платные_УслугиRow rowЗаявки_на_Платные_УслугиRow = ((Заявки_на_Платные_УслугиRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1850,11 +1990,11 @@ namespace Apllication4Course {
                         Дата_Подачи,
                         Статус,
                         null};
-                if ((parentУслугиRowByFK__Заявки_на__ID_Ус__403A8C7D != null)) {
-                    columnValuesArray[1] = parentУслугиRowByFK__Заявки_на__ID_Ус__403A8C7D[0];
+                if ((parentУслугиRowByFK_Заявки_на_Платные_Услуги_Услуги != null)) {
+                    columnValuesArray[1] = parentУслугиRowByFK_Заявки_на_Платные_Услуги_Услуги[0];
                 }
-                if ((parentСотрудникиRowByFK__Заявки_на__ID_От__4222D4EF != null)) {
-                    columnValuesArray[6] = parentСотрудникиRowByFK__Заявки_на__ID_От__4222D4EF[0];
+                if ((parentСотрудникиRowByFK_Заявки_на_Платные_Услуги_Сотрудники != null)) {
+                    columnValuesArray[6] = parentСотрудникиRowByFK_Заявки_на_Платные_Услуги_Сотрудники[0];
                 }
                 rowЗаявки_на_Платные_УслугиRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowЗаявки_на_Платные_УслугиRow);
@@ -2489,7 +2629,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Использование_ИнвентаряRow AddИспользование_ИнвентаряRow(ИсследованияRow parentИсследованияRowByFK__Использов__ID_Ис__6754599E, ИнвентарьRow parentИнвентарьRowByFK__Использов__ID_Ин__68487DD7, int КоличествоИспользовано, СотрудникиRow parentСотрудникиRowByFK__Использов__ID_От__6A30C649) {
+            public Использование_ИнвентаряRow AddИспользование_ИнвентаряRow(ИсследованияRow parentИсследованияRowByFK_Использование_Инвентаря_Исследования, ИнвентарьRow parentИнвентарьRowByFK_Использование_Инвентаря_Инвентарь, int КоличествоИспользовано, СотрудникиRow parentСотрудникиRowByFK_Использование_Инвентаря_Сотрудники) {
                 Использование_ИнвентаряRow rowИспользование_ИнвентаряRow = ((Использование_ИнвентаряRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2497,14 +2637,14 @@ namespace Apllication4Course {
                         null,
                         КоличествоИспользовано,
                         null};
-                if ((parentИсследованияRowByFK__Использов__ID_Ис__6754599E != null)) {
-                    columnValuesArray[1] = parentИсследованияRowByFK__Использов__ID_Ис__6754599E[0];
+                if ((parentИсследованияRowByFK_Использование_Инвентаря_Исследования != null)) {
+                    columnValuesArray[1] = parentИсследованияRowByFK_Использование_Инвентаря_Исследования[0];
                 }
-                if ((parentИнвентарьRowByFK__Использов__ID_Ин__68487DD7 != null)) {
-                    columnValuesArray[2] = parentИнвентарьRowByFK__Использов__ID_Ин__68487DD7[0];
+                if ((parentИнвентарьRowByFK_Использование_Инвентаря_Инвентарь != null)) {
+                    columnValuesArray[2] = parentИнвентарьRowByFK_Использование_Инвентаря_Инвентарь[0];
                 }
-                if ((parentСотрудникиRowByFK__Использов__ID_От__6A30C649 != null)) {
-                    columnValuesArray[4] = parentСотрудникиRowByFK__Использов__ID_От__6A30C649[0];
+                if ((parentСотрудникиRowByFK_Использование_Инвентаря_Сотрудники != null)) {
+                    columnValuesArray[4] = parentСотрудникиRowByFK_Использование_Инвентаря_Сотрудники[0];
                 }
                 rowИспользование_ИнвентаряRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowИспользование_ИнвентаряRow);
@@ -2820,7 +2960,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Использование_ОбразцовRow AddИспользование_ОбразцовRow(ОбразцыRow parentОбразцыRowByFK__Использов__ID_Об__5EBF139D, ИсследованияRow parentИсследованияRowByFK__Использов__ID_Ис__5FB337D6, decimal Количество_Использовано, СотрудникиRow parentСотрудникиRowByFK__Использов__ID_От__619B8048) {
+            public Использование_ОбразцовRow AddИспользование_ОбразцовRow(ОбразцыRow parentОбразцыRowByFK_Использование_Образцов_Образцы, ИсследованияRow parentИсследованияRowByFK_Использование_Образцов_Исследования, decimal Количество_Использовано, СотрудникиRow parentСотрудникиRowByFK_Использование_Образцов_Сотрудники) {
                 Использование_ОбразцовRow rowИспользование_ОбразцовRow = ((Использование_ОбразцовRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2828,14 +2968,14 @@ namespace Apllication4Course {
                         null,
                         Количество_Использовано,
                         null};
-                if ((parentОбразцыRowByFK__Использов__ID_Об__5EBF139D != null)) {
-                    columnValuesArray[1] = parentОбразцыRowByFK__Использов__ID_Об__5EBF139D[0];
+                if ((parentОбразцыRowByFK_Использование_Образцов_Образцы != null)) {
+                    columnValuesArray[1] = parentОбразцыRowByFK_Использование_Образцов_Образцы[0];
                 }
-                if ((parentИсследованияRowByFK__Использов__ID_Ис__5FB337D6 != null)) {
-                    columnValuesArray[2] = parentИсследованияRowByFK__Использов__ID_Ис__5FB337D6[0];
+                if ((parentИсследованияRowByFK_Использование_Образцов_Исследования != null)) {
+                    columnValuesArray[2] = parentИсследованияRowByFK_Использование_Образцов_Исследования[0];
                 }
-                if ((parentСотрудникиRowByFK__Использов__ID_От__619B8048 != null)) {
-                    columnValuesArray[4] = parentСотрудникиRowByFK__Использов__ID_От__619B8048[0];
+                if ((parentСотрудникиRowByFK_Использование_Образцов_Сотрудники != null)) {
+                    columnValuesArray[4] = parentСотрудникиRowByFK_Использование_Образцов_Сотрудники[0];
                 }
                 rowИспользование_ОбразцовRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowИспользование_ОбразцовRow);
@@ -3171,7 +3311,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ИсследованияRow AddИсследованияRow(УмершиеRow parentУмершиеRowByFK__Исследова__ID_Ум__5535A963, string Тип_Исследования, System.DateTime Дата_Проведения, string Описание, string Результаты, СотрудникиRow parentСотрудникиRowByFK__Исследова__ID_Ис__571DF1D5) {
+            public ИсследованияRow AddИсследованияRow(УмершиеRow parentУмершиеRowByFK_Исследования_Умершие, string Тип_Исследования, System.DateTime Дата_Проведения, string Описание, string Результаты, СотрудникиRow parentСотрудникиRowByFK_Исследования_Сотрудники) {
                 ИсследованияRow rowИсследованияRow = ((ИсследованияRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3181,11 +3321,11 @@ namespace Apllication4Course {
                         Описание,
                         Результаты,
                         null};
-                if ((parentУмершиеRowByFK__Исследова__ID_Ум__5535A963 != null)) {
-                    columnValuesArray[1] = parentУмершиеRowByFK__Исследова__ID_Ум__5535A963[0];
+                if ((parentУмершиеRowByFK_Исследования_Умершие != null)) {
+                    columnValuesArray[1] = parentУмершиеRowByFK_Исследования_Умершие[0];
                 }
-                if ((parentСотрудникиRowByFK__Исследова__ID_Ис__571DF1D5 != null)) {
-                    columnValuesArray[6] = parentСотрудникиRowByFK__Исследова__ID_Ис__571DF1D5[0];
+                if ((parentСотрудникиRowByFK_Исследования_Сотрудники != null)) {
+                    columnValuesArray[6] = parentСотрудникиRowByFK_Исследования_Сотрудники[0];
                 }
                 rowИсследованияRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowИсследованияRow);
@@ -3817,7 +3957,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Места_В_КамерахRow AddМеста_В_КамерахRow(Камеры_ХраненияRow parentКамеры_ХраненияRowByFK__Места_В_К__ID_Ка__4D94879B, УмершиеRow parentУмершиеRowByFK__Места_В_К__ID_Ум__4E88ABD4, System.DateTime Дата_Размещения, System.DateTime Дата_Извлечения) {
+            public Места_В_КамерахRow AddМеста_В_КамерахRow(Камеры_ХраненияRow parentКамеры_ХраненияRowByFK_Места_В_Камерах_Камеры_Хранения, УмершиеRow parentУмершиеRowByFK_Места_В_Камерах_Умершие, System.DateTime Дата_Размещения, System.DateTime Дата_Извлечения) {
                 Места_В_КамерахRow rowМеста_В_КамерахRow = ((Места_В_КамерахRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3825,11 +3965,11 @@ namespace Apllication4Course {
                         null,
                         Дата_Размещения,
                         Дата_Извлечения};
-                if ((parentКамеры_ХраненияRowByFK__Места_В_К__ID_Ка__4D94879B != null)) {
-                    columnValuesArray[1] = parentКамеры_ХраненияRowByFK__Места_В_К__ID_Ка__4D94879B[0];
+                if ((parentКамеры_ХраненияRowByFK_Места_В_Камерах_Камеры_Хранения != null)) {
+                    columnValuesArray[1] = parentКамеры_ХраненияRowByFK_Места_В_Камерах_Камеры_Хранения[0];
                 }
-                if ((parentУмершиеRowByFK__Места_В_К__ID_Ум__4E88ABD4 != null)) {
-                    columnValuesArray[2] = parentУмершиеRowByFK__Места_В_К__ID_Ум__4E88ABD4[0];
+                if ((parentУмершиеRowByFK_Места_В_Камерах_Умершие != null)) {
+                    columnValuesArray[2] = parentУмершиеRowByFK_Места_В_Камерах_Умершие[0];
                 }
                 rowМеста_В_КамерахRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowМеста_В_КамерахRow);
@@ -4154,7 +4294,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ОбразцыRow AddОбразцыRow(УмершиеRow parentУмершиеRowByFK__Образцы__ID_Умер__59FA5E80, string Тип_Образца, System.DateTime Дата_Взятия, string Условия_Хранения, СотрудникиRow parentСотрудникиRowByFK__Образцы__ID_Отве__5BE2A6F2) {
+            public ОбразцыRow AddОбразцыRow(УмершиеRow parentУмершиеRowByFK_Образцы_Умершие, string Тип_Образца, System.DateTime Дата_Взятия, string Условия_Хранения, СотрудникиRow parentСотрудникиRowByFK_Образцы_Сотрудники) {
                 ОбразцыRow rowОбразцыRow = ((ОбразцыRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4163,11 +4303,11 @@ namespace Apllication4Course {
                         Дата_Взятия,
                         Условия_Хранения,
                         null};
-                if ((parentУмершиеRowByFK__Образцы__ID_Умер__59FA5E80 != null)) {
-                    columnValuesArray[1] = parentУмершиеRowByFK__Образцы__ID_Умер__59FA5E80[0];
+                if ((parentУмершиеRowByFK_Образцы_Умершие != null)) {
+                    columnValuesArray[1] = parentУмершиеRowByFK_Образцы_Умершие[0];
                 }
-                if ((parentСотрудникиRowByFK__Образцы__ID_Отве__5BE2A6F2 != null)) {
-                    columnValuesArray[5] = parentСотрудникиRowByFK__Образцы__ID_Отве__5BE2A6F2[0];
+                if ((parentСотрудникиRowByFK_Образцы_Сотрудники != null)) {
+                    columnValuesArray[5] = parentСотрудникиRowByFK_Образцы_Сотрудники[0];
                 }
                 rowОбразцыRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowОбразцыRow);
@@ -4508,7 +4648,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Платные_ИсследованияRow AddПлатные_ИсследованияRow(Заявки_на_Платные_УслугиRow parentЗаявки_на_Платные_УслугиRowByFK__Платные_И__ID_За__44FF419A, string Тип_Исследования, System.DateTime Дата_Проведения, string Описание, string Результаты, СотрудникиRow parentСотрудникиRowByFK__Платные_И__ID_Ис__45F365D3) {
+            public Платные_ИсследованияRow AddПлатные_ИсследованияRow(Заявки_на_Платные_УслугиRow parentЗаявки_на_Платные_УслугиRowByFK_Платные_Исследования_Заявки_на_Платные_Услуги, string Тип_Исследования, System.DateTime Дата_Проведения, string Описание, string Результаты, СотрудникиRow parentСотрудникиRowByFK_Платные_Исследования_Сотрудники) {
                 Платные_ИсследованияRow rowПлатные_ИсследованияRow = ((Платные_ИсследованияRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -4518,11 +4658,11 @@ namespace Apllication4Course {
                         Описание,
                         Результаты,
                         null};
-                if ((parentЗаявки_на_Платные_УслугиRowByFK__Платные_И__ID_За__44FF419A != null)) {
-                    columnValuesArray[1] = parentЗаявки_на_Платные_УслугиRowByFK__Платные_И__ID_За__44FF419A[0];
+                if ((parentЗаявки_на_Платные_УслугиRowByFK_Платные_Исследования_Заявки_на_Платные_Услуги != null)) {
+                    columnValuesArray[1] = parentЗаявки_на_Платные_УслугиRowByFK_Платные_Исследования_Заявки_на_Платные_Услуги[0];
                 }
-                if ((parentСотрудникиRowByFK__Платные_И__ID_Ис__45F365D3 != null)) {
-                    columnValuesArray[6] = parentСотрудникиRowByFK__Платные_И__ID_Ис__45F365D3[0];
+                if ((parentСотрудникиRowByFK_Платные_Исследования_Сотрудники != null)) {
+                    columnValuesArray[6] = parentСотрудникиRowByFK_Платные_Исследования_Сотрудники[0];
                 }
                 rowПлатные_ИсследованияRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowПлатные_ИсследованияRow);
@@ -5501,7 +5641,7 @@ namespace Apllication4Course {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ТранспортировкаRow AddТранспортировкаRow(УмершиеRow parentУмершиеRowByFK__Транспорт__ID_Ум__70DDC3D8, string Тип_Перемещения, System.DateTime Дата_Время, string Место_Отправления, string Место_Назначения, СотрудникиRow parentСотрудникиRowByFK__Транспорт__ID_От__72C60C4A) {
+            public ТранспортировкаRow AddТранспортировкаRow(УмершиеRow parentУмершиеRowByFK_Транспортировка_Умершие, string Тип_Перемещения, System.DateTime Дата_Время, string Место_Отправления, string Место_Назначения, СотрудникиRow parentСотрудникиRowByFK_Транспортировка_Сотрудники) {
                 ТранспортировкаRow rowТранспортировкаRow = ((ТранспортировкаRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5511,11 +5651,11 @@ namespace Apllication4Course {
                         Место_Отправления,
                         Место_Назначения,
                         null};
-                if ((parentУмершиеRowByFK__Транспорт__ID_Ум__70DDC3D8 != null)) {
-                    columnValuesArray[1] = parentУмершиеRowByFK__Транспорт__ID_Ум__70DDC3D8[0];
+                if ((parentУмершиеRowByFK_Транспортировка_Умершие != null)) {
+                    columnValuesArray[1] = parentУмершиеRowByFK_Транспортировка_Умершие[0];
                 }
-                if ((parentСотрудникиRowByFK__Транспорт__ID_От__72C60C4A != null)) {
-                    columnValuesArray[6] = parentСотрудникиRowByFK__Транспорт__ID_От__72C60C4A[0];
+                if ((parentСотрудникиRowByFK_Транспортировка_Сотрудники != null)) {
+                    columnValuesArray[6] = parentСотрудникиRowByFK_Транспортировка_Сотрудники[0];
                 }
                 rowТранспортировкаRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowТранспортировкаRow);
@@ -6720,6 +6860,1349 @@ namespace Apllication4Course {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Мониторинг_Финансовых_ОперацийDataTable : global::System.Data.TypedTableBase<Мониторинг_Финансовых_ОперацийRow> {
+            
+            private global::System.Data.DataColumn columnID_Операции;
+            
+            private global::System.Data.DataColumn columnУслуга;
+            
+            private global::System.Data.DataColumn columnСумма;
+            
+            private global::System.Data.DataColumn columnТип_Операции;
+            
+            private global::System.Data.DataColumn columnДата_Операции;
+            
+            private global::System.Data.DataColumn columnСпособ_Оплаты;
+            
+            private global::System.Data.DataColumn columnФИО_Ответственного;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийDataTable() {
+                this.TableName = "Мониторинг_Финансовых_Операций";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Мониторинг_Финансовых_ОперацийDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Мониторинг_Финансовых_ОперацийDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_ОперацииColumn {
+                get {
+                    return this.columnID_Операции;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn УслугаColumn {
+                get {
+                    return this.columnУслуга;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn СуммаColumn {
+                get {
+                    return this.columnСумма;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Тип_ОперацииColumn {
+                get {
+                    return this.columnТип_Операции;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Дата_ОперацииColumn {
+                get {
+                    return this.columnДата_Операции;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Способ_ОплатыColumn {
+                get {
+                    return this.columnСпособ_Оплаты;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ФИО_ОтветственногоColumn {
+                get {
+                    return this.columnФИО_Ответственного;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийRow this[int index] {
+                get {
+                    return ((Мониторинг_Финансовых_ОперацийRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Мониторинг_Финансовых_ОперацийRowChangeEventHandler Мониторинг_Финансовых_ОперацийRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Мониторинг_Финансовых_ОперацийRowChangeEventHandler Мониторинг_Финансовых_ОперацийRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Мониторинг_Финансовых_ОперацийRowChangeEventHandler Мониторинг_Финансовых_ОперацийRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Мониторинг_Финансовых_ОперацийRowChangeEventHandler Мониторинг_Финансовых_ОперацийRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddМониторинг_Финансовых_ОперацийRow(Мониторинг_Финансовых_ОперацийRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийRow AddМониторинг_Финансовых_ОперацийRow(int ID_Операции, string Услуга, decimal Сумма, string Тип_Операции, System.DateTime Дата_Операции, string Способ_Оплаты, string ФИО_Ответственного) {
+                Мониторинг_Финансовых_ОперацийRow rowМониторинг_Финансовых_ОперацийRow = ((Мониторинг_Финансовых_ОперацийRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_Операции,
+                        Услуга,
+                        Сумма,
+                        Тип_Операции,
+                        Дата_Операции,
+                        Способ_Оплаты,
+                        ФИО_Ответственного};
+                rowМониторинг_Финансовых_ОперацийRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowМониторинг_Финансовых_ОперацийRow);
+                return rowМониторинг_Финансовых_ОперацийRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийRow FindByID_Операции(int ID_Операции) {
+                return ((Мониторинг_Финансовых_ОперацийRow)(this.Rows.Find(new object[] {
+                            ID_Операции})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Мониторинг_Финансовых_ОперацийDataTable cln = ((Мониторинг_Финансовых_ОперацийDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Мониторинг_Финансовых_ОперацийDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID_Операции = base.Columns["ID_Операции"];
+                this.columnУслуга = base.Columns["Услуга"];
+                this.columnСумма = base.Columns["Сумма"];
+                this.columnТип_Операции = base.Columns["Тип_Операции"];
+                this.columnДата_Операции = base.Columns["Дата_Операции"];
+                this.columnСпособ_Оплаты = base.Columns["Способ_Оплаты"];
+                this.columnФИО_Ответственного = base.Columns["ФИО_Ответственного"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID_Операции = new global::System.Data.DataColumn("ID_Операции", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Операции);
+                this.columnУслуга = new global::System.Data.DataColumn("Услуга", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnУслуга);
+                this.columnСумма = new global::System.Data.DataColumn("Сумма", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСумма);
+                this.columnТип_Операции = new global::System.Data.DataColumn("Тип_Операции", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_Операции);
+                this.columnДата_Операции = new global::System.Data.DataColumn("Дата_Операции", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_Операции);
+                this.columnСпособ_Оплаты = new global::System.Data.DataColumn("Способ_Оплаты", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnСпособ_Оплаты);
+                this.columnФИО_Ответственного = new global::System.Data.DataColumn("ФИО_Ответственного", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО_Ответственного);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Операции}, true));
+                this.columnID_Операции.AllowDBNull = false;
+                this.columnID_Операции.Unique = true;
+                this.columnУслуга.AllowDBNull = false;
+                this.columnУслуга.MaxLength = 255;
+                this.columnСумма.AllowDBNull = false;
+                this.columnТип_Операции.AllowDBNull = false;
+                this.columnТип_Операции.MaxLength = 50;
+                this.columnДата_Операции.AllowDBNull = false;
+                this.columnСпособ_Оплаты.AllowDBNull = false;
+                this.columnСпособ_Оплаты.MaxLength = 50;
+                this.columnФИО_Ответственного.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийRow NewМониторинг_Финансовых_ОперацийRow() {
+                return ((Мониторинг_Финансовых_ОперацийRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Мониторинг_Финансовых_ОперацийRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Мониторинг_Финансовых_ОперацийRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Мониторинг_Финансовых_ОперацийRowChanged != null)) {
+                    this.Мониторинг_Финансовых_ОперацийRowChanged(this, new Мониторинг_Финансовых_ОперацийRowChangeEvent(((Мониторинг_Финансовых_ОперацийRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Мониторинг_Финансовых_ОперацийRowChanging != null)) {
+                    this.Мониторинг_Финансовых_ОперацийRowChanging(this, new Мониторинг_Финансовых_ОперацийRowChangeEvent(((Мониторинг_Финансовых_ОперацийRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Мониторинг_Финансовых_ОперацийRowDeleted != null)) {
+                    this.Мониторинг_Финансовых_ОперацийRowDeleted(this, new Мониторинг_Финансовых_ОперацийRowChangeEvent(((Мониторинг_Финансовых_ОперацийRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Мониторинг_Финансовых_ОперацийRowDeleting != null)) {
+                    this.Мониторинг_Финансовых_ОперацийRowDeleting(this, new Мониторинг_Финансовых_ОперацийRowChangeEvent(((Мониторинг_Финансовых_ОперацийRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveМониторинг_Финансовых_ОперацийRow(Мониторинг_Финансовых_ОперацийRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BDA_pat_otdDataSet ds = new BDA_pat_otdDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Мониторинг_Финансовых_ОперацийDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Отчет_Проведенные_ИсследованияDataTable : global::System.Data.TypedTableBase<Отчет_Проведенные_ИсследованияRow> {
+            
+            private global::System.Data.DataColumn columnID_Исследования;
+            
+            private global::System.Data.DataColumn columnФИО_Умершего;
+            
+            private global::System.Data.DataColumn columnТип_Исследования;
+            
+            private global::System.Data.DataColumn columnДата_Проведения;
+            
+            private global::System.Data.DataColumn columnОписание;
+            
+            private global::System.Data.DataColumn columnРезультаты;
+            
+            private global::System.Data.DataColumn columnФИО_Исполнителя;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияDataTable() {
+                this.TableName = "Отчет_Проведенные_Исследования";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Отчет_Проведенные_ИсследованияDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Отчет_Проведенные_ИсследованияDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_ИсследованияColumn {
+                get {
+                    return this.columnID_Исследования;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ФИО_УмершегоColumn {
+                get {
+                    return this.columnФИО_Умершего;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Тип_ИсследованияColumn {
+                get {
+                    return this.columnТип_Исследования;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Дата_ПроведенияColumn {
+                get {
+                    return this.columnДата_Проведения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ОписаниеColumn {
+                get {
+                    return this.columnОписание;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn РезультатыColumn {
+                get {
+                    return this.columnРезультаты;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ФИО_ИсполнителяColumn {
+                get {
+                    return this.columnФИО_Исполнителя;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияRow this[int index] {
+                get {
+                    return ((Отчет_Проведенные_ИсследованияRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Отчет_Проведенные_ИсследованияRowChangeEventHandler Отчет_Проведенные_ИсследованияRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Отчет_Проведенные_ИсследованияRowChangeEventHandler Отчет_Проведенные_ИсследованияRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Отчет_Проведенные_ИсследованияRowChangeEventHandler Отчет_Проведенные_ИсследованияRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Отчет_Проведенные_ИсследованияRowChangeEventHandler Отчет_Проведенные_ИсследованияRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddОтчет_Проведенные_ИсследованияRow(Отчет_Проведенные_ИсследованияRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияRow AddОтчет_Проведенные_ИсследованияRow(int ID_Исследования, string ФИО_Умершего, string Тип_Исследования, System.DateTime Дата_Проведения, string Описание, string Результаты, string ФИО_Исполнителя) {
+                Отчет_Проведенные_ИсследованияRow rowОтчет_Проведенные_ИсследованияRow = ((Отчет_Проведенные_ИсследованияRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_Исследования,
+                        ФИО_Умершего,
+                        Тип_Исследования,
+                        Дата_Проведения,
+                        Описание,
+                        Результаты,
+                        ФИО_Исполнителя};
+                rowОтчет_Проведенные_ИсследованияRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowОтчет_Проведенные_ИсследованияRow);
+                return rowОтчет_Проведенные_ИсследованияRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияRow FindByID_Исследования(int ID_Исследования) {
+                return ((Отчет_Проведенные_ИсследованияRow)(this.Rows.Find(new object[] {
+                            ID_Исследования})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Отчет_Проведенные_ИсследованияDataTable cln = ((Отчет_Проведенные_ИсследованияDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Отчет_Проведенные_ИсследованияDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID_Исследования = base.Columns["ID_Исследования"];
+                this.columnФИО_Умершего = base.Columns["ФИО_Умершего"];
+                this.columnТип_Исследования = base.Columns["Тип_Исследования"];
+                this.columnДата_Проведения = base.Columns["Дата_Проведения"];
+                this.columnОписание = base.Columns["Описание"];
+                this.columnРезультаты = base.Columns["Результаты"];
+                this.columnФИО_Исполнителя = base.Columns["ФИО_Исполнителя"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID_Исследования = new global::System.Data.DataColumn("ID_Исследования", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Исследования);
+                this.columnФИО_Умершего = new global::System.Data.DataColumn("ФИО_Умершего", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО_Умершего);
+                this.columnТип_Исследования = new global::System.Data.DataColumn("Тип_Исследования", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_Исследования);
+                this.columnДата_Проведения = new global::System.Data.DataColumn("Дата_Проведения", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_Проведения);
+                this.columnОписание = new global::System.Data.DataColumn("Описание", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnОписание);
+                this.columnРезультаты = new global::System.Data.DataColumn("Результаты", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnРезультаты);
+                this.columnФИО_Исполнителя = new global::System.Data.DataColumn("ФИО_Исполнителя", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО_Исполнителя);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Исследования}, true));
+                this.columnID_Исследования.AllowDBNull = false;
+                this.columnID_Исследования.Unique = true;
+                this.columnФИО_Умершего.AllowDBNull = false;
+                this.columnФИО_Умершего.MaxLength = 255;
+                this.columnТип_Исследования.AllowDBNull = false;
+                this.columnТип_Исследования.MaxLength = 255;
+                this.columnДата_Проведения.AllowDBNull = false;
+                this.columnОписание.MaxLength = 2147483647;
+                this.columnРезультаты.MaxLength = 2147483647;
+                this.columnФИО_Исполнителя.AllowDBNull = false;
+                this.columnФИО_Исполнителя.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияRow NewОтчет_Проведенные_ИсследованияRow() {
+                return ((Отчет_Проведенные_ИсследованияRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Отчет_Проведенные_ИсследованияRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Отчет_Проведенные_ИсследованияRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Отчет_Проведенные_ИсследованияRowChanged != null)) {
+                    this.Отчет_Проведенные_ИсследованияRowChanged(this, new Отчет_Проведенные_ИсследованияRowChangeEvent(((Отчет_Проведенные_ИсследованияRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Отчет_Проведенные_ИсследованияRowChanging != null)) {
+                    this.Отчет_Проведенные_ИсследованияRowChanging(this, new Отчет_Проведенные_ИсследованияRowChangeEvent(((Отчет_Проведенные_ИсследованияRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Отчет_Проведенные_ИсследованияRowDeleted != null)) {
+                    this.Отчет_Проведенные_ИсследованияRowDeleted(this, new Отчет_Проведенные_ИсследованияRowChangeEvent(((Отчет_Проведенные_ИсследованияRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Отчет_Проведенные_ИсследованияRowDeleting != null)) {
+                    this.Отчет_Проведенные_ИсследованияRowDeleting(this, new Отчет_Проведенные_ИсследованияRowChangeEvent(((Отчет_Проведенные_ИсследованияRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveОтчет_Проведенные_ИсследованияRow(Отчет_Проведенные_ИсследованияRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BDA_pat_otdDataSet ds = new BDA_pat_otdDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Отчет_Проведенные_ИсследованияDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class Статистика_Движения_УмершихDataTable : global::System.Data.TypedTableBase<Статистика_Движения_УмершихRow> {
+            
+            private global::System.Data.DataColumn columnID_Умершего;
+            
+            private global::System.Data.DataColumn columnФИО;
+            
+            private global::System.Data.DataColumn columnДата_Смерти;
+            
+            private global::System.Data.DataColumn columnМесто_Смерти;
+            
+            private global::System.Data.DataColumn columnПричина_Смерти;
+            
+            private global::System.Data.DataColumn columnТип_Перемещения;
+            
+            private global::System.Data.DataColumn columnДата_Перемещения;
+            
+            private global::System.Data.DataColumn columnМесто_Отправления;
+            
+            private global::System.Data.DataColumn columnМесто_Назначения;
+            
+            private global::System.Data.DataColumn columnФИО_Ответственного;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихDataTable() {
+                this.TableName = "Статистика_Движения_Умерших";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Статистика_Движения_УмершихDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected Статистика_Движения_УмершихDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_УмершегоColumn {
+                get {
+                    return this.columnID_Умершего;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ФИОColumn {
+                get {
+                    return this.columnФИО;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Дата_СмертиColumn {
+                get {
+                    return this.columnДата_Смерти;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Место_СмертиColumn {
+                get {
+                    return this.columnМесто_Смерти;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Причина_СмертиColumn {
+                get {
+                    return this.columnПричина_Смерти;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Тип_ПеремещенияColumn {
+                get {
+                    return this.columnТип_Перемещения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Дата_ПеремещенияColumn {
+                get {
+                    return this.columnДата_Перемещения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Место_ОтправленияColumn {
+                get {
+                    return this.columnМесто_Отправления;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Место_НазначенияColumn {
+                get {
+                    return this.columnМесто_Назначения;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ФИО_ОтветственногоColumn {
+                get {
+                    return this.columnФИО_Ответственного;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихRow this[int index] {
+                get {
+                    return ((Статистика_Движения_УмершихRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Статистика_Движения_УмершихRowChangeEventHandler Статистика_Движения_УмершихRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Статистика_Движения_УмершихRowChangeEventHandler Статистика_Движения_УмершихRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Статистика_Движения_УмершихRowChangeEventHandler Статистика_Движения_УмершихRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event Статистика_Движения_УмершихRowChangeEventHandler Статистика_Движения_УмершихRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddСтатистика_Движения_УмершихRow(Статистика_Движения_УмершихRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихRow AddСтатистика_Движения_УмершихRow(int ID_Умершего, string ФИО, System.DateTime Дата_Смерти, string Место_Смерти, string Причина_Смерти, string Тип_Перемещения, System.DateTime Дата_Перемещения, string Место_Отправления, string Место_Назначения, string ФИО_Ответственного) {
+                Статистика_Движения_УмершихRow rowСтатистика_Движения_УмершихRow = ((Статистика_Движения_УмершихRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_Умершего,
+                        ФИО,
+                        Дата_Смерти,
+                        Место_Смерти,
+                        Причина_Смерти,
+                        Тип_Перемещения,
+                        Дата_Перемещения,
+                        Место_Отправления,
+                        Место_Назначения,
+                        ФИО_Ответственного};
+                rowСтатистика_Движения_УмершихRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowСтатистика_Движения_УмершихRow);
+                return rowСтатистика_Движения_УмершихRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихRow FindByID_Умершего(int ID_Умершего) {
+                return ((Статистика_Движения_УмершихRow)(this.Rows.Find(new object[] {
+                            ID_Умершего})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                Статистика_Движения_УмершихDataTable cln = ((Статистика_Движения_УмершихDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new Статистика_Движения_УмершихDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID_Умершего = base.Columns["ID_Умершего"];
+                this.columnФИО = base.Columns["ФИО"];
+                this.columnДата_Смерти = base.Columns["Дата_Смерти"];
+                this.columnМесто_Смерти = base.Columns["Место_Смерти"];
+                this.columnПричина_Смерти = base.Columns["Причина_Смерти"];
+                this.columnТип_Перемещения = base.Columns["Тип_Перемещения"];
+                this.columnДата_Перемещения = base.Columns["Дата_Перемещения"];
+                this.columnМесто_Отправления = base.Columns["Место_Отправления"];
+                this.columnМесто_Назначения = base.Columns["Место_Назначения"];
+                this.columnФИО_Ответственного = base.Columns["ФИО_Ответственного"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID_Умершего = new global::System.Data.DataColumn("ID_Умершего", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Умершего);
+                this.columnФИО = new global::System.Data.DataColumn("ФИО", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО);
+                this.columnДата_Смерти = new global::System.Data.DataColumn("Дата_Смерти", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_Смерти);
+                this.columnМесто_Смерти = new global::System.Data.DataColumn("Место_Смерти", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnМесто_Смерти);
+                this.columnПричина_Смерти = new global::System.Data.DataColumn("Причина_Смерти", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПричина_Смерти);
+                this.columnТип_Перемещения = new global::System.Data.DataColumn("Тип_Перемещения", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnТип_Перемещения);
+                this.columnДата_Перемещения = new global::System.Data.DataColumn("Дата_Перемещения", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДата_Перемещения);
+                this.columnМесто_Отправления = new global::System.Data.DataColumn("Место_Отправления", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnМесто_Отправления);
+                this.columnМесто_Назначения = new global::System.Data.DataColumn("Место_Назначения", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnМесто_Назначения);
+                this.columnФИО_Ответственного = new global::System.Data.DataColumn("ФИО_Ответственного", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnФИО_Ответственного);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnID_Умершего}, true));
+                this.columnID_Умершего.AllowDBNull = false;
+                this.columnID_Умершего.Unique = true;
+                this.columnФИО.AllowDBNull = false;
+                this.columnФИО.MaxLength = 255;
+                this.columnДата_Смерти.AllowDBNull = false;
+                this.columnМесто_Смерти.MaxLength = 255;
+                this.columnПричина_Смерти.MaxLength = 2147483647;
+                this.columnТип_Перемещения.MaxLength = 50;
+                this.columnМесто_Отправления.MaxLength = 255;
+                this.columnМесто_Назначения.MaxLength = 255;
+                this.columnФИО_Ответственного.MaxLength = 255;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихRow NewСтатистика_Движения_УмершихRow() {
+                return ((Статистика_Движения_УмершихRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new Статистика_Движения_УмершихRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(Статистика_Движения_УмершихRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.Статистика_Движения_УмершихRowChanged != null)) {
+                    this.Статистика_Движения_УмершихRowChanged(this, new Статистика_Движения_УмершихRowChangeEvent(((Статистика_Движения_УмершихRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.Статистика_Движения_УмершихRowChanging != null)) {
+                    this.Статистика_Движения_УмершихRowChanging(this, new Статистика_Движения_УмершихRowChangeEvent(((Статистика_Движения_УмершихRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.Статистика_Движения_УмершихRowDeleted != null)) {
+                    this.Статистика_Движения_УмершихRowDeleted(this, new Статистика_Движения_УмершихRowChangeEvent(((Статистика_Движения_УмершихRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.Статистика_Движения_УмершихRowDeleting != null)) {
+                    this.Статистика_Движения_УмершихRowDeleting(this, new Статистика_Движения_УмершихRowChangeEvent(((Статистика_Движения_УмершихRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveСтатистика_Движения_УмершихRow(Статистика_Движения_УмершихRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BDA_pat_otdDataSet ds = new BDA_pat_otdDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "Статистика_Движения_УмершихDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AddInventoryDataTable : global::System.Data.TypedTableBase<AddInventoryRow> {
+            
+            private global::System.Data.DataColumn columnID_Инвентаря;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AddInventoryDataTable() {
+                this.TableName = "AddInventory";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AddInventoryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected AddInventoryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ID_ИнвентаряColumn {
+                get {
+                    return this.columnID_Инвентаря;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AddInventoryRow this[int index] {
+                get {
+                    return ((AddInventoryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AddInventoryRowChangeEventHandler AddInventoryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AddInventoryRowChangeEventHandler AddInventoryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AddInventoryRowChangeEventHandler AddInventoryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event AddInventoryRowChangeEventHandler AddInventoryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddAddInventoryRow(AddInventoryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AddInventoryRow AddAddInventoryRow(int ID_Инвентаря) {
+                AddInventoryRow rowAddInventoryRow = ((AddInventoryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        ID_Инвентаря};
+                rowAddInventoryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAddInventoryRow);
+                return rowAddInventoryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AddInventoryDataTable cln = ((AddInventoryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AddInventoryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnID_Инвентаря = base.Columns["ID_Инвентаря"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnID_Инвентаря = new global::System.Data.DataColumn("ID_Инвентаря", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID_Инвентаря);
+                this.columnID_Инвентаря.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AddInventoryRow NewAddInventoryRow() {
+                return ((AddInventoryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AddInventoryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AddInventoryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AddInventoryRowChanged != null)) {
+                    this.AddInventoryRowChanged(this, new AddInventoryRowChangeEvent(((AddInventoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AddInventoryRowChanging != null)) {
+                    this.AddInventoryRowChanging(this, new AddInventoryRowChangeEvent(((AddInventoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AddInventoryRowDeleted != null)) {
+                    this.AddInventoryRowDeleted(this, new AddInventoryRowChangeEvent(((AddInventoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AddInventoryRowDeleting != null)) {
+                    this.AddInventoryRowDeleting(this, new AddInventoryRowChangeEvent(((AddInventoryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveAddInventoryRow(AddInventoryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BDA_pat_otdDataSet ds = new BDA_pat_otdDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AddInventoryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Журнал_ОбращенийRow : global::System.Data.DataRow {
@@ -6841,10 +8324,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Журнал_Об__ID_От__6E01572D"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Журнал_Обращений_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Журнал_Об__ID_От__6E01572D"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Журнал_Обращений_Сотрудники"]);
                 }
             }
             
@@ -6958,10 +8441,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Камеры_ХраненияRow Камеры_ХраненияRow {
                 get {
-                    return ((Камеры_ХраненияRow)(this.GetParentRow(this.Table.ParentRelations["FK__Журнал_Те__ID_Ка__5165187F"])));
+                    return ((Камеры_ХраненияRow)(this.GetParentRow(this.Table.ParentRelations["FK_Журнал_Температур_Камеры_Хранения"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Журнал_Те__ID_Ка__5165187F"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Журнал_Температур_Камеры_Хранения"]);
                 }
             }
             
@@ -6969,10 +8452,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Журнал_Те__ID_От__52593CB8"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Журнал_Температур_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Журнал_Те__ID_От__52593CB8"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Журнал_Температур_Сотрудники"]);
                 }
             }
         }
@@ -7078,10 +8561,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Заявки_на__ID_От__4222D4EF"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявки_на_Платные_Услуги_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Заявки_на__ID_От__4222D4EF"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявки_на_Платные_Услуги_Сотрудники"]);
                 }
             }
             
@@ -7089,10 +8572,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public УслугиRow УслугиRow {
                 get {
-                    return ((УслугиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Заявки_на__ID_Ус__403A8C7D"])));
+                    return ((УслугиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявки_на_Платные_Услуги_Услуги"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Заявки_на__ID_Ус__403A8C7D"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявки_на_Платные_Услуги_Услуги"]);
                 }
             }
             
@@ -7111,11 +8594,11 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Платные_ИсследованияRow[] GetПлатные_ИсследованияRows() {
-                if ((this.Table.ChildRelations["FK__Платные_И__ID_За__44FF419A"] == null)) {
+                if ((this.Table.ChildRelations["FK_Платные_Исследования_Заявки_на_Платные_Услуги"] == null)) {
                     return new Платные_ИсследованияRow[0];
                 }
                 else {
-                    return ((Платные_ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Платные_И__ID_За__44FF419A"])));
+                    return ((Платные_ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Платные_Исследования_Заявки_на_Платные_Услуги"])));
                 }
             }
             
@@ -7192,11 +8675,11 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Использование_ИнвентаряRow[] GetИспользование_ИнвентаряRows() {
-                if ((this.Table.ChildRelations["FK__Использов__ID_Ин__68487DD7"] == null)) {
+                if ((this.Table.ChildRelations["FK_Использование_Инвентаря_Инвентарь"] == null)) {
                     return new Использование_ИнвентаряRow[0];
                 }
                 else {
-                    return ((Использование_ИнвентаряRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Использов__ID_Ин__68487DD7"])));
+                    return ((Использование_ИнвентаряRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Использование_Инвентаря_Инвентарь"])));
                 }
             }
         }
@@ -7274,10 +8757,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ИнвентарьRow ИнвентарьRow {
                 get {
-                    return ((ИнвентарьRow)(this.GetParentRow(this.Table.ParentRelations["FK__Использов__ID_Ин__68487DD7"])));
+                    return ((ИнвентарьRow)(this.GetParentRow(this.Table.ParentRelations["FK_Использование_Инвентаря_Инвентарь"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Использов__ID_Ин__68487DD7"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Использование_Инвентаря_Инвентарь"]);
                 }
             }
             
@@ -7285,10 +8768,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ИсследованияRow ИсследованияRow {
                 get {
-                    return ((ИсследованияRow)(this.GetParentRow(this.Table.ParentRelations["FK__Использов__ID_Ис__6754599E"])));
+                    return ((ИсследованияRow)(this.GetParentRow(this.Table.ParentRelations["FK_Использование_Инвентаря_Исследования"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Использов__ID_Ис__6754599E"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Использование_Инвентаря_Исследования"]);
                 }
             }
             
@@ -7296,10 +8779,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Использов__ID_От__6A30C649"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Использование_Инвентаря_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Использов__ID_От__6A30C649"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Использование_Инвентаря_Сотрудники"]);
                 }
             }
         }
@@ -7377,10 +8860,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ИсследованияRow ИсследованияRow {
                 get {
-                    return ((ИсследованияRow)(this.GetParentRow(this.Table.ParentRelations["FK__Использов__ID_Ис__5FB337D6"])));
+                    return ((ИсследованияRow)(this.GetParentRow(this.Table.ParentRelations["FK_Использование_Образцов_Исследования"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Использов__ID_Ис__5FB337D6"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Использование_Образцов_Исследования"]);
                 }
             }
             
@@ -7388,10 +8871,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ОбразцыRow ОбразцыRow {
                 get {
-                    return ((ОбразцыRow)(this.GetParentRow(this.Table.ParentRelations["FK__Использов__ID_Об__5EBF139D"])));
+                    return ((ОбразцыRow)(this.GetParentRow(this.Table.ParentRelations["FK_Использование_Образцов_Образцы"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Использов__ID_Об__5EBF139D"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Использование_Образцов_Образцы"]);
                 }
             }
             
@@ -7399,10 +8882,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Использов__ID_От__619B8048"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Использование_Образцов_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Использов__ID_От__619B8048"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Использование_Образцов_Сотрудники"]);
                 }
             }
         }
@@ -7512,10 +8995,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Исследова__ID_Ис__571DF1D5"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Исследования_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Исследова__ID_Ис__571DF1D5"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Исследования_Сотрудники"]);
                 }
             }
             
@@ -7523,10 +9006,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public УмершиеRow УмершиеRow {
                 get {
-                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK__Исследова__ID_Ум__5535A963"])));
+                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK_Исследования_Умершие"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Исследова__ID_Ум__5535A963"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Исследования_Умершие"]);
                 }
             }
             
@@ -7557,22 +9040,22 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Использование_ИнвентаряRow[] GetИспользование_ИнвентаряRows() {
-                if ((this.Table.ChildRelations["FK__Использов__ID_Ис__6754599E"] == null)) {
+                if ((this.Table.ChildRelations["FK_Использование_Инвентаря_Исследования"] == null)) {
                     return new Использование_ИнвентаряRow[0];
                 }
                 else {
-                    return ((Использование_ИнвентаряRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Использов__ID_Ис__6754599E"])));
+                    return ((Использование_ИнвентаряRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Использование_Инвентаря_Исследования"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Использование_ОбразцовRow[] GetИспользование_ОбразцовRows() {
-                if ((this.Table.ChildRelations["FK__Использов__ID_Ис__5FB337D6"] == null)) {
+                if ((this.Table.ChildRelations["FK_Использование_Образцов_Исследования"] == null)) {
                     return new Использование_ОбразцовRow[0];
                 }
                 else {
-                    return ((Использование_ОбразцовRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Использов__ID_Ис__5FB337D6"])));
+                    return ((Использование_ОбразцовRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Использование_Образцов_Исследования"])));
                 }
             }
         }
@@ -7638,22 +9121,22 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Журнал_ТемпературRow[] GetЖурнал_ТемпературRows() {
-                if ((this.Table.ChildRelations["FK__Журнал_Те__ID_Ка__5165187F"] == null)) {
+                if ((this.Table.ChildRelations["FK_Журнал_Температур_Камеры_Хранения"] == null)) {
                     return new Журнал_ТемпературRow[0];
                 }
                 else {
-                    return ((Журнал_ТемпературRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Журнал_Те__ID_Ка__5165187F"])));
+                    return ((Журнал_ТемпературRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Журнал_Температур_Камеры_Хранения"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Места_В_КамерахRow[] GetМеста_В_КамерахRows() {
-                if ((this.Table.ChildRelations["FK__Места_В_К__ID_Ка__4D94879B"] == null)) {
+                if ((this.Table.ChildRelations["FK_Места_В_Камерах_Камеры_Хранения"] == null)) {
                     return new Места_В_КамерахRow[0];
                 }
                 else {
-                    return ((Места_В_КамерахRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Места_В_К__ID_Ка__4D94879B"])));
+                    return ((Места_В_КамерахRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Места_В_Камерах_Камеры_Хранения"])));
                 }
             }
         }
@@ -7736,10 +9219,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Камеры_ХраненияRow Камеры_ХраненияRow {
                 get {
-                    return ((Камеры_ХраненияRow)(this.GetParentRow(this.Table.ParentRelations["FK__Места_В_К__ID_Ка__4D94879B"])));
+                    return ((Камеры_ХраненияRow)(this.GetParentRow(this.Table.ParentRelations["FK_Места_В_Камерах_Камеры_Хранения"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Места_В_К__ID_Ка__4D94879B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Места_В_Камерах_Камеры_Хранения"]);
                 }
             }
             
@@ -7747,10 +9230,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public УмершиеRow УмершиеRow {
                 get {
-                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK__Места_В_К__ID_Ум__4E88ABD4"])));
+                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK_Места_В_Камерах_Умершие"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Места_В_К__ID_Ум__4E88ABD4"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Места_В_Камерах_Умершие"]);
                 }
             }
             
@@ -7856,10 +9339,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Образцы__ID_Отве__5BE2A6F2"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Образцы_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Образцы__ID_Отве__5BE2A6F2"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Образцы_Сотрудники"]);
                 }
             }
             
@@ -7867,10 +9350,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public УмершиеRow УмершиеRow {
                 get {
-                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK__Образцы__ID_Умер__59FA5E80"])));
+                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK_Образцы_Умершие"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Образцы__ID_Умер__59FA5E80"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Образцы_Умершие"]);
                 }
             }
             
@@ -7889,11 +9372,11 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Использование_ОбразцовRow[] GetИспользование_ОбразцовRows() {
-                if ((this.Table.ChildRelations["FK__Использов__ID_Об__5EBF139D"] == null)) {
+                if ((this.Table.ChildRelations["FK_Использование_Образцов_Образцы"] == null)) {
                     return new Использование_ОбразцовRow[0];
                 }
                 else {
-                    return ((Использование_ОбразцовRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Использов__ID_Об__5EBF139D"])));
+                    return ((Использование_ОбразцовRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Использование_Образцов_Образцы"])));
                 }
             }
         }
@@ -8003,10 +9486,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Заявки_на_Платные_УслугиRow Заявки_на_Платные_УслугиRow {
                 get {
-                    return ((Заявки_на_Платные_УслугиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Платные_И__ID_За__44FF419A"])));
+                    return ((Заявки_на_Платные_УслугиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Платные_Исследования_Заявки_на_Платные_Услуги"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Платные_И__ID_За__44FF419A"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Платные_Исследования_Заявки_на_Платные_Услуги"]);
                 }
             }
             
@@ -8014,10 +9497,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Платные_И__ID_Ис__45F365D3"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Платные_Исследования_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Платные_И__ID_Ис__45F365D3"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Платные_Исследования_Сотрудники"]);
                 }
             }
             
@@ -8174,99 +9657,99 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Журнал_ОбращенийRow[] GetЖурнал_ОбращенийRows() {
-                if ((this.Table.ChildRelations["FK__Журнал_Об__ID_От__6E01572D"] == null)) {
+                if ((this.Table.ChildRelations["FK_Журнал_Обращений_Сотрудники"] == null)) {
                     return new Журнал_ОбращенийRow[0];
                 }
                 else {
-                    return ((Журнал_ОбращенийRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Журнал_Об__ID_От__6E01572D"])));
+                    return ((Журнал_ОбращенийRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Журнал_Обращений_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Журнал_ТемпературRow[] GetЖурнал_ТемпературRows() {
-                if ((this.Table.ChildRelations["FK__Журнал_Те__ID_От__52593CB8"] == null)) {
+                if ((this.Table.ChildRelations["FK_Журнал_Температур_Сотрудники"] == null)) {
                     return new Журнал_ТемпературRow[0];
                 }
                 else {
-                    return ((Журнал_ТемпературRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Журнал_Те__ID_От__52593CB8"])));
+                    return ((Журнал_ТемпературRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Журнал_Температур_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Заявки_на_Платные_УслугиRow[] GetЗаявки_на_Платные_УслугиRows() {
-                if ((this.Table.ChildRelations["FK__Заявки_на__ID_От__4222D4EF"] == null)) {
+                if ((this.Table.ChildRelations["FK_Заявки_на_Платные_Услуги_Сотрудники"] == null)) {
                     return new Заявки_на_Платные_УслугиRow[0];
                 }
                 else {
-                    return ((Заявки_на_Платные_УслугиRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Заявки_на__ID_От__4222D4EF"])));
+                    return ((Заявки_на_Платные_УслугиRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Заявки_на_Платные_Услуги_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Использование_ИнвентаряRow[] GetИспользование_ИнвентаряRows() {
-                if ((this.Table.ChildRelations["FK__Использов__ID_От__6A30C649"] == null)) {
+                if ((this.Table.ChildRelations["FK_Использование_Инвентаря_Сотрудники"] == null)) {
                     return new Использование_ИнвентаряRow[0];
                 }
                 else {
-                    return ((Использование_ИнвентаряRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Использов__ID_От__6A30C649"])));
+                    return ((Использование_ИнвентаряRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Использование_Инвентаря_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Использование_ОбразцовRow[] GetИспользование_ОбразцовRows() {
-                if ((this.Table.ChildRelations["FK__Использов__ID_От__619B8048"] == null)) {
+                if ((this.Table.ChildRelations["FK_Использование_Образцов_Сотрудники"] == null)) {
                     return new Использование_ОбразцовRow[0];
                 }
                 else {
-                    return ((Использование_ОбразцовRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Использов__ID_От__619B8048"])));
+                    return ((Использование_ОбразцовRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Использование_Образцов_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ИсследованияRow[] GetИсследованияRows() {
-                if ((this.Table.ChildRelations["FK__Исследова__ID_Ис__571DF1D5"] == null)) {
+                if ((this.Table.ChildRelations["FK_Исследования_Сотрудники"] == null)) {
                     return new ИсследованияRow[0];
                 }
                 else {
-                    return ((ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Исследова__ID_Ис__571DF1D5"])));
+                    return ((ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Исследования_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ОбразцыRow[] GetОбразцыRows() {
-                if ((this.Table.ChildRelations["FK__Образцы__ID_Отве__5BE2A6F2"] == null)) {
+                if ((this.Table.ChildRelations["FK_Образцы_Сотрудники"] == null)) {
                     return new ОбразцыRow[0];
                 }
                 else {
-                    return ((ОбразцыRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Образцы__ID_Отве__5BE2A6F2"])));
+                    return ((ОбразцыRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Образцы_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Платные_ИсследованияRow[] GetПлатные_ИсследованияRows() {
-                if ((this.Table.ChildRelations["FK__Платные_И__ID_Ис__45F365D3"] == null)) {
+                if ((this.Table.ChildRelations["FK_Платные_Исследования_Сотрудники"] == null)) {
                     return new Платные_ИсследованияRow[0];
                 }
                 else {
-                    return ((Платные_ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Платные_И__ID_Ис__45F365D3"])));
+                    return ((Платные_ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Платные_Исследования_Сотрудники"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ТранспортировкаRow[] GetТранспортировкаRows() {
-                if ((this.Table.ChildRelations["FK__Транспорт__ID_От__72C60C4A"] == null)) {
+                if ((this.Table.ChildRelations["FK_Транспортировка_Сотрудники"] == null)) {
                     return new ТранспортировкаRow[0];
                 }
                 else {
-                    return ((ТранспортировкаRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Транспорт__ID_От__72C60C4A"])));
+                    return ((ТранспортировкаRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Транспортировка_Сотрудники"])));
                 }
             }
         }
@@ -8426,10 +9909,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public СотрудникиRow СотрудникиRow {
                 get {
-                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK__Транспорт__ID_От__72C60C4A"])));
+                    return ((СотрудникиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Транспортировка_Сотрудники"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Транспорт__ID_От__72C60C4A"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Транспортировка_Сотрудники"]);
                 }
             }
             
@@ -8437,10 +9920,10 @@ namespace Apllication4Course {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public УмершиеRow УмершиеRow {
                 get {
-                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK__Транспорт__ID_Ум__70DDC3D8"])));
+                    return ((УмершиеRow)(this.GetParentRow(this.Table.ParentRelations["FK_Транспортировка_Умершие"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Транспорт__ID_Ум__70DDC3D8"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Транспортировка_Умершие"]);
                 }
             }
             
@@ -8586,44 +10069,44 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ИсследованияRow[] GetИсследованияRows() {
-                if ((this.Table.ChildRelations["FK__Исследова__ID_Ум__5535A963"] == null)) {
+                if ((this.Table.ChildRelations["FK_Исследования_Умершие"] == null)) {
                     return new ИсследованияRow[0];
                 }
                 else {
-                    return ((ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Исследова__ID_Ум__5535A963"])));
+                    return ((ИсследованияRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Исследования_Умершие"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Места_В_КамерахRow[] GetМеста_В_КамерахRows() {
-                if ((this.Table.ChildRelations["FK__Места_В_К__ID_Ум__4E88ABD4"] == null)) {
+                if ((this.Table.ChildRelations["FK_Места_В_Камерах_Умершие"] == null)) {
                     return new Места_В_КамерахRow[0];
                 }
                 else {
-                    return ((Места_В_КамерахRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Места_В_К__ID_Ум__4E88ABD4"])));
+                    return ((Места_В_КамерахRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Места_В_Камерах_Умершие"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ОбразцыRow[] GetОбразцыRows() {
-                if ((this.Table.ChildRelations["FK__Образцы__ID_Умер__59FA5E80"] == null)) {
+                if ((this.Table.ChildRelations["FK_Образцы_Умершие"] == null)) {
                     return new ОбразцыRow[0];
                 }
                 else {
-                    return ((ОбразцыRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Образцы__ID_Умер__59FA5E80"])));
+                    return ((ОбразцыRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Образцы_Умершие"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ТранспортировкаRow[] GetТранспортировкаRows() {
-                if ((this.Table.ChildRelations["FK__Транспорт__ID_Ум__70DDC3D8"] == null)) {
+                if ((this.Table.ChildRelations["FK_Транспортировка_Умершие"] == null)) {
                     return new ТранспортировкаRow[0];
                 }
                 else {
-                    return ((ТранспортировкаRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Транспорт__ID_Ум__70DDC3D8"])));
+                    return ((ТранспортировкаRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Транспортировка_Умершие"])));
                 }
             }
         }
@@ -8717,11 +10200,11 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Заявки_на_Платные_УслугиRow[] GetЗаявки_на_Платные_УслугиRows() {
-                if ((this.Table.ChildRelations["FK__Заявки_на__ID_Ус__403A8C7D"] == null)) {
+                if ((this.Table.ChildRelations["FK_Заявки_на_Платные_Услуги_Услуги"] == null)) {
                     return new Заявки_на_Платные_УслугиRow[0];
                 }
                 else {
-                    return ((Заявки_на_Платные_УслугиRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Заявки_на__ID_Ус__403A8C7D"])));
+                    return ((Заявки_на_Платные_УслугиRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Заявки_на_Платные_Услуги_Услуги"])));
                 }
             }
         }
@@ -8826,6 +10309,538 @@ namespace Apllication4Course {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Финансовые_Операции_Способ_Оплаты"]);
                 }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Мониторинг_Финансовых_ОперацийRow : global::System.Data.DataRow {
+            
+            private Мониторинг_Финансовых_ОперацийDataTable tableМониторинг_Финансовых_Операций;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Мониторинг_Финансовых_ОперацийRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableМониторинг_Финансовых_Операций = ((Мониторинг_Финансовых_ОперацийDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_Операции {
+                get {
+                    return ((int)(this[this.tableМониторинг_Финансовых_Операций.ID_ОперацииColumn]));
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.ID_ОперацииColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Услуга {
+                get {
+                    return ((string)(this[this.tableМониторинг_Финансовых_Операций.УслугаColumn]));
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.УслугаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Сумма {
+                get {
+                    return ((decimal)(this[this.tableМониторинг_Финансовых_Операций.СуммаColumn]));
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.СуммаColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Тип_Операции {
+                get {
+                    return ((string)(this[this.tableМониторинг_Финансовых_Операций.Тип_ОперацииColumn]));
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.Тип_ОперацииColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Дата_Операции {
+                get {
+                    return ((global::System.DateTime)(this[this.tableМониторинг_Финансовых_Операций.Дата_ОперацииColumn]));
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.Дата_ОперацииColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Способ_Оплаты {
+                get {
+                    return ((string)(this[this.tableМониторинг_Финансовых_Операций.Способ_ОплатыColumn]));
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.Способ_ОплатыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ФИО_Ответственного {
+                get {
+                    try {
+                        return ((string)(this[this.tableМониторинг_Финансовых_Операций.ФИО_ОтветственногоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ФИО_Ответственного\' в таблице \'Мониторинг_Финансовых_Операц" +
+                                "ий\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableМониторинг_Финансовых_Операций.ФИО_ОтветственногоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsФИО_ОтветственногоNull() {
+                return this.IsNull(this.tableМониторинг_Финансовых_Операций.ФИО_ОтветственногоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetФИО_ОтветственногоNull() {
+                this[this.tableМониторинг_Финансовых_Операций.ФИО_ОтветственногоColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Отчет_Проведенные_ИсследованияRow : global::System.Data.DataRow {
+            
+            private Отчет_Проведенные_ИсследованияDataTable tableОтчет_Проведенные_Исследования;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Отчет_Проведенные_ИсследованияRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableОтчет_Проведенные_Исследования = ((Отчет_Проведенные_ИсследованияDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_Исследования {
+                get {
+                    return ((int)(this[this.tableОтчет_Проведенные_Исследования.ID_ИсследованияColumn]));
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.ID_ИсследованияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ФИО_Умершего {
+                get {
+                    return ((string)(this[this.tableОтчет_Проведенные_Исследования.ФИО_УмершегоColumn]));
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.ФИО_УмершегоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Тип_Исследования {
+                get {
+                    return ((string)(this[this.tableОтчет_Проведенные_Исследования.Тип_ИсследованияColumn]));
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.Тип_ИсследованияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Дата_Проведения {
+                get {
+                    return ((global::System.DateTime)(this[this.tableОтчет_Проведенные_Исследования.Дата_ПроведенияColumn]));
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.Дата_ПроведенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Описание {
+                get {
+                    try {
+                        return ((string)(this[this.tableОтчет_Проведенные_Исследования.ОписаниеColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Описание\' в таблице \'Отчет_Проведенные_Исследования\' равно " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.ОписаниеColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Результаты {
+                get {
+                    try {
+                        return ((string)(this[this.tableОтчет_Проведенные_Исследования.РезультатыColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Результаты\' в таблице \'Отчет_Проведенные_Исследования\' равн" +
+                                "о DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.РезультатыColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ФИО_Исполнителя {
+                get {
+                    return ((string)(this[this.tableОтчет_Проведенные_Исследования.ФИО_ИсполнителяColumn]));
+                }
+                set {
+                    this[this.tableОтчет_Проведенные_Исследования.ФИО_ИсполнителяColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsОписаниеNull() {
+                return this.IsNull(this.tableОтчет_Проведенные_Исследования.ОписаниеColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetОписаниеNull() {
+                this[this.tableОтчет_Проведенные_Исследования.ОписаниеColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsРезультатыNull() {
+                return this.IsNull(this.tableОтчет_Проведенные_Исследования.РезультатыColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetРезультатыNull() {
+                this[this.tableОтчет_Проведенные_Исследования.РезультатыColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class Статистика_Движения_УмершихRow : global::System.Data.DataRow {
+            
+            private Статистика_Движения_УмершихDataTable tableСтатистика_Движения_Умерших;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal Статистика_Движения_УмершихRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableСтатистика_Движения_Умерших = ((Статистика_Движения_УмершихDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_Умершего {
+                get {
+                    return ((int)(this[this.tableСтатистика_Движения_Умерших.ID_УмершегоColumn]));
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.ID_УмершегоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ФИО {
+                get {
+                    return ((string)(this[this.tableСтатистика_Движения_Умерших.ФИОColumn]));
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.ФИОColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Дата_Смерти {
+                get {
+                    return ((global::System.DateTime)(this[this.tableСтатистика_Движения_Умерших.Дата_СмертиColumn]));
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Дата_СмертиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Место_Смерти {
+                get {
+                    try {
+                        return ((string)(this[this.tableСтатистика_Движения_Умерших.Место_СмертиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Место_Смерти\' в таблице \'Статистика_Движения_Умерших\' равно" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Место_СмертиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Причина_Смерти {
+                get {
+                    try {
+                        return ((string)(this[this.tableСтатистика_Движения_Умерших.Причина_СмертиColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Причина_Смерти\' в таблице \'Статистика_Движения_Умерших\' рав" +
+                                "но DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Причина_СмертиColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Тип_Перемещения {
+                get {
+                    try {
+                        return ((string)(this[this.tableСтатистика_Движения_Умерших.Тип_ПеремещенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Тип_Перемещения\' в таблице \'Статистика_Движения_Умерших\' ра" +
+                                "вно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Тип_ПеремещенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime Дата_Перемещения {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableСтатистика_Движения_Умерших.Дата_ПеремещенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Дата_Перемещения\' в таблице \'Статистика_Движения_Умерших\' р" +
+                                "авно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Дата_ПеремещенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Место_Отправления {
+                get {
+                    try {
+                        return ((string)(this[this.tableСтатистика_Движения_Умерших.Место_ОтправленияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Место_Отправления\' в таблице \'Статистика_Движения_Умерших\' " +
+                                "равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Место_ОтправленияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Место_Назначения {
+                get {
+                    try {
+                        return ((string)(this[this.tableСтатистика_Движения_Умерших.Место_НазначенияColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Место_Назначения\' в таблице \'Статистика_Движения_Умерших\' р" +
+                                "авно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.Место_НазначенияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ФИО_Ответственного {
+                get {
+                    try {
+                        return ((string)(this[this.tableСтатистика_Движения_Умерших.ФИО_ОтветственногоColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ФИО_Ответственного\' в таблице \'Статистика_Движения_Умерших\'" +
+                                " равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableСтатистика_Движения_Умерших.ФИО_ОтветственногоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsМесто_СмертиNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.Место_СмертиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetМесто_СмертиNull() {
+                this[this.tableСтатистика_Движения_Умерших.Место_СмертиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsПричина_СмертиNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.Причина_СмертиColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetПричина_СмертиNull() {
+                this[this.tableСтатистика_Движения_Умерших.Причина_СмертиColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsТип_ПеремещенияNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.Тип_ПеремещенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetТип_ПеремещенияNull() {
+                this[this.tableСтатистика_Движения_Умерших.Тип_ПеремещенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsДата_ПеремещенияNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.Дата_ПеремещенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetДата_ПеремещенияNull() {
+                this[this.tableСтатистика_Движения_Умерших.Дата_ПеремещенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsМесто_ОтправленияNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.Место_ОтправленияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetМесто_ОтправленияNull() {
+                this[this.tableСтатистика_Движения_Умерших.Место_ОтправленияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsМесто_НазначенияNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.Место_НазначенияColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetМесто_НазначенияNull() {
+                this[this.tableСтатистика_Движения_Умерших.Место_НазначенияColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsФИО_ОтветственногоNull() {
+                return this.IsNull(this.tableСтатистика_Движения_Умерших.ФИО_ОтветственногоColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetФИО_ОтветственногоNull() {
+                this[this.tableСтатистика_Движения_Умерших.ФИО_ОтветственногоColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AddInventoryRow : global::System.Data.DataRow {
+            
+            private AddInventoryDataTable tableAddInventory;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal AddInventoryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAddInventory = ((AddInventoryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ID_Инвентаря {
+                get {
+                    try {
+                        return ((int)(this[this.tableAddInventory.ID_ИнвентаряColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ID_Инвентаря\' в таблице \'AddInventory\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAddInventory.ID_ИнвентаряColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsID_ИнвентаряNull() {
+                return this.IsNull(this.tableAddInventory.ID_ИнвентаряColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetID_ИнвентаряNull() {
+                this[this.tableAddInventory.ID_ИнвентаряColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9393,6 +11408,142 @@ namespace Apllication4Course {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Финансовые_ОперацииRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class Мониторинг_Финансовых_ОперацийRowChangeEvent : global::System.EventArgs {
+            
+            private Мониторинг_Финансовых_ОперацийRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийRowChangeEvent(Мониторинг_Финансовых_ОперацийRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Мониторинг_Финансовых_ОперацийRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class Отчет_Проведенные_ИсследованияRowChangeEvent : global::System.EventArgs {
+            
+            private Отчет_Проведенные_ИсследованияRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияRowChangeEvent(Отчет_Проведенные_ИсследованияRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Отчет_Проведенные_ИсследованияRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class Статистика_Движения_УмершихRowChangeEvent : global::System.EventArgs {
+            
+            private Статистика_Движения_УмершихRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихRowChangeEvent(Статистика_Движения_УмершихRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public Статистика_Движения_УмершихRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class AddInventoryRowChangeEvent : global::System.EventArgs {
+            
+            private AddInventoryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AddInventoryRowChangeEvent(AddInventoryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public AddInventoryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15712,6 +17863,739 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Мониторинг_Финансовых_ОперацийTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Мониторинг_Финансовых_ОперацийTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Мониторинг_Финансовых_Операций";
+            tableMapping.ColumnMappings.Add("ID_Операции", "ID_Операции");
+            tableMapping.ColumnMappings.Add("Услуга", "Услуга");
+            tableMapping.ColumnMappings.Add("Сумма", "Сумма");
+            tableMapping.ColumnMappings.Add("Тип_Операции", "Тип_Операции");
+            tableMapping.ColumnMappings.Add("Дата_Операции", "Дата_Операции");
+            tableMapping.ColumnMappings.Add("Способ_Оплаты", "Способ_Оплаты");
+            tableMapping.ColumnMappings.Add("ФИО_Ответственного", "ФИО_Ответственного");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Apllication4Course.Properties.Settings.Default.BDA_pat_otdConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_Операции, Услуга, Сумма, Тип_Операции, Дата_Операции, Способ_Оплаты, ФИ" +
+                "О_Ответственного FROM dbo.Мониторинг_Финансовых_Операций";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BDA_pat_otdDataSet.Мониторинг_Финансовых_ОперацийDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BDA_pat_otdDataSet.Мониторинг_Финансовых_ОперацийDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BDA_pat_otdDataSet.Мониторинг_Финансовых_ОперацийDataTable dataTable = new BDA_pat_otdDataSet.Мониторинг_Финансовых_ОперацийDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Отчет_Проведенные_ИсследованияTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Отчет_Проведенные_ИсследованияTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Отчет_Проведенные_Исследования";
+            tableMapping.ColumnMappings.Add("ID_Исследования", "ID_Исследования");
+            tableMapping.ColumnMappings.Add("ФИО_Умершего", "ФИО_Умершего");
+            tableMapping.ColumnMappings.Add("Тип_Исследования", "Тип_Исследования");
+            tableMapping.ColumnMappings.Add("Дата_Проведения", "Дата_Проведения");
+            tableMapping.ColumnMappings.Add("Описание", "Описание");
+            tableMapping.ColumnMappings.Add("Результаты", "Результаты");
+            tableMapping.ColumnMappings.Add("ФИО_Исполнителя", "ФИО_Исполнителя");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Apllication4Course.Properties.Settings.Default.BDA_pat_otdConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_Исследования, ФИО_Умершего, Тип_Исследования, Дата_Проведения, Описание" +
+                ", Результаты, ФИО_Исполнителя FROM dbo.Отчет_Проведенные_Исследования";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BDA_pat_otdDataSet.Отчет_Проведенные_ИсследованияDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BDA_pat_otdDataSet.Отчет_Проведенные_ИсследованияDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BDA_pat_otdDataSet.Отчет_Проведенные_ИсследованияDataTable dataTable = new BDA_pat_otdDataSet.Отчет_Проведенные_ИсследованияDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class Статистика_Движения_УмершихTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public Статистика_Движения_УмершихTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "Статистика_Движения_Умерших";
+            tableMapping.ColumnMappings.Add("ID_Умершего", "ID_Умершего");
+            tableMapping.ColumnMappings.Add("ФИО", "ФИО");
+            tableMapping.ColumnMappings.Add("Дата_Смерти", "Дата_Смерти");
+            tableMapping.ColumnMappings.Add("Место_Смерти", "Место_Смерти");
+            tableMapping.ColumnMappings.Add("Причина_Смерти", "Причина_Смерти");
+            tableMapping.ColumnMappings.Add("Тип_Перемещения", "Тип_Перемещения");
+            tableMapping.ColumnMappings.Add("Дата_Перемещения", "Дата_Перемещения");
+            tableMapping.ColumnMappings.Add("Место_Отправления", "Место_Отправления");
+            tableMapping.ColumnMappings.Add("Место_Назначения", "Место_Назначения");
+            tableMapping.ColumnMappings.Add("ФИО_Ответственного", "ФИО_Ответственного");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Apllication4Course.Properties.Settings.Default.BDA_pat_otdConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT ID_Умершего, ФИО, Дата_Смерти, Место_Смерти, Причина_Смерти, Тип_Перемещен" +
+                "ия, Дата_Перемещения, Место_Отправления, Место_Назначения, ФИО_Ответственного FR" +
+                "OM dbo.Статистика_Движения_Умерших";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BDA_pat_otdDataSet.Статистика_Движения_УмершихDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BDA_pat_otdDataSet.Статистика_Движения_УмершихDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            BDA_pat_otdDataSet.Статистика_Движения_УмершихDataTable dataTable = new BDA_pat_otdDataSet.Статистика_Движения_УмершихDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AddInventoryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public AddInventoryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AddInventory";
+            tableMapping.ColumnMappings.Add("ID_Инвентаря", "ID_Инвентаря");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::Apllication4Course.Properties.Settings.Default.BDA_pat_otdConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.AddInventory";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Наименование", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Количество", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 10, 2, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Единица_Измерения", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(BDA_pat_otdDataSet.AddInventoryDataTable dataTable, string Наименование, global::System.Nullable<decimal> Количество, string Единица_Измерения) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Наименование == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Наименование));
+            }
+            if ((Количество.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(Количество.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Единица_Измерения == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(Единица_Измерения));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual BDA_pat_otdDataSet.AddInventoryDataTable GetData(string Наименование, global::System.Nullable<decimal> Количество, string Единица_Измерения) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Наименование == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Наименование));
+            }
+            if ((Количество.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((decimal)(Количество.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Единица_Измерения == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(Единица_Измерения));
+            }
+            BDA_pat_otdDataSet.AddInventoryDataTable dataTable = new BDA_pat_otdDataSet.AddInventoryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -16172,21 +19056,21 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateUpdatedRows(BDA_pat_otdDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._умершиеTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Умершие.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._умершиеTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._услугиTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Услуги.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._услугиTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._умершиеTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Умершие.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._умершиеTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16217,15 +19101,6 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._способ_ОплатыTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Способ_Оплаты.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._способ_ОплатыTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._исследованияTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Исследования.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16253,6 +19128,15 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._способ_ОплатыTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Способ_Оплаты.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._способ_ОплатыTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._журнал_ОбращенийTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Журнал_Обращений.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -16262,12 +19146,21 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._транспортировкаTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Транспортировка.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._финансовые_ОперацииTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Финансовые_Операции.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._транспортировкаTableAdapter.Update(updatedRows));
+                    result = (result + this._финансовые_ОперацииTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._платные_ИсследованияTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Платные_Исследования.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._платные_ИсследованияTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16307,21 +19200,12 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._платные_ИсследованияTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Платные_Исследования.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._транспортировкаTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Транспортировка.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._платные_ИсследованияTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._финансовые_ОперацииTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Финансовые_Операции.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._финансовые_ОперацииTableAdapter.Update(updatedRows));
+                    result = (result + this._транспортировкаTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -16335,19 +19219,19 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateInsertedRows(BDA_pat_otdDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._умершиеTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Умершие.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._умершиеTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._услугиTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Услуги.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._услугиTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._умершиеTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Умершие.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._умершиеTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16375,14 +19259,6 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._способ_ОплатыTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Способ_Оплаты.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._способ_ОплатыTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._исследованияTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Исследования.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16407,6 +19283,14 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._способ_ОплатыTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Способ_Оплаты.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._способ_ОплатыTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._журнал_ОбращенийTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Журнал_Обращений.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -16415,11 +19299,19 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._транспортировкаTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Транспортировка.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._финансовые_ОперацииTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Финансовые_Операции.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._транспортировкаTableAdapter.Update(addedRows));
+                    result = (result + this._финансовые_ОперацииTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._платные_ИсследованияTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Платные_Исследования.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._платные_ИсследованияTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16455,19 +19347,11 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._платные_ИсследованияTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Платные_Исследования.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._транспортировкаTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Транспортировка.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._платные_ИсследованияTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._финансовые_ОперацииTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Финансовые_Операции.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._финансовые_ОперацииTableAdapter.Update(addedRows));
+                    result = (result + this._транспортировкаTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -16481,19 +19365,11 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(BDA_pat_otdDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._финансовые_ОперацииTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Финансовые_Операции.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._транспортировкаTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Транспортировка.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._финансовые_ОперацииTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._платные_ИсследованияTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Платные_Исследования.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._платные_ИсследованияTableAdapter.Update(deletedRows));
+                    result = (result + this._транспортировкаTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16529,11 +19405,19 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._транспортировкаTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Транспортировка.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._платные_ИсследованияTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Платные_Исследования.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._транспортировкаTableAdapter.Update(deletedRows));
+                    result = (result + this._платные_ИсследованияTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._финансовые_ОперацииTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Финансовые_Операции.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._финансовые_ОперацииTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16542,6 +19426,14 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._журнал_ОбращенийTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._способ_ОплатыTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Способ_Оплаты.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._способ_ОплатыTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -16569,14 +19461,6 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._способ_ОплатыTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Способ_Оплаты.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._способ_ОплатыTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._инвентарьTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Инвентарь.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -16601,19 +19485,19 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._услугиTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Услуги.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._услугиTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._умершиеTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Умершие.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._умершиеTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._услугиTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Услуги.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._услугиTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

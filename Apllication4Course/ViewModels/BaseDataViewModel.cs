@@ -6,6 +6,7 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Diagnostics;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 
 namespace Apllication4Course.ViewModels
 {
@@ -59,9 +60,7 @@ namespace Apllication4Course.ViewModels
         protected virtual void LoadData()
         {
             var context = DatabaseContext.Instance;
-            var itemsList = context.Set<T>()
-                .AsNoTracking()
-                .ToList();
+            var itemsList = context.Set<T>().ToList();
             _items = new ObservableCollection<T>(itemsList);
         }
 
@@ -115,46 +114,87 @@ namespace Apllication4Course.ViewModels
         protected virtual void SaveChanges()
         {
             var context = DatabaseContext.Instance;
-                try
-                {
-                    if (_itemToEdit == null && _itemToDelete == null && SelectedItem != null)
-                        context.Set<T>().Add((T)SelectedItem);
+            try
+            {
+                if (_itemToEdit == null && _itemToDelete == null && SelectedItem != null)
+                    context.Set<T>().Add(SelectedItem);
 
-                if (_isModified)
+                if (_isModified && _itemToEdit != null)
                 {
-                    foreach (var item in Items)
-                        context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+                    var entry = context.Entry(_itemToEdit);
+                    if (entry.State == EntityState.Detached)
+                    {
+                        context.Set<T>().Attach(_itemToEdit);
+                    }
+                    entry.State = EntityState.Modified;
                     _isModified = false;
+                    _itemToEdit = null;
                 }
 
 
                 if (_itemToDelete != null)
+                {
+                    // сначала проверяем, есть ли сущность в контексте
+                    var entry = context.Entry(_itemToDelete);
+                    if (entry.State == EntityState.Detached)
                     {
-                    context.Set<T>().Remove(_itemToDelete);
-                    Items.Remove(_itemToDelete);
-                    _itemToDelete = null;
+                        // Если сущность не отслеживается, пробуем найти её в БД по ключу
+                        var key = GetEntityKey(_itemToDelete);
+                        if (key != null)
+                        {
+                            var existingEntity = context.Set<T>().Find(key);
+                            if (existingEntity != null)
+                            {
+                                context.Set<T>().Remove(existingEntity);
+                                Items.Remove(_itemToDelete);
+                            }
+                        }
                     }
+                    else
+                    {
+                        context.Set<T>().Remove(_itemToDelete);
+                        Items.Remove(_itemToDelete);
+                    }
+                    _itemToDelete = null;
+                }
 
-                    context.SaveChanges();
+                context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                ShowErrorMessage($"Конфликт при обновлении данных: {ex.Message}");
+            }
+            catch (DbUpdateException ex)
+            {
+                ShowErrorMessage($"Ошибка при обновлении данных: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                ShowErrorMessage($"Произошла ошибка: {ex.Message}");
+            }
+            finally
+            {
+                LoadData();
+            }
+        }
 
-                    SelectedItem = Items.FirstOrDefault();
+        private object[] GetEntityKey(T entity)
+        {
+            var _context = DatabaseContext.Instance;
+            var objectContext = ((IObjectContextAdapter)_context).ObjectContext;
+            var objectSet = objectContext.CreateObjectSet<T>();
+            var keyNames = objectSet.EntitySet.ElementType.KeyMembers.Select(k => k.Name).ToArray();
 
-                    var mainWindow = App.Current.MainWindow;
-                    if (mainWindow != null && mainWindow.DataContext is DataViewModel dataViewModel)
-                        dataViewModel.IsConfirmButtonVisible = false;
-                }
-                catch (DbUpdateConcurrencyException ex)
-                {
-                    ShowErrorMessage($"Конфликт при обновлении данных: {ex.Message}");
-                }
-                catch (DbUpdateException ex)
-                {
-                    ShowErrorMessage($"Ошибка при обновлении данных: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    ShowErrorMessage($"Произошла ошибка: {ex.Message}");
-                }
+            var keyValues = new object[keyNames.Length];
+            var entityType = typeof(T);
+
+            for (int i = 0; i < keyNames.Length; i++)
+            {
+                var prop = entityType.GetProperty(keyNames[i]);
+                keyValues[i] = prop?.GetValue(entity);
+            }
+
+            return keyValues;
         }
     }
 }

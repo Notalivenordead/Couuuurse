@@ -1122,6 +1122,96 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Мониторинг_Финансовых_ОперацийTableAdapter" GeneratorDataComponentClassName="Мониторинг_Финансовых_ОперацийTableAdapter" Name="Мониторинг_Финансовых_Операций" UserDataComponentName="Мониторинг_Финансовых_ОперацийTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDA_pat_otdConnectionString (Settings)" DbObjectName="BDA_pat_otd.dbo.Мониторинг_Финансовых_Операций" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Операции, Услуга, Сумма, Тип_Операции, Дата_Операции, Способ_Оплаты, ФИО_Ответственного FROM dbo.Мониторинг_Финансовых_Операций</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Операции" DataSetColumn="ID_Операции" />
+              <Mapping SourceColumn="Услуга" DataSetColumn="Услуга" />
+              <Mapping SourceColumn="Сумма" DataSetColumn="Сумма" />
+              <Mapping SourceColumn="Тип_Операции" DataSetColumn="Тип_Операции" />
+              <Mapping SourceColumn="Дата_Операции" DataSetColumn="Дата_Операции" />
+              <Mapping SourceColumn="Способ_Оплаты" DataSetColumn="Способ_Оплаты" />
+              <Mapping SourceColumn="ФИО_Ответственного" DataSetColumn="ФИО_Ответственного" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Отчет_Проведенные_ИсследованияTableAdapter" GeneratorDataComponentClassName="Отчет_Проведенные_ИсследованияTableAdapter" Name="Отчет_Проведенные_Исследования" UserDataComponentName="Отчет_Проведенные_ИсследованияTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDA_pat_otdConnectionString (Settings)" DbObjectName="BDA_pat_otd.dbo.Отчет_Проведенные_Исследования" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Исследования, ФИО_Умершего, Тип_Исследования, Дата_Проведения, Описание, Результаты, ФИО_Исполнителя FROM dbo.Отчет_Проведенные_Исследования</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Исследования" DataSetColumn="ID_Исследования" />
+              <Mapping SourceColumn="ФИО_Умершего" DataSetColumn="ФИО_Умершего" />
+              <Mapping SourceColumn="Тип_Исследования" DataSetColumn="Тип_Исследования" />
+              <Mapping SourceColumn="Дата_Проведения" DataSetColumn="Дата_Проведения" />
+              <Mapping SourceColumn="Описание" DataSetColumn="Описание" />
+              <Mapping SourceColumn="Результаты" DataSetColumn="Результаты" />
+              <Mapping SourceColumn="ФИО_Исполнителя" DataSetColumn="ФИО_Исполнителя" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Статистика_Движения_УмершихTableAdapter" GeneratorDataComponentClassName="Статистика_Движения_УмершихTableAdapter" Name="Статистика_Движения_Умерших" UserDataComponentName="Статистика_Движения_УмершихTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDA_pat_otdConnectionString (Settings)" DbObjectName="BDA_pat_otd.dbo.Статистика_Движения_Умерших" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID_Умершего, ФИО, Дата_Смерти, Место_Смерти, Причина_Смерти, Тип_Перемещения, Дата_Перемещения, Место_Отправления, Место_Назначения, ФИО_Ответственного FROM dbo.Статистика_Движения_Умерших</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Умершего" DataSetColumn="ID_Умершего" />
+              <Mapping SourceColumn="ФИО" DataSetColumn="ФИО" />
+              <Mapping SourceColumn="Дата_Смерти" DataSetColumn="Дата_Смерти" />
+              <Mapping SourceColumn="Место_Смерти" DataSetColumn="Место_Смерти" />
+              <Mapping SourceColumn="Причина_Смерти" DataSetColumn="Причина_Смерти" />
+              <Mapping SourceColumn="Тип_Перемещения" DataSetColumn="Тип_Перемещения" />
+              <Mapping SourceColumn="Дата_Перемещения" DataSetColumn="Дата_Перемещения" />
+              <Mapping SourceColumn="Место_Отправления" DataSetColumn="Место_Отправления" />
+              <Mapping SourceColumn="Место_Назначения" DataSetColumn="Место_Назначения" />
+              <Mapping SourceColumn="ФИО_Ответственного" DataSetColumn="ФИО_Ответственного" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AddInventoryTableAdapter" GeneratorDataComponentClassName="AddInventoryTableAdapter" Name="AddInventory" UserDataComponentName="AddInventoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDA_pat_otdConnectionString (Settings)" DbObjectName="BDA_pat_otd.dbo.AddInventory" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.AddInventory</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Наименование" Precision="0" ProviderType="NVarChar" Scale="0" Size="255" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="decimal" DbType="Decimal" Direction="Input" ParameterName="@Количество" Precision="10" ProviderType="Decimal" Scale="2" Size="9" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="nvarchar" DbType="String" Direction="Input" ParameterName="@Единица_Измерения" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID_Инвентаря" DataSetColumn="ID_Инвентаря" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1538,6 +1628,151 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Мониторинг_Финансовых_Операций" msprop:Generator_RowEvHandlerName="Мониторинг_Финансовых_ОперацийRowChangeEventHandler" msprop:Generator_RowDeletedName="Мониторинг_Финансовых_ОперацийRowDeleted" msprop:Generator_RowDeletingName="Мониторинг_Финансовых_ОперацийRowDeleting" msprop:Generator_RowEvArgName="Мониторинг_Финансовых_ОперацийRowChangeEvent" msprop:Generator_TablePropName="Мониторинг_Финансовых_Операций" msprop:Generator_RowChangedName="Мониторинг_Финансовых_ОперацийRowChanged" msprop:Generator_RowChangingName="Мониторинг_Финансовых_ОперацийRowChanging" msprop:Generator_TableClassName="Мониторинг_Финансовых_ОперацийDataTable" msprop:Generator_RowClassName="Мониторинг_Финансовых_ОперацийRow" msprop:Generator_TableVarName="tableМониторинг_Финансовых_Операций" msprop:Generator_UserTableName="Мониторинг_Финансовых_Операций">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Операции" msprop:Generator_ColumnPropNameInRow="ID_Операции" msprop:Generator_ColumnPropNameInTable="ID_ОперацииColumn" msprop:Generator_ColumnVarNameInTable="columnID_Операции" msprop:Generator_UserColumnName="ID_Операции" type="xs:int" />
+              <xs:element name="Услуга" msprop:Generator_ColumnPropNameInRow="Услуга" msprop:Generator_ColumnPropNameInTable="УслугаColumn" msprop:Generator_ColumnVarNameInTable="columnУслуга" msprop:Generator_UserColumnName="Услуга">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Сумма" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_ColumnVarNameInTable="columnСумма" msprop:Generator_UserColumnName="Сумма" type="xs:decimal" />
+              <xs:element name="Тип_Операции" msprop:Generator_ColumnPropNameInRow="Тип_Операции" msprop:Generator_ColumnPropNameInTable="Тип_ОперацииColumn" msprop:Generator_ColumnVarNameInTable="columnТип_Операции" msprop:Generator_UserColumnName="Тип_Операции">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_Операции" msprop:Generator_ColumnPropNameInRow="Дата_Операции" msprop:Generator_ColumnPropNameInTable="Дата_ОперацииColumn" msprop:Generator_ColumnVarNameInTable="columnДата_Операции" msprop:Generator_UserColumnName="Дата_Операции" type="xs:dateTime" />
+              <xs:element name="Способ_Оплаты" msprop:Generator_ColumnPropNameInRow="Способ_Оплаты" msprop:Generator_ColumnPropNameInTable="Способ_ОплатыColumn" msprop:Generator_ColumnVarNameInTable="columnСпособ_Оплаты" msprop:Generator_UserColumnName="Способ_Оплаты">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ФИО_Ответственного" msprop:Generator_ColumnPropNameInRow="ФИО_Ответственного" msprop:Generator_ColumnPropNameInTable="ФИО_ОтветственногоColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_Ответственного" msprop:Generator_UserColumnName="ФИО_Ответственного" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Отчет_Проведенные_Исследования" msprop:Generator_RowEvHandlerName="Отчет_Проведенные_ИсследованияRowChangeEventHandler" msprop:Generator_RowDeletedName="Отчет_Проведенные_ИсследованияRowDeleted" msprop:Generator_RowDeletingName="Отчет_Проведенные_ИсследованияRowDeleting" msprop:Generator_RowEvArgName="Отчет_Проведенные_ИсследованияRowChangeEvent" msprop:Generator_TablePropName="Отчет_Проведенные_Исследования" msprop:Generator_RowChangedName="Отчет_Проведенные_ИсследованияRowChanged" msprop:Generator_RowChangingName="Отчет_Проведенные_ИсследованияRowChanging" msprop:Generator_TableClassName="Отчет_Проведенные_ИсследованияDataTable" msprop:Generator_RowClassName="Отчет_Проведенные_ИсследованияRow" msprop:Generator_TableVarName="tableОтчет_Проведенные_Исследования" msprop:Generator_UserTableName="Отчет_Проведенные_Исследования">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Исследования" msprop:Generator_ColumnPropNameInRow="ID_Исследования" msprop:Generator_ColumnPropNameInTable="ID_ИсследованияColumn" msprop:Generator_ColumnVarNameInTable="columnID_Исследования" msprop:Generator_UserColumnName="ID_Исследования" type="xs:int" />
+              <xs:element name="ФИО_Умершего" msprop:Generator_ColumnPropNameInRow="ФИО_Умершего" msprop:Generator_ColumnPropNameInTable="ФИО_УмершегоColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_Умершего" msprop:Generator_UserColumnName="ФИО_Умершего">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип_Исследования" msprop:Generator_ColumnPropNameInRow="Тип_Исследования" msprop:Generator_ColumnPropNameInTable="Тип_ИсследованияColumn" msprop:Generator_ColumnVarNameInTable="columnТип_Исследования" msprop:Generator_UserColumnName="Тип_Исследования">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_Проведения" msprop:Generator_ColumnPropNameInRow="Дата_Проведения" msprop:Generator_ColumnPropNameInTable="Дата_ПроведенияColumn" msprop:Generator_ColumnVarNameInTable="columnДата_Проведения" msprop:Generator_UserColumnName="Дата_Проведения" type="xs:dateTime" />
+              <xs:element name="Описание" msprop:Generator_ColumnPropNameInRow="Описание" msprop:Generator_ColumnPropNameInTable="ОписаниеColumn" msprop:Generator_ColumnVarNameInTable="columnОписание" msprop:Generator_UserColumnName="Описание" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Результаты" msprop:Generator_ColumnPropNameInRow="Результаты" msprop:Generator_ColumnPropNameInTable="РезультатыColumn" msprop:Generator_ColumnVarNameInTable="columnРезультаты" msprop:Generator_UserColumnName="Результаты" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ФИО_Исполнителя" msprop:Generator_ColumnPropNameInRow="ФИО_Исполнителя" msprop:Generator_ColumnPropNameInTable="ФИО_ИсполнителяColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_Исполнителя" msprop:Generator_UserColumnName="ФИО_Исполнителя">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Статистика_Движения_Умерших" msprop:Generator_RowEvHandlerName="Статистика_Движения_УмершихRowChangeEventHandler" msprop:Generator_RowDeletedName="Статистика_Движения_УмершихRowDeleted" msprop:Generator_RowDeletingName="Статистика_Движения_УмершихRowDeleting" msprop:Generator_RowEvArgName="Статистика_Движения_УмершихRowChangeEvent" msprop:Generator_TablePropName="Статистика_Движения_Умерших" msprop:Generator_RowChangedName="Статистика_Движения_УмершихRowChanged" msprop:Generator_RowChangingName="Статистика_Движения_УмершихRowChanging" msprop:Generator_TableClassName="Статистика_Движения_УмершихDataTable" msprop:Generator_RowClassName="Статистика_Движения_УмершихRow" msprop:Generator_TableVarName="tableСтатистика_Движения_Умерших" msprop:Generator_UserTableName="Статистика_Движения_Умерших">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Умершего" msprop:Generator_ColumnPropNameInRow="ID_Умершего" msprop:Generator_ColumnPropNameInTable="ID_УмершегоColumn" msprop:Generator_ColumnVarNameInTable="columnID_Умершего" msprop:Generator_UserColumnName="ID_Умершего" type="xs:int" />
+              <xs:element name="ФИО" msprop:Generator_ColumnPropNameInRow="ФИО" msprop:Generator_ColumnPropNameInTable="ФИОColumn" msprop:Generator_ColumnVarNameInTable="columnФИО" msprop:Generator_UserColumnName="ФИО">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_Смерти" msprop:Generator_ColumnPropNameInRow="Дата_Смерти" msprop:Generator_ColumnPropNameInTable="Дата_СмертиColumn" msprop:Generator_ColumnVarNameInTable="columnДата_Смерти" msprop:Generator_UserColumnName="Дата_Смерти" type="xs:dateTime" />
+              <xs:element name="Место_Смерти" msprop:Generator_ColumnPropNameInRow="Место_Смерти" msprop:Generator_ColumnPropNameInTable="Место_СмертиColumn" msprop:Generator_ColumnVarNameInTable="columnМесто_Смерти" msprop:Generator_UserColumnName="Место_Смерти" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Причина_Смерти" msprop:Generator_ColumnPropNameInRow="Причина_Смерти" msprop:Generator_ColumnPropNameInTable="Причина_СмертиColumn" msprop:Generator_ColumnVarNameInTable="columnПричина_Смерти" msprop:Generator_UserColumnName="Причина_Смерти" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Тип_Перемещения" msprop:Generator_ColumnPropNameInRow="Тип_Перемещения" msprop:Generator_ColumnPropNameInTable="Тип_ПеремещенияColumn" msprop:Generator_ColumnVarNameInTable="columnТип_Перемещения" msprop:Generator_UserColumnName="Тип_Перемещения" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_Перемещения" msprop:Generator_ColumnPropNameInRow="Дата_Перемещения" msprop:Generator_ColumnPropNameInTable="Дата_ПеремещенияColumn" msprop:Generator_ColumnVarNameInTable="columnДата_Перемещения" msprop:Generator_UserColumnName="Дата_Перемещения" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Место_Отправления" msprop:Generator_ColumnPropNameInRow="Место_Отправления" msprop:Generator_ColumnPropNameInTable="Место_ОтправленияColumn" msprop:Generator_ColumnVarNameInTable="columnМесто_Отправления" msprop:Generator_UserColumnName="Место_Отправления" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Место_Назначения" msprop:Generator_ColumnPropNameInRow="Место_Назначения" msprop:Generator_ColumnPropNameInTable="Место_НазначенияColumn" msprop:Generator_ColumnVarNameInTable="columnМесто_Назначения" msprop:Generator_UserColumnName="Место_Назначения" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ФИО_Ответственного" msprop:Generator_ColumnPropNameInRow="ФИО_Ответственного" msprop:Generator_ColumnPropNameInTable="ФИО_ОтветственногоColumn" msprop:Generator_ColumnVarNameInTable="columnФИО_Ответственного" msprop:Generator_UserColumnName="ФИО_Ответственного" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AddInventory" msprop:Generator_RowEvHandlerName="AddInventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="AddInventoryRowDeleted" msprop:Generator_RowDeletingName="AddInventoryRowDeleting" msprop:Generator_RowEvArgName="AddInventoryRowChangeEvent" msprop:Generator_TablePropName="AddInventory" msprop:Generator_RowChangedName="AddInventoryRowChanged" msprop:Generator_RowChangingName="AddInventoryRowChanging" msprop:Generator_TableClassName="AddInventoryDataTable" msprop:Generator_RowClassName="AddInventoryRow" msprop:Generator_TableVarName="tableAddInventory" msprop:Generator_UserTableName="AddInventory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_Инвентаря" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="ID_Инвентаря" msprop:Generator_ColumnPropNameInTable="ID_ИнвентаряColumn" msprop:Generator_ColumnVarNameInTable="columnID_Инвентаря" msprop:Generator_UserColumnName="ID_Инвентаря" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1608,30 +1843,42 @@ SELECT ID_Операции, ID_Заявки, Сумма, Тип, Дата_Опе
       <xs:selector xpath=".//mstns:Финансовые_Операции" />
       <xs:field xpath="mstns:ID_Операции" />
     </xs:unique>
+    <xs:unique name="Мониторинг_Финансовых_Операций_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Мониторинг_Финансовых_Операций" />
+      <xs:field xpath="mstns:ID_Операции" />
+    </xs:unique>
+    <xs:unique name="Отчет_Проведенные_Исследования_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Отчет_Проведенные_Исследования" />
+      <xs:field xpath="mstns:ID_Исследования" />
+    </xs:unique>
+    <xs:unique name="Статистика_Движения_Умерших_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Статистика_Движения_Умерших" />
+      <xs:field xpath="mstns:ID_Умершего" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__Журнал_Об__ID_От__6E01572D" msdata:parent="Сотрудники" msdata:child="Журнал_Обращений" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Журнал_Обращений" msprop:Generator_RelationVarName="relationFK__Журнал_Об__ID_От__6E01572D" msprop:Generator_UserRelationName="FK__Журнал_Об__ID_От__6E01572D" msprop:Generator_ChildPropName="GetЖурнал_ОбращенийRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Журнал_Те__ID_Ка__5165187F" msdata:parent="Камеры_Хранения" msdata:child="Журнал_Температур" msdata:parentkey="ID_Камеры" msdata:childkey="ID_Камеры" msprop:Generator_UserParentTable="Камеры_Хранения" msprop:Generator_UserChildTable="Журнал_Температур" msprop:Generator_RelationVarName="relationFK__Журнал_Те__ID_Ка__5165187F" msprop:Generator_UserRelationName="FK__Журнал_Те__ID_Ка__5165187F" msprop:Generator_ChildPropName="GetЖурнал_ТемпературRows" msprop:Generator_ParentPropName="Камеры_ХраненияRow" />
-      <msdata:Relationship name="FK__Журнал_Те__ID_От__52593CB8" msdata:parent="Сотрудники" msdata:child="Журнал_Температур" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Журнал_Температур" msprop:Generator_RelationVarName="relationFK__Журнал_Те__ID_От__52593CB8" msprop:Generator_UserRelationName="FK__Журнал_Те__ID_От__52593CB8" msprop:Generator_ChildPropName="GetЖурнал_ТемпературRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Заявки_на__ID_От__4222D4EF" msdata:parent="Сотрудники" msdata:child="Заявки_на_Платные_Услуги" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Заявки_на_Платные_Услуги" msprop:Generator_RelationVarName="relationFK__Заявки_на__ID_От__4222D4EF" msprop:Generator_UserRelationName="FK__Заявки_на__ID_От__4222D4EF" msprop:Generator_ChildPropName="GetЗаявки_на_Платные_УслугиRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Заявки_на__ID_Ус__403A8C7D" msdata:parent="Услуги" msdata:child="Заявки_на_Платные_Услуги" msdata:parentkey="ID_Услуги" msdata:childkey="ID_Услуги" msprop:Generator_UserParentTable="Услуги" msprop:Generator_UserChildTable="Заявки_на_Платные_Услуги" msprop:Generator_RelationVarName="relationFK__Заявки_на__ID_Ус__403A8C7D" msprop:Generator_UserRelationName="FK__Заявки_на__ID_Ус__403A8C7D" msprop:Generator_ChildPropName="GetЗаявки_на_Платные_УслугиRows" msprop:Generator_ParentPropName="УслугиRow" />
-      <msdata:Relationship name="FK__Использов__ID_Ин__68487DD7" msdata:parent="Инвентарь" msdata:child="Использование_Инвентаря" msdata:parentkey="ID_Инвентаря" msdata:childkey="ID_Инвентаря" msprop:Generator_UserParentTable="Инвентарь" msprop:Generator_UserChildTable="Использование_Инвентаря" msprop:Generator_RelationVarName="relationFK__Использов__ID_Ин__68487DD7" msprop:Generator_ChildPropName="GetИспользование_ИнвентаряRows" msprop:Generator_ParentPropName="ИнвентарьRow" msprop:Generator_UserRelationName="FK__Использов__ID_Ин__68487DD7" />
-      <msdata:Relationship name="FK__Использов__ID_Ис__6754599E" msdata:parent="Исследования" msdata:child="Использование_Инвентаря" msdata:parentkey="ID_Исследования" msdata:childkey="ID_Исследования" msprop:Generator_UserParentTable="Исследования" msprop:Generator_UserChildTable="Использование_Инвентаря" msprop:Generator_RelationVarName="relationFK__Использов__ID_Ис__6754599E" msprop:Generator_UserRelationName="FK__Использов__ID_Ис__6754599E" msprop:Generator_ChildPropName="GetИспользование_ИнвентаряRows" msprop:Generator_ParentPropName="ИсследованияRow" />
-      <msdata:Relationship name="FK__Использов__ID_От__6A30C649" msdata:parent="Сотрудники" msdata:child="Использование_Инвентаря" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Использование_Инвентаря" msprop:Generator_RelationVarName="relationFK__Использов__ID_От__6A30C649" msprop:Generator_UserRelationName="FK__Использов__ID_От__6A30C649" msprop:Generator_ChildPropName="GetИспользование_ИнвентаряRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Использов__ID_Ис__5FB337D6" msdata:parent="Исследования" msdata:child="Использование_Образцов" msdata:parentkey="ID_Исследования" msdata:childkey="ID_Исследования" msprop:Generator_UserParentTable="Исследования" msprop:Generator_UserChildTable="Использование_Образцов" msprop:Generator_RelationVarName="relationFK__Использов__ID_Ис__5FB337D6" msprop:Generator_UserRelationName="FK__Использов__ID_Ис__5FB337D6" msprop:Generator_ChildPropName="GetИспользование_ОбразцовRows" msprop:Generator_ParentPropName="ИсследованияRow" />
-      <msdata:Relationship name="FK__Использов__ID_Об__5EBF139D" msdata:parent="Образцы" msdata:child="Использование_Образцов" msdata:parentkey="ID_Образца" msdata:childkey="ID_Образца" msprop:Generator_UserParentTable="Образцы" msprop:Generator_UserChildTable="Использование_Образцов" msprop:Generator_RelationVarName="relationFK__Использов__ID_Об__5EBF139D" msprop:Generator_UserRelationName="FK__Использов__ID_Об__5EBF139D" msprop:Generator_ChildPropName="GetИспользование_ОбразцовRows" msprop:Generator_ParentPropName="ОбразцыRow" />
-      <msdata:Relationship name="FK__Использов__ID_От__619B8048" msdata:parent="Сотрудники" msdata:child="Использование_Образцов" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Использование_Образцов" msprop:Generator_RelationVarName="relationFK__Использов__ID_От__619B8048" msprop:Generator_UserRelationName="FK__Использов__ID_От__619B8048" msprop:Generator_ChildPropName="GetИспользование_ОбразцовRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Исследова__ID_Ис__571DF1D5" msdata:parent="Сотрудники" msdata:child="Исследования" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Исполнителя" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Исследования" msprop:Generator_RelationVarName="relationFK__Исследова__ID_Ис__571DF1D5" msprop:Generator_UserRelationName="FK__Исследова__ID_Ис__571DF1D5" msprop:Generator_ChildPropName="GetИсследованияRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Исследова__ID_Ум__5535A963" msdata:parent="Умершие" msdata:child="Исследования" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Исследования" msprop:Generator_RelationVarName="relationFK__Исследова__ID_Ум__5535A963" msprop:Generator_UserRelationName="FK__Исследова__ID_Ум__5535A963" msprop:Generator_ChildPropName="GetИсследованияRows" msprop:Generator_ParentPropName="УмершиеRow" />
-      <msdata:Relationship name="FK__Места_В_К__ID_Ка__4D94879B" msdata:parent="Камеры_Хранения" msdata:child="Места_В_Камерах" msdata:parentkey="ID_Камеры" msdata:childkey="ID_Камеры" msprop:Generator_UserParentTable="Камеры_Хранения" msprop:Generator_UserChildTable="Места_В_Камерах" msprop:Generator_RelationVarName="relationFK__Места_В_К__ID_Ка__4D94879B" msprop:Generator_ChildPropName="GetМеста_В_КамерахRows" msprop:Generator_ParentPropName="Камеры_ХраненияRow" msprop:Generator_UserRelationName="FK__Места_В_К__ID_Ка__4D94879B" />
-      <msdata:Relationship name="FK__Места_В_К__ID_Ум__4E88ABD4" msdata:parent="Умершие" msdata:child="Места_В_Камерах" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Места_В_Камерах" msprop:Generator_RelationVarName="relationFK__Места_В_К__ID_Ум__4E88ABD4" msprop:Generator_UserRelationName="FK__Места_В_К__ID_Ум__4E88ABD4" msprop:Generator_ChildPropName="GetМеста_В_КамерахRows" msprop:Generator_ParentPropName="УмершиеRow" />
-      <msdata:Relationship name="FK__Образцы__ID_Отве__5BE2A6F2" msdata:parent="Сотрудники" msdata:child="Образцы" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Образцы" msprop:Generator_RelationVarName="relationFK__Образцы__ID_Отве__5BE2A6F2" msprop:Generator_UserRelationName="FK__Образцы__ID_Отве__5BE2A6F2" msprop:Generator_ChildPropName="GetОбразцыRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Образцы__ID_Умер__59FA5E80" msdata:parent="Умершие" msdata:child="Образцы" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Образцы" msprop:Generator_RelationVarName="relationFK__Образцы__ID_Умер__59FA5E80" msprop:Generator_UserRelationName="FK__Образцы__ID_Умер__59FA5E80" msprop:Generator_ChildPropName="GetОбразцыRows" msprop:Generator_ParentPropName="УмершиеRow" />
-      <msdata:Relationship name="FK__Платные_И__ID_За__44FF419A" msdata:parent="Заявки_на_Платные_Услуги" msdata:child="Платные_Исследования" msdata:parentkey="ID_Заявки" msdata:childkey="ID_Заявки" msprop:Generator_UserParentTable="Заявки_на_Платные_Услуги" msprop:Generator_UserChildTable="Платные_Исследования" msprop:Generator_RelationVarName="relationFK__Платные_И__ID_За__44FF419A" msprop:Generator_ChildPropName="GetПлатные_ИсследованияRows" msprop:Generator_ParentPropName="Заявки_на_Платные_УслугиRow" msprop:Generator_UserRelationName="FK__Платные_И__ID_За__44FF419A" />
-      <msdata:Relationship name="FK__Платные_И__ID_Ис__45F365D3" msdata:parent="Сотрудники" msdata:child="Платные_Исследования" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Исполнителя" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Платные_Исследования" msprop:Generator_RelationVarName="relationFK__Платные_И__ID_Ис__45F365D3" msprop:Generator_UserRelationName="FK__Платные_И__ID_Ис__45F365D3" msprop:Generator_ChildPropName="GetПлатные_ИсследованияRows" msprop:Generator_ParentPropName="СотрудникиRow" />
-      <msdata:Relationship name="FK__Транспорт__ID_От__72C60C4A" msdata:parent="Сотрудники" msdata:child="Транспортировка" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Транспортировка" msprop:Generator_RelationVarName="relationFK__Транспорт__ID_От__72C60C4A" msprop:Generator_ChildPropName="GetТранспортировкаRows" msprop:Generator_ParentPropName="СотрудникиRow" msprop:Generator_UserRelationName="FK__Транспорт__ID_От__72C60C4A" />
-      <msdata:Relationship name="FK__Транспорт__ID_Ум__70DDC3D8" msdata:parent="Умершие" msdata:child="Транспортировка" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Транспортировка" msprop:Generator_RelationVarName="relationFK__Транспорт__ID_Ум__70DDC3D8" msprop:Generator_UserRelationName="FK__Транспорт__ID_Ум__70DDC3D8" msprop:Generator_ChildPropName="GetТранспортировкаRows" msprop:Generator_ParentPropName="УмершиеRow" />
+      <msdata:Relationship name="FK_Журнал_Обращений_Сотрудники" msdata:parent="Сотрудники" msdata:child="Журнал_Обращений" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Журнал_Обращений" msprop:Generator_RelationVarName="relationFK_Журнал_Обращений_Сотрудники" msprop:Generator_UserRelationName="FK_Журнал_Обращений_Сотрудники" msprop:Generator_ChildPropName="GetЖурнал_ОбращенийRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Журнал_Температур_Камеры_Хранения" msdata:parent="Камеры_Хранения" msdata:child="Журнал_Температур" msdata:parentkey="ID_Камеры" msdata:childkey="ID_Камеры" msprop:Generator_UserParentTable="Камеры_Хранения" msprop:Generator_UserChildTable="Журнал_Температур" msprop:Generator_RelationVarName="relationFK_Журнал_Температур_Камеры_Хранения" msprop:Generator_UserRelationName="FK_Журнал_Температур_Камеры_Хранения" msprop:Generator_ChildPropName="GetЖурнал_ТемпературRows" msprop:Generator_ParentPropName="Камеры_ХраненияRow" />
+      <msdata:Relationship name="FK_Журнал_Температур_Сотрудники" msdata:parent="Сотрудники" msdata:child="Журнал_Температур" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Журнал_Температур" msprop:Generator_RelationVarName="relationFK_Журнал_Температур_Сотрудники" msprop:Generator_UserRelationName="FK_Журнал_Температур_Сотрудники" msprop:Generator_ChildPropName="GetЖурнал_ТемпературRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Заявки_на_Платные_Услуги_Сотрудники" msdata:parent="Сотрудники" msdata:child="Заявки_на_Платные_Услуги" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Заявки_на_Платные_Услуги" msprop:Generator_RelationVarName="relationFK_Заявки_на_Платные_Услуги_Сотрудники" msprop:Generator_UserRelationName="FK_Заявки_на_Платные_Услуги_Сотрудники" msprop:Generator_ChildPropName="GetЗаявки_на_Платные_УслугиRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Заявки_на_Платные_Услуги_Услуги" msdata:parent="Услуги" msdata:child="Заявки_на_Платные_Услуги" msdata:parentkey="ID_Услуги" msdata:childkey="ID_Услуги" msprop:Generator_UserParentTable="Услуги" msprop:Generator_UserChildTable="Заявки_на_Платные_Услуги" msprop:Generator_RelationVarName="relationFK_Заявки_на_Платные_Услуги_Услуги" msprop:Generator_UserRelationName="FK_Заявки_на_Платные_Услуги_Услуги" msprop:Generator_ChildPropName="GetЗаявки_на_Платные_УслугиRows" msprop:Generator_ParentPropName="УслугиRow" />
+      <msdata:Relationship name="FK_Использование_Инвентаря_Инвентарь" msdata:parent="Инвентарь" msdata:child="Использование_Инвентаря" msdata:parentkey="ID_Инвентаря" msdata:childkey="ID_Инвентаря" msprop:Generator_UserParentTable="Инвентарь" msprop:Generator_UserChildTable="Использование_Инвентаря" msprop:Generator_RelationVarName="relationFK_Использование_Инвентаря_Инвентарь" msprop:Generator_ChildPropName="GetИспользование_ИнвентаряRows" msprop:Generator_ParentPropName="ИнвентарьRow" msprop:Generator_UserRelationName="FK_Использование_Инвентаря_Инвентарь" />
+      <msdata:Relationship name="FK_Использование_Инвентаря_Исследования" msdata:parent="Исследования" msdata:child="Использование_Инвентаря" msdata:parentkey="ID_Исследования" msdata:childkey="ID_Исследования" msprop:Generator_UserParentTable="Исследования" msprop:Generator_UserChildTable="Использование_Инвентаря" msprop:Generator_RelationVarName="relationFK_Использование_Инвентаря_Исследования" msprop:Generator_UserRelationName="FK_Использование_Инвентаря_Исследования" msprop:Generator_ChildPropName="GetИспользование_ИнвентаряRows" msprop:Generator_ParentPropName="ИсследованияRow" />
+      <msdata:Relationship name="FK_Использование_Инвентаря_Сотрудники" msdata:parent="Сотрудники" msdata:child="Использование_Инвентаря" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Использование_Инвентаря" msprop:Generator_RelationVarName="relationFK_Использование_Инвентаря_Сотрудники" msprop:Generator_UserRelationName="FK_Использование_Инвентаря_Сотрудники" msprop:Generator_ChildPropName="GetИспользование_ИнвентаряRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Использование_Образцов_Исследования" msdata:parent="Исследования" msdata:child="Использование_Образцов" msdata:parentkey="ID_Исследования" msdata:childkey="ID_Исследования" msprop:Generator_UserParentTable="Исследования" msprop:Generator_UserChildTable="Использование_Образцов" msprop:Generator_RelationVarName="relationFK_Использование_Образцов_Исследования" msprop:Generator_UserRelationName="FK_Использование_Образцов_Исследования" msprop:Generator_ChildPropName="GetИспользование_ОбразцовRows" msprop:Generator_ParentPropName="ИсследованияRow" />
+      <msdata:Relationship name="FK_Использование_Образцов_Образцы" msdata:parent="Образцы" msdata:child="Использование_Образцов" msdata:parentkey="ID_Образца" msdata:childkey="ID_Образца" msprop:Generator_UserParentTable="Образцы" msprop:Generator_UserChildTable="Использование_Образцов" msprop:Generator_RelationVarName="relationFK_Использование_Образцов_Образцы" msprop:Generator_UserRelationName="FK_Использование_Образцов_Образцы" msprop:Generator_ChildPropName="GetИспользование_ОбразцовRows" msprop:Generator_ParentPropName="ОбразцыRow" />
+      <msdata:Relationship name="FK_Использование_Образцов_Сотрудники" msdata:parent="Сотрудники" msdata:child="Использование_Образцов" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Использование_Образцов" msprop:Generator_RelationVarName="relationFK_Использование_Образцов_Сотрудники" msprop:Generator_UserRelationName="FK_Использование_Образцов_Сотрудники" msprop:Generator_ChildPropName="GetИспользование_ОбразцовRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Исследования_Сотрудники" msdata:parent="Сотрудники" msdata:child="Исследования" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Исполнителя" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Исследования" msprop:Generator_RelationVarName="relationFK_Исследования_Сотрудники" msprop:Generator_UserRelationName="FK_Исследования_Сотрудники" msprop:Generator_ChildPropName="GetИсследованияRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Исследования_Умершие" msdata:parent="Умершие" msdata:child="Исследования" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Исследования" msprop:Generator_RelationVarName="relationFK_Исследования_Умершие" msprop:Generator_UserRelationName="FK_Исследования_Умершие" msprop:Generator_ChildPropName="GetИсследованияRows" msprop:Generator_ParentPropName="УмершиеRow" />
+      <msdata:Relationship name="FK_Места_В_Камерах_Камеры_Хранения" msdata:parent="Камеры_Хранения" msdata:child="Места_В_Камерах" msdata:parentkey="ID_Камеры" msdata:childkey="ID_Камеры" msprop:Generator_UserParentTable="Камеры_Хранения" msprop:Generator_UserChildTable="Места_В_Камерах" msprop:Generator_RelationVarName="relationFK_Места_В_Камерах_Камеры_Хранения" msprop:Generator_ChildPropName="GetМеста_В_КамерахRows" msprop:Generator_ParentPropName="Камеры_ХраненияRow" msprop:Generator_UserRelationName="FK_Места_В_Камерах_Камеры_Хранения" />
+      <msdata:Relationship name="FK_Места_В_Камерах_Умершие" msdata:parent="Умершие" msdata:child="Места_В_Камерах" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Места_В_Камерах" msprop:Generator_RelationVarName="relationFK_Места_В_Камерах_Умершие" msprop:Generator_UserRelationName="FK_Места_В_Камерах_Умершие" msprop:Generator_ChildPropName="GetМеста_В_КамерахRows" msprop:Generator_ParentPropName="УмершиеRow" />
+      <msdata:Relationship name="FK_Образцы_Сотрудники" msdata:parent="Сотрудники" msdata:child="Образцы" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Образцы" msprop:Generator_RelationVarName="relationFK_Образцы_Сотрудники" msprop:Generator_UserRelationName="FK_Образцы_Сотрудники" msprop:Generator_ChildPropName="GetОбразцыRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Образцы_Умершие" msdata:parent="Умершие" msdata:child="Образцы" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Образцы" msprop:Generator_RelationVarName="relationFK_Образцы_Умершие" msprop:Generator_UserRelationName="FK_Образцы_Умершие" msprop:Generator_ChildPropName="GetОбразцыRows" msprop:Generator_ParentPropName="УмершиеRow" />
+      <msdata:Relationship name="FK_Платные_Исследования_Заявки_на_Платные_Услуги" msdata:parent="Заявки_на_Платные_Услуги" msdata:child="Платные_Исследования" msdata:parentkey="ID_Заявки" msdata:childkey="ID_Заявки" msprop:Generator_UserParentTable="Заявки_на_Платные_Услуги" msprop:Generator_UserChildTable="Платные_Исследования" msprop:Generator_RelationVarName="relationFK_Платные_Исследования_Заявки_на_Платные_Услуги" msprop:Generator_ChildPropName="GetПлатные_ИсследованияRows" msprop:Generator_ParentPropName="Заявки_на_Платные_УслугиRow" msprop:Generator_UserRelationName="FK_Платные_Исследования_Заявки_на_Платные_Услуги" />
+      <msdata:Relationship name="FK_Платные_Исследования_Сотрудники" msdata:parent="Сотрудники" msdata:child="Платные_Исследования" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Исполнителя" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Платные_Исследования" msprop:Generator_RelationVarName="relationFK_Платные_Исследования_Сотрудники" msprop:Generator_UserRelationName="FK_Платные_Исследования_Сотрудники" msprop:Generator_ChildPropName="GetПлатные_ИсследованияRows" msprop:Generator_ParentPropName="СотрудникиRow" />
+      <msdata:Relationship name="FK_Транспортировка_Сотрудники" msdata:parent="Сотрудники" msdata:child="Транспортировка" msdata:parentkey="ID_Сотрудника" msdata:childkey="ID_Ответственного" msprop:Generator_UserParentTable="Сотрудники" msprop:Generator_UserChildTable="Транспортировка" msprop:Generator_RelationVarName="relationFK_Транспортировка_Сотрудники" msprop:Generator_ChildPropName="GetТранспортировкаRows" msprop:Generator_ParentPropName="СотрудникиRow" msprop:Generator_UserRelationName="FK_Транспортировка_Сотрудники" />
+      <msdata:Relationship name="FK_Транспортировка_Умершие" msdata:parent="Умершие" msdata:child="Транспортировка" msdata:parentkey="ID_Умершего" msdata:childkey="ID_Умершего" msprop:Generator_UserParentTable="Умершие" msprop:Generator_UserChildTable="Транспортировка" msprop:Generator_RelationVarName="relationFK_Транспортировка_Умершие" msprop:Generator_UserRelationName="FK_Транспортировка_Умершие" msprop:Generator_ChildPropName="GetТранспортировкаRows" msprop:Generator_ParentPropName="УмершиеRow" />
       <msdata:Relationship name="FK_Финансовые_Операции_Заявки" msdata:parent="Заявки_на_Платные_Услуги" msdata:child="Финансовые_Операции" msdata:parentkey="ID_Заявки" msdata:childkey="ID_Заявки" msprop:Generator_UserParentTable="Заявки_на_Платные_Услуги" msprop:Generator_UserChildTable="Финансовые_Операции" msprop:Generator_RelationVarName="relationFK_Финансовые_Операции_Заявки" msprop:Generator_ChildPropName="GetФинансовые_ОперацииRows" msprop:Generator_ParentPropName="Заявки_на_Платные_УслугиRow" msprop:Generator_UserRelationName="FK_Финансовые_Операции_Заявки" />
       <msdata:Relationship name="FK_Финансовые_Операции_Способ_Оплаты" msdata:parent="Способ_Оплаты" msdata:child="Финансовые_Операции" msdata:parentkey="ID_Способа" msdata:childkey="ID_Способа" msprop:Generator_UserParentTable="Способ_Оплаты" msprop:Generator_UserChildTable="Финансовые_Операции" msprop:Generator_RelationVarName="relationFK_Финансовые_Операции_Способ_Оплаты" msprop:Generator_ChildPropName="GetФинансовые_ОперацииRows" msprop:Generator_ParentPropName="Способ_ОплатыRow" msprop:Generator_UserRelationName="FK_Финансовые_Операции_Способ_Оплаты" />
     </xs:appinfo>

@@ -9,7 +9,7 @@ namespace Apllication4Course.Views
         public RegisterWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModels.RegisterViewModel(new Services.UserService(DatabaseContext.Instance));
+            DataContext = new ViewModels.RegisterViewModel(new Services.UserService());
         }
 
         private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)

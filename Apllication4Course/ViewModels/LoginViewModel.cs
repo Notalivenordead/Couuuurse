@@ -59,7 +59,7 @@ namespace Apllication4Course.ViewModels
 
         public LoginViewModel()
         {
-            _userService = new UserService(DatabaseContext.Instance);
+            _userService = new UserService();
             LoginCommand = new RelayCommand(LoginExecute);
             GoToRegisterCommand = new RelayCommand(GoToRegisterExecute);
             RefreshCaptchaCommand = new RelayCommand(GenerateCaptcha);

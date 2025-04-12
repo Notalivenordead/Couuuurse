@@ -14,16 +14,14 @@ namespace UnitTestProject
     [TestClass]
     public class RegisterViewModelTests : IDisposable
     {
-        private readonly DatabaseContext _context;
         private readonly UserService _userService;
         private readonly RegisterViewModel _viewModel;
 
         public RegisterViewModelTests()
         {
-            _context = DatabaseContext.Instance;
-            _userService = new UserService(_context);
+            _userService = new UserService();
             _viewModel = new RegisterViewModel(_userService);
-            _context.Database.BeginTransaction();
+            DatabaseContext.Instance.Database.BeginTransaction();
         }
         [TestMethod]
         public void CheckRegister_SuccessfulRegistration()
@@ -296,7 +294,7 @@ namespace UnitTestProject
             Assert.AreEqual(-3, res);
         }
 
-        public void Dispose() => _context.Database.CurrentTransaction?.Rollback();
+        public void Dispose() => DatabaseContext.Instance.Database.CurrentTransaction?.Rollback();
 
         private int ToReg(string login, string password, string lastname, string firstname, string position, string phone, string fathername,
             string email) => _viewModel.CheckRegister(login, password, lastname, firstname, position, phone, fathername, email);
