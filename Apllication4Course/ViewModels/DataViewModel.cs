@@ -98,77 +98,77 @@ namespace Apllication4Course.ViewModels
 
                 case "Deceased":
                     CurrentPageViewModel = new DeceasedViewModel();
-                    _mainFrame.Navigate(new DeceasedPage());
+                    _mainFrame.Navigate(new DeceasedPage { DataContext = CurrentPageViewModel });
                     break;
 
                 case "Employees":
                     CurrentPageViewModel = new EmployeeViewModel();
-                    _mainFrame.Navigate(new EmployeesPage());
+                    _mainFrame.Navigate(new EmployeesPage { DataContext = CurrentPageViewModel });
                     break;
 
                 case "StorageLocations":
                     CurrentPageViewModel = new StorageLocationViewModel();
-                    _mainFrame.Navigate(new StorageLocationsPage());
+                    _mainFrame.Navigate(new StorageLocationsPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "ComplaintLog":
                     CurrentPageViewModel = new ComplaintLogViewModel();
-                    _mainFrame.Navigate(new ComplaintLogPage());
+                    _mainFrame.Navigate(new ComplaintLogPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "FinancialOperation":
                     CurrentPageViewModel = new FinancialOperationViewModel();
-                    _mainFrame.Navigate(new FinancialOperationPage());
+                    _mainFrame.Navigate(new FinancialOperationPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "InventoryUsage":
                     CurrentPageViewModel = new InventoryUsageViewModel();
-                    _mainFrame.Navigate(new InventoryUsagePage());
+                    _mainFrame.Navigate(new InventoryUsagePage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "PaidResearch":
                     CurrentPageViewModel = new PaidResearchViewModel();
-                    _mainFrame.Navigate(new PaidResearchPage());
+                    _mainFrame.Navigate(new PaidResearchPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "Inventory":
                     CurrentPageViewModel = new InventoryViewModel();
-                    _mainFrame.Navigate(new InventoryPage());
+                    _mainFrame.Navigate(new InventoryPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "PaymentMethod":
                     CurrentPageViewModel = new PaymentMethodViewModel();
-                    _mainFrame.Navigate(new PaymentMethodPage());
+                    _mainFrame.Navigate(new PaymentMethodPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "Request":
                     CurrentPageViewModel = new RequestViewModel();
-                    _mainFrame.Navigate(new RequestPage());
+                    _mainFrame.Navigate(new RequestPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "Research":
                     CurrentPageViewModel = new ResearchViewModel();
-                    _mainFrame.Navigate(new ResearchPage());
+                    _mainFrame.Navigate(new ResearchPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "SampleUsage":
                     CurrentPageViewModel = new SampleUsageViewModel();
-                    _mainFrame.Navigate(new SampleUsagePage());
+                    _mainFrame.Navigate(new SampleUsagePage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "Sample":
                     CurrentPageViewModel = new SampleViewModel();
-                    _mainFrame.Navigate(new SamplePage());
+                    _mainFrame.Navigate(new SamplePage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "TemperatureLog":
                     CurrentPageViewModel = new TemperatureLogViewModel();
-                    _mainFrame.Navigate(new TemperatureLogPage());
+                    _mainFrame.Navigate(new TemperatureLogPage{ DataContext = CurrentPageViewModel });
                     break;
 
                 case "Transportation":
                     CurrentPageViewModel = new TransportationViewModel();
-                    _mainFrame.Navigate(new TransportationPage());
+                    _mainFrame.Navigate(new TransportationPage{ DataContext = CurrentPageViewModel });
                     break;
             }
         }

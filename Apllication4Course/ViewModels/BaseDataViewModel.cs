@@ -168,6 +168,7 @@ namespace Apllication4Course.ViewModels
                     }
                     _itemToDelete = null;
                     SelectedItem = null;
+                    ShowSuccessMessage("Выбранная запись была удалена.");
                 }
 
                 context.SaveChanges();

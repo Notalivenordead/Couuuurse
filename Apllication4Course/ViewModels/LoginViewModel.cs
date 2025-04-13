@@ -91,20 +91,8 @@ namespace Apllication4Course.ViewModels
                 case 1:
                     ErrorMessage = "Успешная авторизация!";
                     ShowSuccessMessage(ErrorMessage);
-                    bool fisrt_login = true;
-                    foreach (var window in Application.Current.Windows)
-                        if (window is MainWindow MainWindow)
-                        {
-                            MainWindow.Show();
-                            fisrt_login = false;
-                            break;
-                        }
-                    if (fisrt_login)
-                    {
-                        var mainWindow = new MainWindow();
-                        mainWindow.Show();
-                    }
-
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
                     CloseCurrentWindow();
                     break;
                 case 0:
