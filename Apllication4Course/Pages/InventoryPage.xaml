@@ -1,9 +1,9 @@
-﻿<Page x:Class="Apllication4Course.Pages.EmployeesPage"
+﻿<Page x:Class="Apllication4Course.Pages.InventoryPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="Сотрудники" Style="{DynamicResource BasePage}">
+      Title="Инвентарь" Style="{DynamicResource BasePage}">
     <Grid>
-        <DataGrid ItemsSource="{Binding Employees}"
+        <DataGrid ItemsSource="{Binding Inventory}"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   AutoGenerateColumns="True"
                   Style="{StaticResource MDataGrid}"/>

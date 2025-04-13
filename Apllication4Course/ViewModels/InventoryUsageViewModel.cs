@@ -1,20 +1,17 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using Apllication4Course.Models;
-using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class InventoryUsageViewModel : BaseViewModel
+    public class InventoryUsageViewModel : BaseDataViewModel<Использование_Инвентаря>
     {
-        public ObservableCollection<Использование_Инвентаря> InventoryUsages { get; set; }
-
+        public ObservableCollection<Использование_Инвентаря> InventoryUsages => Items;
         public InventoryUsageViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                InventoryUsages = new ObservableCollection<Использование_Инвентаря>(context.ИспользованиеИнвентаря.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

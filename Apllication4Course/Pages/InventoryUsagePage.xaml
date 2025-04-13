@@ -1,0 +1,19 @@
+﻿<Page x:Class="Apllication4Course.Pages.InventoryUsagePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Использование инвентаря" Style="{DynamicResource BasePage}">
+    <Grid>
+        <DataGrid ItemsSource="{Binding InventoryUsages}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource MDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Использования" Binding="{Binding ID_Использования}" />
+                <DataGridTextColumn Header="ID Исследования" Binding="{Binding ID_Исследования}" />
+                <DataGridTextColumn Header="ID Инвентаря" Binding="{Binding ID_Инвентаря}" />
+                <DataGridTextColumn Header="Количество Использовано" Binding="{Binding КоличествоИспользовано}" />
+                <DataGridTextColumn Header="ID Ответственного" Binding="{Binding ID_Ответственного}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

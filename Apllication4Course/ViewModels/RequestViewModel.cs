@@ -1,22 +1,19 @@
 ﻿using Apllication4Course.Models;
-using Apllication4Course.Services;
 using Apllication4Course.ViewModels;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 
-namespace YourApp.ViewModels
+namespace Apllication4Course.ViewModels
 {
-    public class RequestViewModel : BaseViewModel
+    public class RequestViewModel : BaseDataViewModel<Заявки_на_Платные_Услуги>
     {
-        public ObservableCollection<Заявки_на_Платные_Услуги> Requests { get; set; }
-
+        public ObservableCollection<Заявки_на_Платные_Услуги> Requests => Items;
         public RequestViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                Requests = new ObservableCollection<Заявки_на_Платные_Услуги>(context.ЗаявкиНаПлатныеУслуги.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

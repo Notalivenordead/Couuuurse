@@ -1,0 +1,19 @@
+﻿<Page x:Class="Apllication4Course.Pages.TemperatureLogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Журнал температуры" Style="{DynamicResource BasePage}">
+    <Grid>
+        <DataGrid ItemsSource="{Binding TemperatureLogs}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource MDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Записи" Binding="{Binding ID_Записи}" />
+                <DataGridTextColumn Header="ID Камеры" Binding="{Binding ID_Камеры}" />
+                <DataGridTextColumn Header="Дата измерения" Binding="{Binding Дата_Измерения, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Температура" Binding="{Binding Температура}" />
+                <DataGridTextColumn Header="ID Ответственного" Binding="{Binding ID_Ответственного}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

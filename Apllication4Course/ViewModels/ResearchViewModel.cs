@@ -1,20 +1,18 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using Apllication4Course.Models;
-using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class ResearchViewModel : BaseViewModel
+    public class ResearchViewModel : BaseDataViewModel<Исследования>
     {
-        public ObservableCollection<Исследования> Researches { get; set; }
+        public ObservableCollection<Исследования> Researches => Items;
 
         public ResearchViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                Researches = new ObservableCollection<Исследования>(context.Исследования.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

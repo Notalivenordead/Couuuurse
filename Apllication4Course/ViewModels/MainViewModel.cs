@@ -1,6 +1,5 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using Apllication4Course.Services;
 using Apllication4Course.Views;
 
 namespace Apllication4Course.ViewModels
@@ -20,9 +19,7 @@ namespace Apllication4Course.ViewModels
 
         private void ExecuteViewData()
         {
-            // Открыть окно просмотра данных
-            DataWindow dataWindow = new DataWindow();
-            dataWindow.Show();
+            App.Current.MainWindow.Show();
             CloseCurrentWindow();
         }
 

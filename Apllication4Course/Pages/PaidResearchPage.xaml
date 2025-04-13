@@ -1,0 +1,21 @@
+﻿<Page x:Class="Apllication4Course.Pages.PaidResearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Платные исследования" Style="{DynamicResource BasePage}">
+    <Grid>
+        <DataGrid ItemsSource="{Binding PaidResearches}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource MDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Платного Исследования" Binding="{Binding ID_Платного_Исследования}" />
+                <DataGridTextColumn Header="ID Заявки" Binding="{Binding ID_Заявки}" />
+                <DataGridTextColumn Header="Тип Исследования" Binding="{Binding Тип_Исследования}" />
+                <DataGridTextColumn Header="Дата Проведения" Binding="{Binding Дата_Проведения, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Описание" Binding="{Binding Описание, TargetNullValue=Не указано}" />
+                <DataGridTextColumn Header="Результаты" Binding="{Binding Результаты, TargetNullValue=Не указано}" />
+                <DataGridTextColumn Header="ID Исполнителя" Binding="{Binding ID_Исполнителя}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

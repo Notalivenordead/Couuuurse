@@ -2,13 +2,6 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Просмотр данных" Style="{DynamicResource DominatedWindow}">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <Grid Style="{StaticResource BaseGridStyle}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -58,23 +51,60 @@
                Grid.Row="1" Grid.ColumnSpan="3"/>
 
         <!-- StackPanel с навигационными кнопками (снизу) -->
-        <StackPanel Style="{StaticResource DWStackPanel}"
-                    Grid.Row="2" Grid.ColumnSpan="3">
-            <Button Style="{StaticResource NavigateServicesPage}" 
-                    Command="{Binding NavigateCommand}" 
-                    CommandParameter="Services"/>
-            <Button Style="{StaticResource NavigateStoragePage}" 
-                    Command="{Binding NavigateCommand}" 
-                    CommandParameter="Storage"/>
-            <Button Style="{StaticResource NavigateDeceasedPage}" 
-                    Command="{Binding NavigateCommand}" 
-                    CommandParameter="Deceased"/>
-            <Button Style="{StaticResource NavigateEmploymeesPage}" 
-                    Command="{Binding NavigateCommand}" 
-                    CommandParameter="Employees"/>
-            <Button Style="{StaticResource NavigateStorageLocationsPage}" 
-                    Command="{Binding NavigateCommand}" 
-                    CommandParameter="StorageLocations"/>
-        </StackPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Grid.Row="2" Grid.ColumnSpan="3">
+            <StackPanel Style="{StaticResource DWStackPanel}">
+                <Button Style="{StaticResource NavigateServicesPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Services"/>
+                <Button Style="{StaticResource NavigateStoragePage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Storage"/>
+                <Button Style="{StaticResource NavigateDeceasedPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Deceased"/>
+                <Button Style="{StaticResource NavigateEmploymeesPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Employees"/>
+                <Button Style="{StaticResource NavigateStorageLocationsPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="StorageLocations"/>
+                <Button Style="{StaticResource NavigateComplaintLogPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="ComplaintLog"/>
+                <Button Style="{StaticResource NavigateFinancialOperationPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="FinancialOperation"/>
+                <Button Style="{StaticResource NavigateInventoryUsagePage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="InventoryUsage"/>
+                <Button Style="{StaticResource NavigatePaidResearchPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="PaidResearch"/>
+                <Button Style="{StaticResource NavigateInventoryPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Inventory"/>
+                <Button Style="{StaticResource NavigatePaymentMethodPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="PaymentMethod"/>
+                <Button Style="{StaticResource NavigateResearchPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Research"/>
+                <Button Style="{StaticResource NavigateRequestPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Request"/>
+                <Button Style="{StaticResource NavigateSampleUsagePage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="SampleUsage"/>
+                <Button Style="{StaticResource NavigateSamplePage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Sample"/>
+                <Button Style="{StaticResource NavigateTemperatureLogPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="TemperatureLog"/>
+                <Button Style="{StaticResource NavigateTransportationPage}" 
+                        Command="{Binding NavigateCommand}" 
+                        CommandParameter="Transportation"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

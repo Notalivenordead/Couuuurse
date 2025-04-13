@@ -1,0 +1,21 @@
+﻿<Page x:Class="Apllication4Course.Pages.TransportationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Транспортировка" Style="{DynamicResource BasePage}">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Transportations}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  Style="{StaticResource MDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Транспортировки" Binding="{Binding ID_Транспортировки}" />
+                <DataGridTextColumn Header="ID Умершего" Binding="{Binding ID_Умершего}" />
+                <DataGridTextColumn Header="Тип перемещения" Binding="{Binding Тип_Перемещения}" />
+                <DataGridTextColumn Header="Дата и время" Binding="{Binding Дата_Время, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Место отправления" Binding="{Binding Место_Отправления}" />
+                <DataGridTextColumn Header="Место назначения" Binding="{Binding Место_Назначения}" />
+                <DataGridTextColumn Header="ID Ответственного" Binding="{Binding ID_Ответственного}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

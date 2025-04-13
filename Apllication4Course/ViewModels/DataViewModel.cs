@@ -72,7 +72,7 @@ namespace Apllication4Course.ViewModels
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            CloseCurrentWindow();
+            HideCurrentWindow();
         }
 
         private void ExecuteLogout()
@@ -110,15 +110,75 @@ namespace Apllication4Course.ViewModels
                     CurrentPageViewModel = new StorageLocationViewModel();
                     _mainFrame.Navigate(new StorageLocationsPage());
                     break;
+
+                case "ComplaintLog":
+                    CurrentPageViewModel = new ComplaintLogViewModel();
+                    _mainFrame.Navigate(new ComplaintLogPage());
+                    break;
+
+                case "FinancialOperation":
+                    CurrentPageViewModel = new FinancialOperationViewModel();
+                    _mainFrame.Navigate(new FinancialOperationPage());
+                    break;
+
+                case "InventoryUsage":
+                    CurrentPageViewModel = new InventoryUsageViewModel();
+                    _mainFrame.Navigate(new InventoryUsagePage());
+                    break;
+
+                case "PaidResearch":
+                    CurrentPageViewModel = new PaidResearchViewModel();
+                    _mainFrame.Navigate(new PaidResearchPage());
+                    break;
+
+                case "Inventory":
+                    CurrentPageViewModel = new InventoryViewModel();
+                    _mainFrame.Navigate(new InventoryPage());
+                    break;
+
+                case "PaymentMethod":
+                    CurrentPageViewModel = new PaymentMethodViewModel();
+                    _mainFrame.Navigate(new PaymentMethodPage());
+                    break;
+
+                case "Request":
+                    CurrentPageViewModel = new RequestViewModel();
+                    _mainFrame.Navigate(new RequestPage());
+                    break;
+
+                case "Research":
+                    CurrentPageViewModel = new ResearchViewModel();
+                    _mainFrame.Navigate(new ResearchPage());
+                    break;
+
+                case "SampleUsage":
+                    CurrentPageViewModel = new SampleUsageViewModel();
+                    _mainFrame.Navigate(new SampleUsagePage());
+                    break;
+
+                case "Sample":
+                    CurrentPageViewModel = new SampleViewModel();
+                    _mainFrame.Navigate(new SamplePage());
+                    break;
+
+                case "TemperatureLog":
+                    CurrentPageViewModel = new TemperatureLogViewModel();
+                    _mainFrame.Navigate(new TemperatureLogPage());
+                    break;
+
+                case "Transportation":
+                    CurrentPageViewModel = new TransportationViewModel();
+                    _mainFrame.Navigate(new TransportationPage());
+                    break;
             }
         }
 
-        private void CloseCurrentWindow()
+        private void HideCurrentWindow()
         {
             foreach (var window in Application.Current.Windows)
                 if (window is DataWindow dataWindow)
                 {
-                    dataWindow.Close();
+                    dataWindow.Hide();
                     break;
                 }
         }

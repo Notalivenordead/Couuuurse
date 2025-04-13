@@ -1,21 +1,21 @@
-﻿using System.Collections.ObjectModel;
-using System.Linq;
-using Apllication4Course.Services;
-using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
+﻿using Apllication4Course.Services;
+using Apllication4Course.Views;
 using System;
-using System.Diagnostics;
-using System.Data.Entity.Infrastructure;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Diagnostics;
+using System.Linq;
+using System.Windows.Input;
 
 namespace Apllication4Course.ViewModels
 {
     public class BaseDataViewModel<T> : BaseViewModel, IBaseDataViewModel where T : class, new()
     {
         protected ObservableCollection<T> _items;
-        private T _itemToEdit;
-        private T _itemToDelete;
-        private T _selectedItem;
+        protected T _itemToEdit;
+        protected T _itemToDelete;
+        protected T _selectedItem;
 
         public ObservableCollection<T> Items
         {
@@ -66,6 +66,7 @@ namespace Apllication4Course.ViewModels
 
         protected virtual void AddNewItem()
         {
+            Debug.WriteLine("Создание новой записи");
             var newItem = new T();
             Items.Add(newItem);
             SelectedItem = newItem;
@@ -83,6 +84,8 @@ namespace Apllication4Course.ViewModels
 
         protected virtual void EditSelectedItem()
         {
+            Debug.WriteLine("Редактирование выбраной записи");
+
             if (SelectedItem == null) return;
 
             _itemToEdit = SelectedItem;
@@ -98,6 +101,8 @@ namespace Apllication4Course.ViewModels
 
         protected virtual void DeleteSelectedItem()
         {
+            Debug.WriteLine("Удаление выбраной записи");
+
             if (SelectedItem == null) return;
 
             _itemToDelete = SelectedItem;
@@ -117,18 +122,24 @@ namespace Apllication4Course.ViewModels
             try
             {
                 if (_itemToEdit == null && _itemToDelete == null && SelectedItem != null)
+                {
                     context.Set<T>().Add(SelectedItem);
+                    Items.Add(SelectedItem);
+                    SelectedItem = null;
+                    ShowSuccessMessage("Добавлен новая запись");
+                }
 
                 if (_isModified && _itemToEdit != null)
                 {
                     var entry = context.Entry(_itemToEdit);
+
                     if (entry.State == EntityState.Detached)
-                    {
                         context.Set<T>().Attach(_itemToEdit);
-                    }
                     entry.State = EntityState.Modified;
                     _isModified = false;
                     _itemToEdit = null;
+                    SelectedItem = null;
+                    ShowSuccessMessage("Выбранная запись была отредактирована.");
                 }
 
 
@@ -156,9 +167,16 @@ namespace Apllication4Course.ViewModels
                         Items.Remove(_itemToDelete);
                     }
                     _itemToDelete = null;
+                    SelectedItem = null;
                 }
 
                 context.SaveChanges();
+
+                var mainWindow = App.Current.MainWindow;
+                if (mainWindow != null && mainWindow.DataContext is DataViewModel dataViewModel)
+                    dataViewModel.IsConfirmButtonVisible = false;
+                else
+                    Debug.WriteLine("MainWindow или DataContext не инициализированы.");
             }
             catch (DbUpdateConcurrencyException ex)
             {
@@ -178,7 +196,7 @@ namespace Apllication4Course.ViewModels
             }
         }
 
-        private object[] GetEntityKey(T entity)
+        protected object[] GetEntityKey(T entity)
         {
             var _context = DatabaseContext.Instance;
             var objectContext = ((IObjectContextAdapter)_context).ObjectContext;

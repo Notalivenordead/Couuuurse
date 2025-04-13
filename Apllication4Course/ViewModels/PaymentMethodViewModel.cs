@@ -1,20 +1,17 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using Apllication4Course.Models;
-using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class PaymentMethodViewModel : BaseViewModel
+    public class PaymentMethodViewModel : BaseDataViewModel<Способ_Оплаты>
     {
-        public ObservableCollection<Способ_Оплаты> PaymentMethods { get; set; }
-
+        public ObservableCollection<Способ_Оплаты> PaymentMethods => Items;
         public PaymentMethodViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                PaymentMethods = new ObservableCollection<Способ_Оплаты>(context.СпособОплаты.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

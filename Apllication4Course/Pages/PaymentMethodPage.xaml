@@ -1,9 +1,9 @@
-﻿<Page x:Class="Apllication4Course.Pages.EmployeesPage"
+﻿<Page x:Class="Apllication4Course.Pages.PaymentMethodPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      Title="Сотрудники" Style="{DynamicResource BasePage}">
+      Title="Способ оплаты" Style="{DynamicResource BasePage}">
     <Grid>
-        <DataGrid ItemsSource="{Binding Employees}"
+        <DataGrid ItemsSource="{Binding PaymentMethods}"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   AutoGenerateColumns="True"
                   Style="{StaticResource MDataGrid}"/>

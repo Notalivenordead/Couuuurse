@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Windows;
 using Apllication4Course.Models;
 
 namespace Apllication4Course.Services
@@ -10,7 +9,7 @@ namespace Apllication4Course.Services
     public class UserService
     {
 
-        // Хэширование пароля (Для автотестов сменил на public)
+        // Хэширование пароля
         public string HashPassword(string password)
         {
             using (var sha256 = SHA256.Create())

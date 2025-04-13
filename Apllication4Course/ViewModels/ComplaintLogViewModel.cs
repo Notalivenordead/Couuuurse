@@ -1,20 +1,18 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using Apllication4Course.Models;
-using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class ComplaintLogViewModel : BaseViewModel
+    public class ComplaintLogViewModel : BaseDataViewModel<Журнал_Обращений>
     {
-        public ObservableCollection<Журнал_Обращений> ComplaintLogs { get; set; }
+        public ObservableCollection<Журнал_Обращений> ComplaintLogs => Items;
 
         public ComplaintLogViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                ComplaintLogs = new ObservableCollection<Журнал_Обращений>(context.ЖурналОбращений.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

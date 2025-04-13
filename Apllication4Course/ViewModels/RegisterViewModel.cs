@@ -1,13 +1,9 @@
 ﻿using System.Text.RegularExpressions;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
 using Apllication4Course.Services;
 using System;
 using System.Collections.Generic;
-using System.Windows;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Security.Policy;
 
 namespace Apllication4Course.ViewModels
 {

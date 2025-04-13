@@ -2,14 +2,10 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Умершие" Style="{DynamicResource BasePage}">
-    <Page.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Styles/Styles.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Page.Resources>
     <Grid>
-        <DataGrid ItemsSource="{Binding Deceased}" AutoGenerateColumns="True" Style="{StaticResource MDataGrid}"/>
+        <DataGrid ItemsSource="{Binding Deceased}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                  AutoGenerateColumns="True"
+                  Style="{StaticResource MDataGrid}"/>
     </Grid>
 </Page>

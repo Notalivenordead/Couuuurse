@@ -1,20 +1,18 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using Apllication4Course.Models;
-using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class TransportationViewModel : BaseViewModel
+    public class TransportationViewModel : BaseDataViewModel<Транспортировка>
     {
-        public ObservableCollection<Транспортировка> Transportations { get; set; }
+        public ObservableCollection<Транспортировка> Transportations => Items;
 
         public TransportationViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                Transportations = new ObservableCollection<Транспортировка>(context.Транспортировка.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

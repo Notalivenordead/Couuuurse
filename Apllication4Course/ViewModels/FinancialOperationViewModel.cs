@@ -1,20 +1,17 @@
 ﻿using System.Collections.ObjectModel;
-using System.Linq;
 using Apllication4Course.Models;
-using Apllication4Course.Services;
 
 namespace Apllication4Course.ViewModels
 {
-    public class FinancialOperationViewModel : BaseViewModel
+    public class FinancialOperationViewModel : BaseDataViewModel<Финансовые_Операции>
     {
-        public ObservableCollection<Финансовые_Операции> FinancialOperations { get; set; }
-
+        public ObservableCollection<Финансовые_Операции> FinancialOperations => Items;
         public FinancialOperationViewModel()
         {
-            using (var context = DatabaseContext.Instance)
-            {
-                FinancialOperations = new ObservableCollection<Финансовые_Операции>(context.ФинансовыеОперации.ToList());
-            }
+            AddCommand = new RelayCommand(AddNewItem);
+            EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
+            DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
+            SaveCommand = new RelayCommand(SaveChanges);
         }
     }
 }

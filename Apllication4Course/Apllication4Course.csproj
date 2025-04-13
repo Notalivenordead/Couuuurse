@@ -105,11 +105,41 @@
     <Compile Include="Models\Сотрудники.cs" />
     <Compile Include="Models\Инвентарь.cs" />
     <Compile Include="Models\Финансовые_Операции.cs" />
+    <Compile Include="Pages\ComplaintLogPage.xaml.cs">
+      <DependentUpon>ComplaintLogPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\DeceasedPage.xaml.cs">
       <DependentUpon>DeceasedPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\EmployeesPage.xaml.cs">
       <DependentUpon>EmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FinancialOperationPage.xaml.cs">
+      <DependentUpon>FinancialOperationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InventoryPage.xaml.cs">
+      <DependentUpon>InventoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\InventoryUsagePage.xaml.cs">
+      <DependentUpon>InventoryUsagePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PaidResearchPage.xaml.cs">
+      <DependentUpon>PaidResearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PaymentMethodPage.xaml.cs">
+      <DependentUpon>PaymentMethodPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RequestPage.xaml.cs">
+      <DependentUpon>RequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ResearchPage.xaml.cs">
+      <DependentUpon>ResearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SamplePage.xaml.cs">
+      <DependentUpon>SamplePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SampleUsagePage.xaml.cs">
+      <DependentUpon>SampleUsagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ServicesPage.xaml.cs">
       <DependentUpon>ServicesPage.xaml</DependentUpon>
@@ -119,6 +149,12 @@
     </Compile>
     <Compile Include="Pages\StoragePage.xaml.cs">
       <DependentUpon>StoragePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TemperatureLogPage.xaml.cs">
+      <DependentUpon>TemperatureLogPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TransportationPage.xaml.cs">
+      <DependentUpon>TransportationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\Convertor.cs" />
     <Compile Include="Services\DatabaseContext.cs" />
@@ -157,6 +193,10 @@
     <Compile Include="Views\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\ComplaintLogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\DeceasedPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -164,6 +204,42 @@
     <Page Include="Pages\EmployeesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\FinancialOperationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InventoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\InventoryUsagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PaidResearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PaymentMethodPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ResearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SamplePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SampleUsagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ServicesPage.xaml">
       <SubType>Designer</SubType>
@@ -174,6 +250,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\StoragePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TemperatureLogPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TransportationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

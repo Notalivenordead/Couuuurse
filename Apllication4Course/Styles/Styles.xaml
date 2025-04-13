@@ -561,7 +561,55 @@
     <Style x:Key="NavigateServicesPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
         <Setter Property="Content" Value="Услуги"/>
     </Style>
-    
+
+    <Style x:Key="NavigateComplaintLogPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Журнал Обращений"/>
+    </Style>
+
+    <Style x:Key="NavigateFinancialOperationPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Финансовые операции"/>
+    </Style>
+
+    <Style x:Key="NavigateInventoryUsagePage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Использование инвентаря"/>
+    </Style>
+
+    <Style x:Key="NavigatePaidResearchPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Платные исследования"/>
+    </Style>
+
+    <Style x:Key="NavigateInventoryPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Инвентарь"/>
+    </Style>
+
+    <Style x:Key="NavigatePaymentMethodPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Способ оплаты"/>
+    </Style>
+
+    <Style x:Key="NavigateRequestPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Заявки на платные услуги"/>
+    </Style>
+
+    <Style x:Key="NavigateResearchPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Исследования"/>
+    </Style>
+
+    <Style x:Key="NavigateSampleUsagePage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Использование образцов"/>
+    </Style>
+
+    <Style x:Key="NavigateSamplePage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Образцы"/>
+    </Style>
+
+    <Style x:Key="NavigateTemperatureLogPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Журнал температуры"/>
+    </Style>
+
+    <Style x:Key="NavigateTransportationPage" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
+        <Setter Property="Content" Value="Транспортировка"/>
+    </Style>
+
     <Style x:Key="NavigateToDataView" TargetType="Button" BasedOn="{StaticResource NavigationButtonStyle}">
         <Setter Property="Content" Value="Просмотр данных"/>
     </Style>
