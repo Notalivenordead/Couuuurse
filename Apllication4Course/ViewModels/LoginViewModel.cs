@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Input;
-using GalaSoft.MvvmLight.Command;
 using Apllication4Course.Services;
 using Apllication4Course.Views;
 using System.Linq;

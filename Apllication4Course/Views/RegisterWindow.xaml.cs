@@ -1,5 +1,4 @@
-﻿using Apllication4Course.Services;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
 namespace Apllication4Course.Views

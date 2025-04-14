@@ -1,5 +1,4 @@
 ﻿using Apllication4Course.Services;
-using Apllication4Course.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
@@ -124,7 +123,6 @@ namespace Apllication4Course.ViewModels
                 if (_itemToEdit == null && _itemToDelete == null && SelectedItem != null)
                 {
                     context.Set<T>().Add(SelectedItem);
-                    Items.Add(SelectedItem);
                     SelectedItem = null;
                     ShowSuccessMessage("Добавлен новая запись");
                 }
