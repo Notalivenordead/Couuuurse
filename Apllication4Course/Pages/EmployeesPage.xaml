@@ -3,7 +3,36 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       Title="Сотрудники" Style="{DynamicResource BasePage}">
     <Grid>
-        <DataGrid ItemsSource="{Binding Employees}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель поиска и сортировки -->
+        <StackPanel Grid.Row="0" Style="{StaticResource DWStackPanel}">
+            <!-- Поле для поиска по значению-->
+            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource FiltringStyle}"/>
+
+            <!-- Поле для выбора атрибута-->
+            <ComboBox ItemsSource="{Binding SortProperties}" 
+                      SelectedItem="{Binding SelectedSortProperty}"
+                      Style ="{StaticResource DWComboBoxStyle}"/>
+
+            <!-- Кнопка для фильтрации по возрастнаию-->
+            <Button Command="{Binding SortAscendingCommand}"
+                    Style="{StaticResource FilterAscButtonStyle}"/>
+
+            <!-- Кнопка для фильтрации по убыванию-->
+            <Button  Command="{Binding SortDescendingCommand}"
+                    Style="{StaticResource FilterDescButtonStyle}"/>
+
+            <!-- Кнопка для применения фильтров -->
+            <Button  Command="{Binding ApplyFilterCommand}"
+                     Style="{StaticResource ApplyFilterButtonStyle}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Employees}"
                   SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                   AutoGenerateColumns="True"
                   Style="{StaticResource MDataGrid}"/>

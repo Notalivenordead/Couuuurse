@@ -1,9 +1,13 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System;
+using System.Collections.ObjectModel;
+using System.Linq.Expressions;
 using Apllication4Course.Models;
+using System.Globalization;
 
 namespace Apllication4Course.ViewModels
 {
-    public class ResearchViewModel : BaseDataViewModel<Исследования>
+    public class ResearchViewModel : SearchSortViewModel<Исследования>
     {
         public ObservableCollection<Исследования> Researches => Items;
 
@@ -13,6 +17,48 @@ namespace Apllication4Course.ViewModels
             EditCommand = new RelayCommand(EditSelectedItem, () => IsEditEnabled);
             DeleteCommand = new RelayCommand(DeleteSelectedItem, () => IsDeleteEnabled);
             SaveCommand = new RelayCommand(SaveChanges);
+        }
+
+        protected override Dictionary<string, Expression<Func<Исследования, object>>> CreateSortProperties()
+        {
+            return new Dictionary<string, Expression<Func<Исследования, object>>>
+            {
+                ["Тип исследования"] = x => x.Тип_Исследования,
+                ["Дата проведения"] = x => x.Дата_Проведения,
+                ["Результаты"] = x => x.Результаты
+            };
+        }
+
+        protected override bool FilterPredicate(Исследования item)
+        {
+            if (string.IsNullOrWhiteSpace(SearchText))
+                return true;
+
+
+            // Поиск по дате (поддержка разных форматов)
+            if (item.Дата_Проведения != null)
+            {
+                // Проверяем все компоненты даты/времени отдельно
+                if (item.Дата_Проведения.Day.ToString().Contains(SearchText) ||
+                    item.Дата_Проведения.Month.ToString().Contains(SearchText) ||
+                    item.Дата_Проведения.Year.ToString().Contains(SearchText) ||
+                    item.Дата_Проведения.Hour.ToString().Contains(SearchText) ||
+                    item.Дата_Проведения.Minute.ToString().Contains(SearchText) ||
+                    item.Дата_Проведения.Second.ToString().Contains(SearchText))
+                {
+                    return true;
+                }
+
+                if (item.Дата_Проведения.ToString("dd.MM.yyyy HH:mm:ss").Contains(SearchText) ||
+                    item.Дата_Проведения.ToString("yyyy-MM-dd HH:mm:ss").Contains(SearchText))
+                {
+                    return true;
+                }
+            }
+
+            // Ищем по основным полям (регистронезависимо)
+            return (item.Результаты != null && item.Результаты.IndexOf(SearchText, StringComparison.OrdinalIgnoreCase) >= 0) ||
+                   (item.Тип_Исследования != null && item.Тип_Исследования.IndexOf(SearchText, StringComparison.OrdinalIgnoreCase) >= 0);
         }
     }
 }
