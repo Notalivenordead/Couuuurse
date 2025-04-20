@@ -130,6 +130,16 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#F8F32B"/>
+                <Setter Property="Foreground" Value="#1E1E1E"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#DAA520"/>
+                <Setter Property="Foreground" Value="#1E1E1E"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <!-- Базовый стиль для ToggleButton -->
@@ -163,11 +173,6 @@
         <Setter Property="MinWidth" Value="150"/>
         <Setter Property="MaxWidth" Value="500"/>
         <Setter Property="Height" Value="30"/>
-        <Setter Property="ToolTip">
-            <Setter.Value>
-                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Выберите должность"/>
-            </Setter.Value>
-        </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
@@ -304,16 +309,6 @@
                 <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Нажмите, чтобы обновить капчу"/>
             </Setter.Value>
         </Setter>
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#F8F32B"/>
-                <Setter Property="Foreground" Value="#1E1E1E"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Background" Value="#DAA520"/>
-                <Setter Property="Foreground" Value="#1E1E1E"/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
     
     <!-- Стиль для поля логина -->
@@ -460,10 +455,16 @@
 
 
     <!-- Стиль для ComboBox R-->
-    <Style x:Key="RegisterComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource BaseComboBoxStyle}"/>
+    <Style x:Key="RegisterComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource BaseComboBoxStyle}">
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Выберите должность"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 
-    <!-- Стиль для Button R-->
+        <!-- Стиль для Button R-->
     <Style x:Key="RegisterButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}"/>
 
 
@@ -533,7 +534,43 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+
+    <!-- Стиль для кнопки применения фильтрации -->
+    <Style x:Key="ApplyFilterButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Content" Value="Применить"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Нажмите для фильтрации данных"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
     
+    <!-- Кнопка направления фильтрации ASС-->
+    <Style x:Key="FilterAscButtonStyle" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Content" Value="↑"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Сортировать по возрастанию"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Кнопка направления фильтрации DESC-->
+    <Style x:Key="FilterDescButtonStyle" TargetType="Button" BasedOn="{StaticResource FilterAscButtonStyle}">
+        <Setter Property="Content" Value="↓"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Сортировать по убыванию"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="ToAdd" TargetType="Button" BasedOn="{StaticResource BaseButtonStyle}">
         <Setter Property="Content" Value="Создать"/>
     </Style>
@@ -630,6 +667,27 @@
         <Setter Property="Content" Value="Места в камерах"/>
     </Style>
     <!--Другие элементы-->
+    <!-- Стиль для ввода текста для фильтрации -->
+    <Style x:Key="FiltringStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Поле ввода для поиска"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Стиль для ComboBox DW-->
+    <Style x:Key="DWComboBoxStyle" TargetType="ComboBox" BasedOn="{StaticResource BaseComboBoxStyle}">
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="ToolTip">
+            <Setter.Value>
+                <ToolTip Style="{StaticResource BaseToolTipStyle}" Content="Выберите атрибут для фильтрации"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <!-- Доп окно (возможно для использования)-->
     <Style x:Key="DominatedWindow" TargetType="Window">
         <Setter Property="Background" Value="#000000"/>
@@ -639,24 +697,6 @@
         <Setter Property="Width" Value="1920"/>
         <Setter Property="Height" Value="1080"/>
         <Setter Property="WindowState" Value="Maximized"/>
-    </Style>
-
-    <!-- Стиль для кнопок в диалоговых окнах подтверждения ("Да")  !!!(Удалить, если не буду менять базовы MB на своё окно)-->
-    <Style x:Key="ConfirmButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#FF00FF00"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="12"/>
-        <Setter Property="Padding" Value="8"/>
-        <Setter Property="HorizontalAlignment" Value="Right"/>
-    </Style>
-
-    <!-- Стиль для кнопок в диалоговых окнах подтверждения ("Нет") !!!(Удалить, если не буду менять базовы MB на своё окно)-->
-    <Style x:Key="CancelButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="#FFFF0000"/>
-        <Setter Property="Foreground" Value="White"/>
-        <Setter Property="FontSize" Value="12"/>
-        <Setter Property="Padding" Value="8"/>
-        <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
 
     <!-- DataGrid -->
