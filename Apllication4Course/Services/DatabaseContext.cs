@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using Apllication4Course.Models.Reports;
+using System.Data.Entity;
 
 namespace Apllication4Course.Services
 {
@@ -26,6 +27,13 @@ namespace Apllication4Course.Services
                 }
             }
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // Настройка представлений как таблиц
+            modelBuilder.Entity<FinancialOperationReport>().ToTable("Мониторинг_Финансовых_Операций").HasKey(x => x.ID_Операции);
+            modelBuilder.Entity<ResearchReport>().ToTable("Отчет_Проведенные_Исследования").HasKey(x => x.ID_Исследования);
+            modelBuilder.Entity<DeceasedMovementReport>().ToTable("Статистика_Движения_Умерших").HasKey(x => x.ID_Умершего);
+        }
 
         public DbSet<Models.Сотрудники> Сотрудники { get; set; }
         public DbSet<Models.Услуги> Услуги { get; set; }
@@ -44,5 +52,8 @@ namespace Apllication4Course.Services
         public DbSet<Models.Транспортировка> Транспортировка { get; set; }
         public DbSet<Models.Способ_Оплаты> СпособОплаты { get; set; }
         public DbSet<Models.Финансовые_Операции> ФинансовыеОперации { get; set; }
+        public DbSet<FinancialOperationReport> FinancialOperations { get; set; }
+        public DbSet<ResearchReport> Researches { get; set; }
+        public DbSet<DeceasedMovementReport> DeceasedMovements { get; set; }
     }
 }

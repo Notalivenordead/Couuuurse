@@ -3,7 +3,6 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using Apllication4Course.Models;
-using System.Globalization;
 
 namespace Apllication4Course.ViewModels
 {

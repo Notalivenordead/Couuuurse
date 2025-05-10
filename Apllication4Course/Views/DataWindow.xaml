@@ -64,7 +64,8 @@
                         CommandParameter="Deceased"/>
                 <Button Style="{StaticResource NavigateEmploymeesPage}" 
                         Command="{Binding NavigateCommand}" 
-                        CommandParameter="Employees"/>
+                        CommandParameter="Employees"
+                        Visibility="{Binding CurrentUserRole, Converter={StaticResource RoleToVisibilityConverter}, ConverterParameter=админ}"/>
                 <Button Style="{StaticResource NavigateStorageLocationsPage}" 
                         Command="{Binding NavigateCommand}" 
                         CommandParameter="StorageLocations"/>
@@ -73,7 +74,8 @@
                         CommandParameter="ComplaintLog"/>
                 <Button Style="{StaticResource NavigateFinancialOperationPage}" 
                         Command="{Binding NavigateCommand}" 
-                        CommandParameter="FinancialOperation"/>
+                        CommandParameter="FinancialOperation"
+                        Visibility="{Binding CurrentUserRole, Converter={StaticResource RoleToVisibilityConverter}, ConverterParameter=админ}"/>
                 <Button Style="{StaticResource NavigateInventoryUsagePage}" 
                         Command="{Binding NavigateCommand}" 
                         CommandParameter="InventoryUsage"/>
@@ -85,7 +87,8 @@
                         CommandParameter="Inventory"/>
                 <Button Style="{StaticResource NavigatePaymentMethodPage}" 
                         Command="{Binding NavigateCommand}" 
-                        CommandParameter="PaymentMethod"/>
+                        CommandParameter="PaymentMethod"
+                        Visibility="{Binding CurrentUserRole, Converter={StaticResource RoleToVisibilityConverter}, ConverterParameter=админ}"/>
                 <Button Style="{StaticResource NavigateResearchPage}" 
                         Command="{Binding NavigateCommand}" 
                         CommandParameter="Research"/>
@@ -104,6 +107,18 @@
                 <Button Style="{StaticResource NavigateTransportationPage}" 
                         Command="{Binding NavigateCommand}" 
                         CommandParameter="Transportation"/>
+                <Button Style="{StaticResource FinantialOperationReportPage}"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="FinancialOperationReport"
+                        Visibility="{Binding CurrentUserRole, Converter={StaticResource RoleToVisibilityConverter}, ConverterParameter=админ}"/>
+                <Button Style="{StaticResource DeceacedMovementReportPage}"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="DeceasedMovements"
+                        Visibility="{Binding CurrentUserRole, Converter={StaticResource RoleToVisibilityConverter}, ConverterParameter=админ}"/>
+                <Button Style="{StaticResource ResearchReportPage}"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="ResearchReportPage"
+                        Visibility="{Binding CurrentUserRole, Converter={StaticResource RoleToVisibilityConverter}, ConverterParameter=админ}"/>
             </StackPanel>
         </ScrollViewer>
     </Grid>

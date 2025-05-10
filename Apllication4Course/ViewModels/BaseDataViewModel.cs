@@ -124,7 +124,7 @@ namespace Apllication4Course.ViewModels
                 {
                     context.Set<T>().Add(SelectedItem);
                     SelectedItem = null;
-                    ShowSuccessMessage("Добавлен новая запись");
+                    ShowSuccessMessage("Добавлена новая запись");
                 }
 
                 if (_isModified && _itemToEdit != null)

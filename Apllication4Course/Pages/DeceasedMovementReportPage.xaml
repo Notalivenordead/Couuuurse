@@ -1,0 +1,54 @@
+﻿<Page x:Class="Apllication4Course.Pages.DeceasedMovementReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Статистика движения умерших" Style="{DynamicResource BasePage}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Style="{StaticResource DWStackPanel}">
+            <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource FiltringStyle}"/>
+
+            <ComboBox ItemsSource="{Binding SortProperties}" 
+                      SelectedItem="{Binding SelectedSortProperty}"
+                      Style="{StaticResource DWComboBoxStyle}"/>
+
+            <Button Command="{Binding SortAscendingCommand}"
+                    Style="{StaticResource FilterAscButtonStyle}"/>
+
+            <Button Command="{Binding SortDescendingCommand}"
+                    Style="{StaticResource FilterDescButtonStyle}"/>
+
+            <Button Command="{Binding ApplyFilterCommand}"
+                    Style="{StaticResource ApplyFilterButtonStyle}"/>
+
+            <!-- Кнопки экспорта -->
+            <Button Command="{Binding ExportToExcelCommand}"
+                    Style="{StaticResource ExportToExcelButtonStyle}"/>
+
+            <Button Command="{Binding ExportToWordCommand}"
+                    Style="{StaticResource ExportToWordButtonStyle}"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" ItemsSource="{Binding DeceasedMovementReports}" 
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay}" 
+                  AutoGenerateColumns="False" 
+                  Style="{StaticResource MDataGrid}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Умершего" Binding="{Binding ID_Умершего}" />
+                <DataGridTextColumn Header="ФИО" Binding="{Binding ФИО}" />
+                <DataGridTextColumn Header="Дата смерти" Binding="{Binding Дата_Смерти, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Место смерти" Binding="{Binding Место_Смерти}" />
+                <DataGridTextColumn Header="Причина смерти" Binding="{Binding Причина_Смерти}" />
+                <DataGridTextColumn Header="Тип перемещения" Binding="{Binding Тип_Перемещения}" />
+                <DataGridTextColumn Header="Дата перемещения" Binding="{Binding Дата_Перемещения, StringFormat=\{0:dd.MM.yyyy HH:mm:ss\}}" />
+                <DataGridTextColumn Header="Место отправления" Binding="{Binding Место_Отправления}" />
+                <DataGridTextColumn Header="Место назначения" Binding="{Binding Место_Назначения}" />
+                <DataGridTextColumn Header="ФИО ответственного" Binding="{Binding ФИО_Ответственного}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

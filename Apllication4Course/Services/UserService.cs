@@ -9,6 +9,20 @@ namespace Apllication4Course.Services
     public class UserService
     {
 
+        private static string _currentUserRole;
+        public static string CurrentUserRole
+        {
+            get => _currentUserRole;
+            set
+            {
+                if (_currentUserRole != value)
+                {
+                    _currentUserRole = value;
+                    OnRoleChanged?.Invoke(value);
+                }
+            }
+        }
+
         // Хэширование пароля
         public string HashPassword(string password)
         {
@@ -20,7 +34,9 @@ namespace Apllication4Course.Services
             }
         }
 
-        // Проверка логина и пароля
+        public static event Action<string> OnRoleChanged;
+
+        // Авторизация и аутентификация
         public bool Authenticate(string login, string password)
         {
             var user = DatabaseContext.Instance.Сотрудники.FirstOrDefault(u => u.Логин.Equals(login, StringComparison.OrdinalIgnoreCase));
@@ -33,6 +49,7 @@ namespace Apllication4Course.Services
 
             if (user.ПарольHash == hashedPassword)
             {
+                CurrentUserRole = MapRole(user.Должность);
                 Console.WriteLine("Пароль совпадает.");
                 return true;
             }
@@ -57,6 +74,22 @@ namespace Apllication4Course.Services
             DatabaseContext.Instance.SaveChanges();
             Console.WriteLine($"Пользователь {user.Логин} успешно зарегистрирован.");
             return true;
+        }
+
+        private string MapRole(string dbRole)
+        {
+            // Маппинг ролей из БД в "работник" или "админ"
+            switch (dbRole)
+            {
+                case "Лаборант":
+                case "Патологоанатом":
+                    return "работник";
+                case "Администратор":
+                case "Руководство":
+                    return "админ";
+                default:
+                    throw new ArgumentException("Неизвестная роль");
+            }
         }
     }
 }

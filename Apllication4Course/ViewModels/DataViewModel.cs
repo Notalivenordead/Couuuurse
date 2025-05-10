@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using Apllication4Course.Pages;
+using Apllication4Course.Services;
 using Apllication4Course.Views;
 using GalaSoft.MvvmLight.Command;
 
@@ -18,6 +19,21 @@ namespace Apllication4Course.ViewModels
         private bool _isEditButtonVisible = true;
         private bool _isDeleteButtonVisible = true;
         private bool _isConfirmButtonVisible = false;
+
+        private string _currentUserRole;
+
+        public string CurrentUserRole
+        {
+            get => _currentUserRole;
+            set
+            {
+                if (_currentUserRole != value)
+                {
+                    _currentUserRole = value;
+                    OnPropertyChanged(nameof(CurrentUserRole));
+                }
+            }
+        }
 
         public bool IsAddButtonVisible
         {
@@ -66,6 +82,15 @@ namespace Apllication4Course.ViewModels
             GoToMainCommand = new RelayCommand(ExecuteGoToMain);
             NavigateCommand = new RelayCommand<string>(ExecuteNavigate);
             LogoutCommand = new RelayCommand(ExecuteLogout);
+            UserService.OnRoleChanged += UpdateUserRoleFromService;
+
+            // Инициализация роли из сервиса
+            _currentUserRole = UserService.CurrentUserRole;
+        }
+
+        private void UpdateUserRoleFromService(string newRole)
+        {
+            CurrentUserRole = newRole;
         }
 
         private void ExecuteGoToMain()
@@ -169,6 +194,21 @@ namespace Apllication4Course.ViewModels
                 case "Transportation":
                     CurrentPageViewModel = new TransportationViewModel();
                     _mainFrame.Navigate(new TransportationPage{ DataContext = CurrentPageViewModel });
+                    break;
+
+                case "FinancialOperationReport":
+                    CurrentPageViewModel = new FinancialOperationReportViewModel();
+                    _mainFrame.Navigate(new FinancialOperationReportPage { DataContext = CurrentPageViewModel });
+                    break;
+
+                case "DeceasedMovements":
+                    CurrentPageViewModel = new DeceasedMovementReportViewModel();
+                    _mainFrame.Navigate(new DeceasedMovementReportPage { DataContext = CurrentPageViewModel });
+                    break;
+
+                case "ResearchReportPage":
+                    CurrentPageViewModel = new ResearchReportViewModel();
+                    _mainFrame.Navigate(new ResearchReportPage { DataContext = CurrentPageViewModel });
                     break;
             }
         }
